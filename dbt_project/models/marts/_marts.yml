@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: dim_temps
+    description: "Dimension temporelle : années académiques et semestres."
+    columns:
+      - name: id_annee
+        tests: [unique, not_null]
+
+  - name: dim_etudiant
+    description: "Dimension étudiant : profil dénormalisé prêt pour la BI."
+    columns:
+      - name: id_etudiant
+        tests: [unique, not_null]
+
+  - name: dim_formation
+    description: "Dimension formation : profil dénormalisé incluant département et faculté."
+    columns:
+      - name: id_formation
+        tests: [unique, not_null]
+
+  - name: dim_cours
+    description: "Dimension cours : profil dénormalisé incluant enseignant et formation."
+    columns:
+      - name: id_cours
+        tests: [unique, not_null]
+
+  - name: fct_performance_academique
+    description: "Table de faits : une ligne par évaluation. Grain = id_note."
+    columns:
+      - name: id_note
+        tests: [unique, not_null]
+      - name: id_etudiant
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_etudiant')
+                field: id_etudiant
+      - name: id_cours
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_cours')
+                field: id_cours
+      - name: id_formation
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_formation')
+                field: id_formation
+      - name: id_annee
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_temps')
+                field: id_annee
+      - name: mention
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["Insuffisant", "Passable", "Assez Bien", "Bien", "Très Bien"]
