@@ -1663,3 +1663,2685 @@ having count(*) > 1
 [0m20:48:25.163552 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7837a3388410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78378ae2f960>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78378ae2fac0>]}
 [0m20:48:25.164467 [debug] [MainThread]: Flushing usage events
 [0m20:48:25.884945 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:00:19.617657 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48fa968440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48fca34a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48f95239d0>]}
+
+
+============================== 21:00:19.622671 | 5e18c566-0120-4c1f-82da-b60dbc825a2d ==============================
+[0m21:00:19.622671 [info ] [MainThread]: Running with dbt=1.12.0
+[0m21:00:19.623540 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'log_format': 'default', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'log_cache_events': 'False', 'empty': 'False', 'introspect': 'True', 'log_path': '/home/abdelhamid/code212/dbt_project/logs', 'hints_enabled': 'True', 'debug': 'False', 'version_check': 'True', 'fail_fast': 'False', 'warn_error': 'None', 'write_json': 'True', 'maximum_seed_size_mib': '1', 'use_colors': 'True', 'static_parser': 'True', 'printer_width': '80', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'target_path': 'None', 'profiles_dir': '/home/abdelhamid/.dbt', 'cache_selected_only': 'False'}
+[0m21:00:19.860426 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48f96dfce0>]}
+[0m21:00:19.974430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48fcbd3020>]}
+[0m21:00:19.976275 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m21:00:20.059996 [debug] [MainThread]: checksum: 6c18592e4f65e465e5d82dd4fa9931046eaa28fa66c0fda5b424c2ca2fc5145d, vars: {}, profile: dcode212_academique, target: dev, version: 1.12.0
+[0m21:00:20.235618 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m21:00:20.237207 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48f7510450>]}
+[0m21:00:23.190349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48f42b1b80>]}
+[0m21:00:23.341331 [debug] [MainThread]: Wrote artifact WritableManifest to /home/abdelhamid/code212/dbt_project/target/manifest.json
+[0m21:00:23.345089 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/abdelhamid/code212/dbt_project/target/semantic_manifest.json
+[0m21:00:23.362202 [debug] [MainThread]: Wrote artifact OsiDocument to /home/abdelhamid/code212/dbt_project/target/osi_document.json
+[0m21:00:23.377696 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48ef910830>]}
+[0m21:00:23.378393 [info ] [MainThread]: Found 14 models, 36 data tests, 8 sources, 477 macros
+[0m21:00:23.379057 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48efaf2f70>]}
+[0m21:00:23.385704 [info ] [MainThread]: 
+[0m21:00:23.386280 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m21:00:23.386775 [info ] [MainThread]: 
+[0m21:00:23.387887 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m21:00:23.394543 [debug] [ThreadPool]: Acquiring new postgres connection 'list_etudiants_db'
+[0m21:00:23.402727 [debug] [ThreadPool]: Acquiring new postgres connection 'list_etudiants_db'
+[0m21:00:23.450800 [debug] [ThreadPool]: Using postgres connection "list_etudiants_db"
+[0m21:00:23.451454 [debug] [ThreadPool]: On list_etudiants_db: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "connection_name": "list_etudiants_db"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m21:00:23.452064 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:00:23.453005 [debug] [ThreadPool]: Using postgres connection "list_etudiants_db"
+[0m21:00:23.453473 [debug] [ThreadPool]: On list_etudiants_db: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "connection_name": "list_etudiants_db"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m21:00:23.453765 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:00:23.485718 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.034 seconds
+[0m21:00:23.487212 [debug] [ThreadPool]: On list_etudiants_db: Close
+[0m21:00:23.488727 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.035 seconds
+[0m21:00:23.490308 [debug] [ThreadPool]: On list_etudiants_db: Close
+[0m21:00:23.492218 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_etudiants_db, now create_etudiants_db_public_intermediate)
+[0m21:00:23.492874 [debug] [ThreadPool]: Creating schema "database: "etudiants_db"
+schema: "public_intermediate"
+"
+[0m21:00:23.499552 [debug] [ThreadPool]: Using postgres connection "create_etudiants_db_public_intermediate"
+[0m21:00:23.500306 [debug] [ThreadPool]: On create_etudiants_db_public_intermediate: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "connection_name": "create_etudiants_db_public_intermediate"} */
+create schema if not exists "public_intermediate"
+[0m21:00:23.500556 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:00:23.513224 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.012 seconds
+[0m21:00:23.514743 [debug] [ThreadPool]: On create_etudiants_db_public_intermediate: COMMIT
+[0m21:00:23.515204 [debug] [ThreadPool]: Using postgres connection "create_etudiants_db_public_intermediate"
+[0m21:00:23.515532 [debug] [ThreadPool]: On create_etudiants_db_public_intermediate: COMMIT
+[0m21:00:23.520017 [debug] [ThreadPool]: SQL status: COMMIT in 0.004 seconds
+[0m21:00:23.520369 [debug] [ThreadPool]: On create_etudiants_db_public_intermediate: Close
+[0m21:00:23.524006 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_etudiants_db_public_intermediate, now list_etudiants_db_public_intermediate)
+[0m21:00:23.531281 [debug] [ThreadPool]: Using postgres connection "list_etudiants_db_public_intermediate"
+[0m21:00:23.533199 [debug] [ThreadPool]: On list_etudiants_db_public_intermediate: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "connection_name": "list_etudiants_db_public_intermediate"} */
+select
+      'etudiants_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_intermediate'
+    union all
+    select
+      'etudiants_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_intermediate'
+    union all
+    select
+      'etudiants_db' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_intermediate'
+    union all
+    select distinct
+     'etudiants_db' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'public_intermediate'
+  
+[0m21:00:23.533636 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:00:23.532401 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_etudiants_db, now list_etudiants_db_public_staging)
+[0m21:00:23.536026 [debug] [ThreadPool]: Using postgres connection "list_etudiants_db_public_staging"
+[0m21:00:23.536687 [debug] [ThreadPool]: On list_etudiants_db_public_staging: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "connection_name": "list_etudiants_db_public_staging"} */
+select
+      'etudiants_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'etudiants_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'etudiants_db' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_staging'
+    union all
+    select distinct
+     'etudiants_db' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'public_staging'
+  
+[0m21:00:23.537129 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:00:23.559005 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.025 seconds
+[0m21:00:23.560675 [debug] [ThreadPool]: On list_etudiants_db_public_intermediate: ROLLBACK
+[0m21:00:23.561224 [debug] [ThreadPool]: SQL status: SELECT 8 in 0.024 seconds
+[0m21:00:23.563083 [debug] [ThreadPool]: On list_etudiants_db_public_staging: ROLLBACK
+[0m21:00:23.564020 [debug] [ThreadPool]: On list_etudiants_db_public_intermediate: Close
+[0m21:00:23.565612 [debug] [ThreadPool]: On list_etudiants_db_public_staging: Close
+[0m21:00:23.575316 [debug] [MainThread]: Using postgres connection "master"
+[0m21:00:23.576128 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m21:00:23.576546 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:00:23.596298 [debug] [MainThread]: SQL status: SELECT 8 in 0.020 seconds
+[0m21:00:23.598557 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48efa56810>]}
+[0m21:00:23.599289 [debug] [MainThread]: On master: ROLLBACK
+[0m21:00:23.601103 [debug] [MainThread]: On master: COMMIT
+[0m21:00:23.601644 [debug] [MainThread]: Using postgres connection "master"
+[0m21:00:23.601941 [debug] [MainThread]: On master: COMMIT
+[0m21:00:23.603918 [debug] [MainThread]: SQL status: COMMIT in 0.002 seconds
+[0m21:00:23.605190 [debug] [MainThread]: On master: Close
+[0m21:00:23.614823 [debug] [Thread-1 (]: Began running node model.dcode212_academique.stg_annees_academiques
+[0m21:00:23.616067 [debug] [Thread-2 (]: Began running node model.dcode212_academique.stg_cours
+[0m21:00:23.617128 [debug] [Thread-4 (]: Began running node model.dcode212_academique.stg_enseignants
+[0m21:00:23.617913 [debug] [Thread-3 (]: Began running node model.dcode212_academique.stg_departements
+[0m21:00:23.619148 [info ] [Thread-1 (]: 1 of 14 START sql view model public_staging.stg_annees_academiques ............. [RUN]
+[0m21:00:23.622210 [info ] [Thread-4 (]: 4 of 14 START sql view model public_staging.stg_enseignants .................... [RUN]
+[0m21:00:23.620587 [info ] [Thread-2 (]: 2 of 14 START sql view model public_staging.stg_cours .......................... [RUN]
+[0m21:00:23.625451 [info ] [Thread-3 (]: 3 of 14 START sql view model public_staging.stg_departements ................... [RUN]
+[0m21:00:23.627081 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_etudiants_db_public_intermediate, now model.dcode212_academique.stg_annees_academiques)
+[0m21:00:23.628869 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.dcode212_academique.stg_enseignants'
+[0m21:00:23.630147 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_etudiants_db_public_staging, now model.dcode212_academique.stg_cours)
+[0m21:00:23.631973 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.dcode212_academique.stg_departements'
+[0m21:00:23.633643 [debug] [Thread-1 (]: Began compiling node model.dcode212_academique.stg_annees_academiques
+[0m21:00:23.634926 [debug] [Thread-4 (]: Began compiling node model.dcode212_academique.stg_enseignants
+[0m21:00:23.636701 [debug] [Thread-2 (]: Began compiling node model.dcode212_academique.stg_cours
+[0m21:00:23.638003 [debug] [Thread-3 (]: Began compiling node model.dcode212_academique.stg_departements
+[0m21:00:23.653981 [debug] [Thread-4 (]: Writing injected SQL for node "model.dcode212_academique.stg_enseignants"
+[0m21:00:23.656444 [debug] [Thread-1 (]: Writing injected SQL for node "model.dcode212_academique.stg_annees_academiques"
+[0m21:00:23.660676 [debug] [Thread-2 (]: Writing injected SQL for node "model.dcode212_academique.stg_cours"
+[0m21:00:23.665925 [debug] [Thread-3 (]: Writing injected SQL for node "model.dcode212_academique.stg_departements"
+[0m21:00:23.669361 [debug] [Thread-1 (]: Began executing node model.dcode212_academique.stg_annees_academiques
+[0m21:00:23.678582 [debug] [Thread-4 (]: Began executing node model.dcode212_academique.stg_enseignants
+[0m21:00:23.685682 [debug] [Thread-3 (]: Began executing node model.dcode212_academique.stg_departements
+[0m21:00:23.686793 [debug] [Thread-2 (]: Began executing node model.dcode212_academique.stg_cours
+[0m21:00:23.823865 [debug] [Thread-1 (]: Writing runtime sql for node "model.dcode212_academique.stg_annees_academiques"
+[0m21:00:23.825839 [debug] [Thread-2 (]: Writing runtime sql for node "model.dcode212_academique.stg_cours"
+[0m21:00:23.830450 [debug] [Thread-4 (]: Writing runtime sql for node "model.dcode212_academique.stg_enseignants"
+[0m21:00:23.834082 [debug] [Thread-3 (]: Writing runtime sql for node "model.dcode212_academique.stg_departements"
+[0m21:00:23.836250 [debug] [Thread-1 (]: Using postgres connection "model.dcode212_academique.stg_annees_academiques"
+[0m21:00:23.839162 [debug] [Thread-1 (]: On model.dcode212_academique.stg_annees_academiques: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_annees_academiques"} */
+
+  create view "etudiants_db"."public_staging"."stg_annees_academiques__dbt_tmp"
+    
+    
+  as (
+    with source as (
+    select * from "etudiants_db"."public"."annees_academiques"
+)
+select
+    id_annee::integer     as id_annee,
+    trim(libelle)         as libelle,
+    trim(semestre)        as semestre,
+    date_debut::date      as date_debut,
+    date_fin::date        as date_fin
+from source
+  );
+[0m21:00:23.840049 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:00:23.838229 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.stg_enseignants"
+[0m21:00:23.842523 [debug] [Thread-4 (]: On model.dcode212_academique.stg_enseignants: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_enseignants"} */
+
+  create view "etudiants_db"."public_staging"."stg_enseignants__dbt_tmp"
+    
+    
+  as (
+    with source as (
+    select * from "etudiants_db"."public"."enseignants"
+)
+select
+    id_enseignant::integer      as id_enseignant,
+    trim(nom)                   as nom,
+    trim(prenom)                as prenom,
+    trim(grade)                 as grade,
+    id_departement::integer     as id_departement,
+    lower(trim(email))          as email,
+    date_recrutement::date      as date_recrutement
+from source
+  );
+[0m21:00:23.841479 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.stg_cours"
+[0m21:00:23.844884 [debug] [Thread-2 (]: On model.dcode212_academique.stg_cours: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_cours"} */
+
+  create view "etudiants_db"."public_staging"."stg_cours__dbt_tmp"
+    
+    
+  as (
+    with source as (
+    select * from "etudiants_db"."public"."cours"
+)
+select
+    id_cours::integer          as id_cours,
+    trim(code_cours)           as code_cours,
+    trim(intitule)             as intitule,
+    credits_ects::smallint     as credits_ects,
+    id_formation::integer      as id_formation,
+    id_enseignant::integer     as id_enseignant,
+    id_annee::integer          as id_annee,
+    volume_horaire::smallint   as volume_horaire
+from source
+  );
+[0m21:00:23.845739 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:00:23.847376 [debug] [Thread-3 (]: Using postgres connection "model.dcode212_academique.stg_departements"
+[0m21:00:23.848707 [debug] [Thread-3 (]: On model.dcode212_academique.stg_departements: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_departements"} */
+
+  create view "etudiants_db"."public_staging"."stg_departements__dbt_tmp"
+    
+    
+  as (
+    with source as (
+    select * from "etudiants_db"."public"."departements"
+)
+select
+    id_departement::integer                as id_departement,
+    trim(nom_departement)                  as nom_departement,
+    trim(faculte)                          as faculte,
+    trim(responsable)                      as responsable
+from source
+  );
+[0m21:00:23.849595 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m21:00:23.843464 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m21:00:23.865786 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.026 seconds
+[0m21:00:23.877933 [debug] [Thread-1 (]: Using postgres connection "model.dcode212_academique.stg_annees_academiques"
+[0m21:00:23.879708 [debug] [Thread-1 (]: On model.dcode212_academique.stg_annees_academiques: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_annees_academiques"} */
+alter table "etudiants_db"."public_staging"."stg_annees_academiques" rename to "stg_annees_academiques__dbt_backup"
+[0m21:00:23.881690 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.036 seconds
+[0m21:00:23.886567 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.stg_cours"
+[0m21:00:23.887760 [debug] [Thread-2 (]: On model.dcode212_academique.stg_cours: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_cours"} */
+alter table "etudiants_db"."public_staging"."stg_cours" rename to "stg_cours__dbt_backup"
+[0m21:00:23.888838 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.045 seconds
+[0m21:00:23.893869 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.stg_enseignants"
+[0m21:00:23.890445 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m21:00:23.894527 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.045 seconds
+[0m21:00:23.895260 [debug] [Thread-4 (]: On model.dcode212_academique.stg_enseignants: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_enseignants"} */
+alter table "etudiants_db"."public_staging"."stg_enseignants" rename to "stg_enseignants__dbt_backup"
+[0m21:00:23.889781 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.007 seconds
+[0m21:00:23.899409 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.stg_cours"
+[0m21:00:23.902903 [debug] [Thread-3 (]: Using postgres connection "model.dcode212_academique.stg_departements"
+[0m21:00:23.906089 [debug] [Thread-1 (]: Using postgres connection "model.dcode212_academique.stg_annees_academiques"
+[0m21:00:23.906812 [debug] [Thread-2 (]: On model.dcode212_academique.stg_cours: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_cours"} */
+alter table "etudiants_db"."public_staging"."stg_cours__dbt_tmp" rename to "stg_cours"
+[0m21:00:23.907485 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.004 seconds
+[0m21:00:23.912377 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.stg_enseignants"
+[0m21:00:23.909023 [debug] [Thread-1 (]: On model.dcode212_academique.stg_annees_academiques: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_annees_academiques"} */
+alter table "etudiants_db"."public_staging"."stg_annees_academiques__dbt_tmp" rename to "stg_annees_academiques"
+[0m21:00:23.914220 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.004 seconds
+[0m21:00:23.908359 [debug] [Thread-3 (]: On model.dcode212_academique.stg_departements: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_departements"} */
+alter table "etudiants_db"."public_staging"."stg_departements" rename to "stg_departements__dbt_backup"
+[0m21:00:23.920468 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.006 seconds
+[0m21:00:23.913017 [debug] [Thread-4 (]: On model.dcode212_academique.stg_enseignants: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_enseignants"} */
+alter table "etudiants_db"."public_staging"."stg_enseignants__dbt_tmp" rename to "stg_enseignants"
+[0m21:00:23.927053 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.006 seconds
+[0m21:00:23.955733 [debug] [Thread-3 (]: Using postgres connection "model.dcode212_academique.stg_departements"
+[0m21:00:23.952286 [debug] [Thread-1 (]: On model.dcode212_academique.stg_annees_academiques: COMMIT
+[0m21:00:23.956628 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.004 seconds
+[0m21:00:23.960091 [debug] [Thread-2 (]: On model.dcode212_academique.stg_cours: COMMIT
+[0m21:00:23.960744 [debug] [Thread-3 (]: On model.dcode212_academique.stg_departements: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_departements"} */
+alter table "etudiants_db"."public_staging"."stg_departements__dbt_tmp" rename to "stg_departements"
+[0m21:00:23.961330 [debug] [Thread-1 (]: Using postgres connection "model.dcode212_academique.stg_annees_academiques"
+[0m21:00:23.964397 [debug] [Thread-4 (]: On model.dcode212_academique.stg_enseignants: COMMIT
+[0m21:00:23.965457 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.stg_cours"
+[0m21:00:23.966691 [debug] [Thread-1 (]: On model.dcode212_academique.stg_annees_academiques: COMMIT
+[0m21:00:23.967971 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.stg_enseignants"
+[0m21:00:23.970078 [debug] [Thread-4 (]: On model.dcode212_academique.stg_enseignants: COMMIT
+[0m21:00:23.968855 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m21:00:23.973023 [debug] [Thread-3 (]: On model.dcode212_academique.stg_departements: COMMIT
+[0m21:00:23.973594 [debug] [Thread-3 (]: Using postgres connection "model.dcode212_academique.stg_departements"
+[0m21:00:23.974155 [debug] [Thread-3 (]: On model.dcode212_academique.stg_departements: COMMIT
+[0m21:00:23.969339 [debug] [Thread-2 (]: On model.dcode212_academique.stg_cours: COMMIT
+[0m21:00:23.977194 [debug] [Thread-1 (]: SQL status: COMMIT in 0.007 seconds
+[0m21:00:23.986186 [debug] [Thread-2 (]: SQL status: COMMIT in 0.011 seconds
+[0m21:00:23.992318 [debug] [Thread-4 (]: SQL status: COMMIT in 0.021 seconds
+[0m21:00:23.998898 [debug] [Thread-3 (]: SQL status: COMMIT in 0.024 seconds
+[0m21:00:24.000184 [debug] [Thread-2 (]: Applying DROP to: "etudiants_db"."public_staging"."stg_cours__dbt_backup"
+[0m21:00:24.002606 [debug] [Thread-1 (]: Applying DROP to: "etudiants_db"."public_staging"."stg_annees_academiques__dbt_backup"
+[0m21:00:24.005194 [debug] [Thread-3 (]: Applying DROP to: "etudiants_db"."public_staging"."stg_departements__dbt_backup"
+[0m21:00:24.012676 [debug] [Thread-4 (]: Applying DROP to: "etudiants_db"."public_staging"."stg_enseignants__dbt_backup"
+[0m21:00:24.016354 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.stg_cours"
+[0m21:00:24.018024 [debug] [Thread-1 (]: Using postgres connection "model.dcode212_academique.stg_annees_academiques"
+[0m21:00:24.019809 [debug] [Thread-3 (]: Using postgres connection "model.dcode212_academique.stg_departements"
+[0m21:00:24.021339 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.stg_enseignants"
+[0m21:00:24.022433 [debug] [Thread-2 (]: On model.dcode212_academique.stg_cours: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_cours"} */
+drop view if exists "etudiants_db"."public_staging"."stg_cours__dbt_backup" cascade
+[0m21:00:24.023365 [debug] [Thread-1 (]: On model.dcode212_academique.stg_annees_academiques: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_annees_academiques"} */
+drop view if exists "etudiants_db"."public_staging"."stg_annees_academiques__dbt_backup" cascade
+[0m21:00:24.024450 [debug] [Thread-3 (]: On model.dcode212_academique.stg_departements: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_departements"} */
+drop view if exists "etudiants_db"."public_staging"."stg_departements__dbt_backup" cascade
+[0m21:00:24.025305 [debug] [Thread-4 (]: On model.dcode212_academique.stg_enseignants: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_enseignants"} */
+drop view if exists "etudiants_db"."public_staging"."stg_enseignants__dbt_backup" cascade
+[0m21:00:24.047431 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.020 seconds
+[0m21:00:24.052377 [debug] [Thread-3 (]: On model.dcode212_academique.stg_departements: Close
+[0m21:00:24.053403 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.027 seconds
+[0m21:00:24.056900 [debug] [Thread-2 (]: On model.dcode212_academique.stg_cours: Close
+[0m21:00:24.062295 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0.035 seconds
+[0m21:00:24.054326 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.028 seconds
+[0m21:00:24.066490 [debug] [Thread-4 (]: On model.dcode212_academique.stg_enseignants: Close
+[0m21:00:24.067420 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48fc99e620>]}
+[0m21:00:24.068580 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48ee5a09b0>]}
+[0m21:00:24.071274 [debug] [Thread-1 (]: On model.dcode212_academique.stg_annees_academiques: Close
+[0m21:00:24.073091 [info ] [Thread-3 (]: 3 of 14 OK created sql view model public_staging.stg_departements .............. [[32mCREATE VIEW[0m in 0.43s]
+[0m21:00:24.074855 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48ec4352e0>]}
+[0m21:00:24.081083 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48ee6412d0>]}
+[0m21:00:24.077848 [info ] [Thread-2 (]: 2 of 14 OK created sql view model public_staging.stg_cours ..................... [[32mCREATE VIEW[0m in 0.43s]
+[0m21:00:24.085182 [debug] [Thread-3 (]: Finished running node model.dcode212_academique.stg_departements
+[0m21:00:24.091718 [debug] [Thread-2 (]: Finished running node model.dcode212_academique.stg_cours
+[0m21:00:24.087089 [info ] [Thread-4 (]: 4 of 14 OK created sql view model public_staging.stg_enseignants ............... [[32mCREATE VIEW[0m in 0.45s]
+[0m21:00:24.094323 [debug] [Thread-3 (]: Began running node model.dcode212_academique.stg_etudiants
+[0m21:00:24.089326 [info ] [Thread-1 (]: 1 of 14 OK created sql view model public_staging.stg_annees_academiques ........ [[32mCREATE VIEW[0m in 0.45s]
+[0m21:00:24.096361 [debug] [Thread-2 (]: Began running node model.dcode212_academique.stg_formations
+[0m21:00:24.099473 [debug] [Thread-4 (]: Finished running node model.dcode212_academique.stg_enseignants
+[0m21:00:24.101516 [info ] [Thread-3 (]: 5 of 14 START sql view model public_staging.stg_etudiants ...................... [RUN]
+[0m21:00:24.103592 [debug] [Thread-1 (]: Finished running node model.dcode212_academique.stg_annees_academiques
+[0m21:00:24.105465 [info ] [Thread-2 (]: 6 of 14 START sql view model public_staging.stg_formations ..................... [RUN]
+[0m21:00:24.107343 [debug] [Thread-4 (]: Began running node model.dcode212_academique.stg_inscriptions
+[0m21:00:24.109425 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.dcode212_academique.stg_departements, now model.dcode212_academique.stg_etudiants)
+[0m21:00:24.111251 [debug] [Thread-1 (]: Began running node model.dcode212_academique.stg_notes
+[0m21:00:24.113501 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dcode212_academique.stg_cours, now model.dcode212_academique.stg_formations)
+[0m21:00:24.115799 [info ] [Thread-4 (]: 7 of 14 START sql view model public_staging.stg_inscriptions ................... [RUN]
+[0m21:00:24.117947 [debug] [Thread-3 (]: Began compiling node model.dcode212_academique.stg_etudiants
+[0m21:00:24.119949 [info ] [Thread-1 (]: 8 of 14 START sql view model public_staging.stg_notes .......................... [RUN]
+[0m21:00:24.122193 [debug] [Thread-2 (]: Began compiling node model.dcode212_academique.stg_formations
+[0m21:00:24.123562 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.dcode212_academique.stg_enseignants, now model.dcode212_academique.stg_inscriptions)
+[0m21:00:24.128152 [debug] [Thread-3 (]: Writing injected SQL for node "model.dcode212_academique.stg_etudiants"
+[0m21:00:24.129541 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dcode212_academique.stg_annees_academiques, now model.dcode212_academique.stg_notes)
+[0m21:00:24.138091 [debug] [Thread-2 (]: Writing injected SQL for node "model.dcode212_academique.stg_formations"
+[0m21:00:24.139336 [debug] [Thread-4 (]: Began compiling node model.dcode212_academique.stg_inscriptions
+[0m21:00:24.141494 [debug] [Thread-1 (]: Began compiling node model.dcode212_academique.stg_notes
+[0m21:00:24.143221 [debug] [Thread-3 (]: Began executing node model.dcode212_academique.stg_etudiants
+[0m21:00:24.272750 [debug] [Thread-4 (]: Writing injected SQL for node "model.dcode212_academique.stg_inscriptions"
+[0m21:00:24.277221 [debug] [Thread-1 (]: Writing injected SQL for node "model.dcode212_academique.stg_notes"
+[0m21:00:24.284577 [debug] [Thread-2 (]: Began executing node model.dcode212_academique.stg_formations
+[0m21:00:24.286192 [debug] [Thread-3 (]: Writing runtime sql for node "model.dcode212_academique.stg_etudiants"
+[0m21:00:24.292422 [debug] [Thread-2 (]: Writing runtime sql for node "model.dcode212_academique.stg_formations"
+[0m21:00:24.295988 [debug] [Thread-4 (]: Began executing node model.dcode212_academique.stg_inscriptions
+[0m21:00:24.303397 [debug] [Thread-4 (]: Writing runtime sql for node "model.dcode212_academique.stg_inscriptions"
+[0m21:00:24.305448 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.stg_formations"
+[0m21:00:24.306407 [debug] [Thread-2 (]: On model.dcode212_academique.stg_formations: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_formations"} */
+
+  create view "etudiants_db"."public_staging"."stg_formations__dbt_tmp"
+    
+    
+  as (
+    with source as (
+    select * from "etudiants_db"."public"."formations"
+)
+select
+    id_formation::integer     as id_formation,
+    trim(nom_formation)       as nom_formation,
+    id_departement::integer   as id_departement,
+    trim(niveau)              as niveau,
+    trim(type_diplome)        as type_diplome,
+    duree_annees::smallint    as duree_annees
+from source
+  );
+[0m21:00:24.307068 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:00:24.309017 [debug] [Thread-1 (]: Began executing node model.dcode212_academique.stg_notes
+[0m21:00:24.316453 [debug] [Thread-3 (]: Using postgres connection "model.dcode212_academique.stg_etudiants"
+[0m21:00:24.317392 [debug] [Thread-3 (]: On model.dcode212_academique.stg_etudiants: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_etudiants"} */
+
+  create view "etudiants_db"."public_staging"."stg_etudiants__dbt_tmp"
+    
+    
+  as (
+    with source as (
+    select * from "etudiants_db"."public"."etudiants"
+)
+select
+    id_etudiant::integer                    as id_etudiant,
+    trim(matricule)                         as matricule,
+    trim(nom)                               as nom,
+    trim(prenom)                            as prenom,
+    date_naissance::date                    as date_naissance,
+    upper(trim(sexe))                       as sexe,
+    trim(nationalite)                       as nationalite,
+    lower(trim(email))                      as email,
+    date_premiere_inscription::date         as date_premiere_inscription,
+    trim(statut)                            as statut
+from source
+  );
+[0m21:00:24.318228 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:00:24.319903 [debug] [Thread-1 (]: Writing runtime sql for node "model.dcode212_academique.stg_notes"
+[0m21:00:24.321962 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.stg_inscriptions"
+[0m21:00:24.323000 [debug] [Thread-4 (]: On model.dcode212_academique.stg_inscriptions: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_inscriptions"} */
+
+  create view "etudiants_db"."public_staging"."stg_inscriptions__dbt_tmp"
+    
+    
+  as (
+    with source as (
+    select * from "etudiants_db"."public"."inscriptions"
+)
+select
+    id_inscription::integer        as id_inscription,
+    id_etudiant::integer           as id_etudiant,
+    id_formation::integer          as id_formation,
+    id_annee::integer              as id_annee,
+    date_inscription::date         as date_inscription,
+    trim(statut_inscription)       as statut_inscription,
+    trim(mode)                     as mode
+from source
+  );
+[0m21:00:24.323811 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:00:24.325551 [debug] [Thread-1 (]: Using postgres connection "model.dcode212_academique.stg_notes"
+[0m21:00:24.326772 [debug] [Thread-1 (]: On model.dcode212_academique.stg_notes: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_notes"} */
+
+  create view "etudiants_db"."public_staging"."stg_notes__dbt_tmp"
+    
+    
+  as (
+    with source as (
+    select * from "etudiants_db"."public"."notes"
+)
+select
+    id_note::integer             as id_note,
+    id_etudiant::integer         as id_etudiant,
+    id_cours::integer            as id_cours,
+    id_annee::integer            as id_annee,
+    trim(type_evaluation)        as type_evaluation,
+    note::numeric(4,2)           as note,
+    date_evaluation::date        as date_evaluation
+from source
+  );
+[0m21:00:24.327797 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:00:24.337667 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.030 seconds
+[0m21:00:24.343902 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.stg_formations"
+[0m21:00:24.345469 [debug] [Thread-2 (]: On model.dcode212_academique.stg_formations: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_formations"} */
+alter table "etudiants_db"."public_staging"."stg_formations" rename to "stg_formations__dbt_backup"
+[0m21:00:24.349438 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m21:00:24.354910 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.stg_formations"
+[0m21:00:24.357026 [debug] [Thread-2 (]: On model.dcode212_academique.stg_formations: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_formations"} */
+alter table "etudiants_db"."public_staging"."stg_formations__dbt_tmp" rename to "stg_formations"
+[0m21:00:24.356161 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.038 seconds
+[0m21:00:24.361326 [debug] [Thread-3 (]: Using postgres connection "model.dcode212_academique.stg_etudiants"
+[0m21:00:24.362255 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.038 seconds
+[0m21:00:24.363529 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.036 seconds
+[0m21:00:24.364730 [debug] [Thread-3 (]: On model.dcode212_academique.stg_etudiants: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_etudiants"} */
+alter table "etudiants_db"."public_staging"."stg_etudiants" rename to "stg_etudiants__dbt_backup"
+[0m21:00:24.365619 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.008 seconds
+[0m21:00:24.369414 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.stg_inscriptions"
+[0m21:00:24.372940 [debug] [Thread-1 (]: Using postgres connection "model.dcode212_academique.stg_notes"
+[0m21:00:24.375771 [debug] [Thread-2 (]: On model.dcode212_academique.stg_formations: COMMIT
+[0m21:00:24.376682 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m21:00:24.377408 [debug] [Thread-4 (]: On model.dcode212_academique.stg_inscriptions: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_inscriptions"} */
+alter table "etudiants_db"."public_staging"."stg_inscriptions" rename to "stg_inscriptions__dbt_backup"
+[0m21:00:24.378330 [debug] [Thread-1 (]: On model.dcode212_academique.stg_notes: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_notes"} */
+alter table "etudiants_db"."public_staging"."stg_notes" rename to "stg_notes__dbt_backup"
+[0m21:00:24.378979 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.stg_formations"
+[0m21:00:24.384039 [debug] [Thread-2 (]: On model.dcode212_academique.stg_formations: COMMIT
+[0m21:00:24.385640 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m21:00:24.391059 [debug] [Thread-1 (]: Using postgres connection "model.dcode212_academique.stg_notes"
+[0m21:00:24.392177 [debug] [Thread-1 (]: On model.dcode212_academique.stg_notes: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_notes"} */
+alter table "etudiants_db"."public_staging"."stg_notes__dbt_tmp" rename to "stg_notes"
+[0m21:00:24.386866 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m21:00:24.396675 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.stg_inscriptions"
+[0m21:00:24.382516 [debug] [Thread-3 (]: Using postgres connection "model.dcode212_academique.stg_etudiants"
+[0m21:00:24.397791 [debug] [Thread-4 (]: On model.dcode212_academique.stg_inscriptions: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_inscriptions"} */
+alter table "etudiants_db"."public_staging"."stg_inscriptions__dbt_tmp" rename to "stg_inscriptions"
+[0m21:00:24.398654 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.006 seconds
+[0m21:00:24.399448 [debug] [Thread-2 (]: SQL status: COMMIT in 0.015 seconds
+[0m21:00:24.400510 [debug] [Thread-3 (]: On model.dcode212_academique.stg_etudiants: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_etudiants"} */
+alter table "etudiants_db"."public_staging"."stg_etudiants__dbt_tmp" rename to "stg_etudiants"
+[0m21:00:24.404109 [debug] [Thread-1 (]: On model.dcode212_academique.stg_notes: COMMIT
+[0m21:00:24.404945 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m21:00:24.407796 [debug] [Thread-2 (]: Applying DROP to: "etudiants_db"."public_staging"."stg_formations__dbt_backup"
+[0m21:00:24.408885 [debug] [Thread-1 (]: Using postgres connection "model.dcode212_academique.stg_notes"
+[0m21:00:24.411492 [debug] [Thread-4 (]: On model.dcode212_academique.stg_inscriptions: COMMIT
+[0m21:00:24.413204 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.stg_formations"
+[0m21:00:24.414173 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.005 seconds
+[0m21:00:24.415083 [debug] [Thread-1 (]: On model.dcode212_academique.stg_notes: COMMIT
+[0m21:00:24.416381 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.stg_inscriptions"
+[0m21:00:24.417322 [debug] [Thread-2 (]: On model.dcode212_academique.stg_formations: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_formations"} */
+drop view if exists "etudiants_db"."public_staging"."stg_formations__dbt_backup" cascade
+[0m21:00:24.420787 [debug] [Thread-3 (]: On model.dcode212_academique.stg_etudiants: COMMIT
+[0m21:00:24.423450 [debug] [Thread-3 (]: Using postgres connection "model.dcode212_academique.stg_etudiants"
+[0m21:00:24.424285 [debug] [Thread-3 (]: On model.dcode212_academique.stg_etudiants: COMMIT
+[0m21:00:24.425202 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m21:00:24.421963 [debug] [Thread-4 (]: On model.dcode212_academique.stg_inscriptions: COMMIT
+[0m21:00:24.430560 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.007 seconds
+[0m21:00:24.433870 [debug] [Thread-2 (]: On model.dcode212_academique.stg_formations: Close
+[0m21:00:24.435380 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48ee606630>]}
+[0m21:00:24.436463 [debug] [Thread-4 (]: SQL status: COMMIT in 0.007 seconds
+[0m21:00:24.437383 [debug] [Thread-3 (]: SQL status: COMMIT in 0.012 seconds
+[0m21:00:24.450107 [debug] [Thread-3 (]: Applying DROP to: "etudiants_db"."public_staging"."stg_etudiants__dbt_backup"
+[0m21:00:24.428521 [debug] [Thread-1 (]: Applying DROP to: "etudiants_db"."public_staging"."stg_notes__dbt_backup"
+[0m21:00:24.439354 [info ] [Thread-2 (]: 6 of 14 OK created sql view model public_staging.stg_formations ................ [[32mCREATE VIEW[0m in 0.32s]
+[0m21:00:24.452653 [debug] [Thread-3 (]: Using postgres connection "model.dcode212_academique.stg_etudiants"
+[0m21:00:24.443481 [debug] [Thread-4 (]: Applying DROP to: "etudiants_db"."public_staging"."stg_inscriptions__dbt_backup"
+[0m21:00:24.454861 [debug] [Thread-1 (]: Using postgres connection "model.dcode212_academique.stg_notes"
+[0m21:00:24.456291 [debug] [Thread-2 (]: Finished running node model.dcode212_academique.stg_formations
+[0m21:00:24.457362 [debug] [Thread-3 (]: On model.dcode212_academique.stg_etudiants: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_etudiants"} */
+drop view if exists "etudiants_db"."public_staging"."stg_etudiants__dbt_backup" cascade
+[0m21:00:24.459110 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.stg_inscriptions"
+[0m21:00:24.460203 [debug] [Thread-1 (]: On model.dcode212_academique.stg_notes: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_notes"} */
+drop view if exists "etudiants_db"."public_staging"."stg_notes__dbt_backup" cascade
+[0m21:00:24.461302 [debug] [Thread-2 (]: Began running node model.dcode212_academique.int_enseignants_enrichis
+[0m21:00:24.464062 [debug] [Thread-4 (]: On model.dcode212_academique.stg_inscriptions: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.stg_inscriptions"} */
+drop view if exists "etudiants_db"."public_staging"."stg_inscriptions__dbt_backup" cascade
+[0m21:00:24.467403 [info ] [Thread-2 (]: 9 of 14 START sql view model public_intermediate.int_enseignants_enrichis ...... [RUN]
+[0m21:00:24.470161 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dcode212_academique.stg_formations, now model.dcode212_academique.int_enseignants_enrichis)
+[0m21:00:24.472853 [debug] [Thread-2 (]: Began compiling node model.dcode212_academique.int_enseignants_enrichis
+[0m21:00:24.477682 [debug] [Thread-2 (]: Writing injected SQL for node "model.dcode212_academique.int_enseignants_enrichis"
+[0m21:00:24.478867 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0.010 seconds
+[0m21:00:24.480515 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.018 seconds
+[0m21:00:24.481559 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.016 seconds
+[0m21:00:24.484840 [debug] [Thread-4 (]: On model.dcode212_academique.stg_inscriptions: Close
+[0m21:00:24.487475 [debug] [Thread-3 (]: On model.dcode212_academique.stg_etudiants: Close
+[0m21:00:24.489798 [debug] [Thread-1 (]: On model.dcode212_academique.stg_notes: Close
+[0m21:00:24.491023 [debug] [Thread-2 (]: Began executing node model.dcode212_academique.int_enseignants_enrichis
+[0m21:00:24.492326 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48ee59f0b0>]}
+[0m21:00:24.493927 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48ee59edb0>]}
+[0m21:00:24.495144 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48ee59f890>]}
+[0m21:00:24.503856 [debug] [Thread-2 (]: Writing runtime sql for node "model.dcode212_academique.int_enseignants_enrichis"
+[0m21:00:24.505505 [info ] [Thread-4 (]: 7 of 14 OK created sql view model public_staging.stg_inscriptions .............. [[32mCREATE VIEW[0m in 0.37s]
+[0m21:00:24.512310 [debug] [Thread-4 (]: Finished running node model.dcode212_academique.stg_inscriptions
+[0m21:00:24.513688 [debug] [Thread-4 (]: Began running node model.dcode212_academique.int_formations_enrichies
+[0m21:00:24.507034 [info ] [Thread-1 (]: 8 of 14 OK created sql view model public_staging.stg_notes ..................... [[32mCREATE VIEW[0m in 0.36s]
+[0m21:00:24.517965 [debug] [Thread-1 (]: Finished running node model.dcode212_academique.stg_notes
+[0m21:00:24.508929 [info ] [Thread-3 (]: 5 of 14 OK created sql view model public_staging.stg_etudiants ................. [[32mCREATE VIEW[0m in 0.39s]
+[0m21:00:24.521211 [debug] [Thread-3 (]: Finished running node model.dcode212_academique.stg_etudiants
+[0m21:00:24.514660 [info ] [Thread-4 (]: 10 of 14 START sql view model public_intermediate.int_formations_enrichies ..... [RUN]
+[0m21:00:24.522554 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.dcode212_academique.stg_inscriptions, now model.dcode212_academique.int_formations_enrichies)
+[0m21:00:24.523098 [debug] [Thread-4 (]: Began compiling node model.dcode212_academique.int_formations_enrichies
+[0m21:00:24.525766 [debug] [Thread-4 (]: Writing injected SQL for node "model.dcode212_academique.int_formations_enrichies"
+[0m21:00:24.527119 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.int_enseignants_enrichis"
+[0m21:00:24.527958 [debug] [Thread-2 (]: On model.dcode212_academique.int_enseignants_enrichis: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_enseignants_enrichis"} */
+
+  create view "etudiants_db"."public_intermediate"."int_enseignants_enrichis__dbt_tmp"
+    
+    
+  as (
+    with enseignants as (
+    select * from "etudiants_db"."public_staging"."stg_enseignants"
+),
+departements as (
+    select * from "etudiants_db"."public_staging"."stg_departements"
+)
+select
+    e.id_enseignant,
+    e.nom,
+    e.prenom,
+    e.nom || ' ' || e.prenom    as nom_complet,
+    e.grade,
+    e.email,
+    e.date_recrutement,
+    d.id_departement,
+    d.nom_departement
+from enseignants e
+left join departements d on e.id_departement = d.id_departement
+  );
+[0m21:00:24.528626 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:00:24.529499 [debug] [Thread-1 (]: Began running node model.dcode212_academique.int_etudiants_enrichis
+[0m21:00:24.530894 [info ] [Thread-1 (]: 11 of 14 START sql view model public_intermediate.int_etudiants_enrichis ....... [RUN]
+[0m21:00:24.532847 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dcode212_academique.stg_notes, now model.dcode212_academique.int_etudiants_enrichis)
+[0m21:00:24.533669 [debug] [Thread-1 (]: Began compiling node model.dcode212_academique.int_etudiants_enrichis
+[0m21:00:24.538348 [debug] [Thread-1 (]: Writing injected SQL for node "model.dcode212_academique.int_etudiants_enrichis"
+[0m21:00:24.539534 [debug] [Thread-4 (]: Began executing node model.dcode212_academique.int_formations_enrichies
+[0m21:00:24.544348 [debug] [Thread-4 (]: Writing runtime sql for node "model.dcode212_academique.int_formations_enrichies"
+[0m21:00:24.545213 [debug] [Thread-1 (]: Began executing node model.dcode212_academique.int_etudiants_enrichis
+[0m21:00:24.553044 [debug] [Thread-1 (]: Writing runtime sql for node "model.dcode212_academique.int_etudiants_enrichis"
+[0m21:00:24.554592 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.int_formations_enrichies"
+[0m21:00:24.555276 [debug] [Thread-4 (]: On model.dcode212_academique.int_formations_enrichies: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_formations_enrichies"} */
+
+  create view "etudiants_db"."public_intermediate"."int_formations_enrichies__dbt_tmp"
+    
+    
+  as (
+    with formations as (
+    select * from "etudiants_db"."public_staging"."stg_formations"
+),
+departements as (
+    select * from "etudiants_db"."public_staging"."stg_departements"
+)
+select
+    f.id_formation,
+    f.nom_formation,
+    f.niveau,
+    f.type_diplome,
+    f.duree_annees,
+    d.id_departement,
+    d.nom_departement,
+    d.faculte
+from formations f
+left join departements d on f.id_departement = d.id_departement
+  );
+[0m21:00:24.555996 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:00:24.556895 [debug] [Thread-1 (]: Using postgres connection "model.dcode212_academique.int_etudiants_enrichis"
+[0m21:00:24.557976 [debug] [Thread-1 (]: On model.dcode212_academique.int_etudiants_enrichis: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_etudiants_enrichis"} */
+
+  create view "etudiants_db"."public_intermediate"."int_etudiants_enrichis__dbt_tmp"
+    
+    
+  as (
+    with etudiants as (
+    select * from "etudiants_db"."public_staging"."stg_etudiants"
+),
+dedupliques as (
+    select
+        *,
+        row_number() over (partition by id_etudiant order by id_etudiant) as rn
+    from etudiants
+    where id_etudiant is not null
+),
+enrichis as (
+    select
+        id_etudiant,
+        matricule,
+        nom,
+        prenom,
+        nom || ' ' || prenom                                        as nom_complet,
+        date_naissance,
+        date_part('year', age(current_date, date_naissance))::int   as age,
+        sexe,
+        nationalite,
+        email,
+        date_premiere_inscription,
+        statut
+    from dedupliques
+    where rn = 1
+)
+select
+    *,
+    case
+        when age < 20 then '18-19'
+        when age < 23 then '20-22'
+        when age < 26 then '23-25'
+        else '26+'
+    end as tranche_age
+from enrichis
+  );
+[0m21:00:24.558900 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:00:24.559891 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.031 seconds
+[0m21:00:24.564580 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.int_enseignants_enrichis"
+[0m21:00:24.565519 [debug] [Thread-2 (]: On model.dcode212_academique.int_enseignants_enrichis: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_enseignants_enrichis"} */
+alter table "etudiants_db"."public_intermediate"."int_enseignants_enrichis__dbt_tmp" rename to "int_enseignants_enrichis"
+[0m21:00:24.568475 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m21:00:24.571013 [debug] [Thread-2 (]: On model.dcode212_academique.int_enseignants_enrichis: COMMIT
+[0m21:00:24.571912 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.int_enseignants_enrichis"
+[0m21:00:24.572481 [debug] [Thread-2 (]: On model.dcode212_academique.int_enseignants_enrichis: COMMIT
+[0m21:00:24.579106 [debug] [Thread-2 (]: SQL status: COMMIT in 0.006 seconds
+[0m21:00:24.583317 [debug] [Thread-2 (]: Applying DROP to: "etudiants_db"."public_intermediate"."int_enseignants_enrichis__dbt_backup"
+[0m21:00:24.586188 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.int_enseignants_enrichis"
+[0m21:00:24.586994 [debug] [Thread-2 (]: On model.dcode212_academique.int_enseignants_enrichis: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_enseignants_enrichis"} */
+drop view if exists "etudiants_db"."public_intermediate"."int_enseignants_enrichis__dbt_backup" cascade
+[0m21:00:24.584517 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.028 seconds
+[0m21:00:24.591851 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.int_formations_enrichies"
+[0m21:00:24.593484 [debug] [Thread-4 (]: On model.dcode212_academique.int_formations_enrichies: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_formations_enrichies"} */
+alter table "etudiants_db"."public_intermediate"."int_formations_enrichies__dbt_tmp" rename to "int_formations_enrichies"
+[0m21:00:24.594375 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.035 seconds
+[0m21:00:24.598332 [debug] [Thread-1 (]: Using postgres connection "model.dcode212_academique.int_etudiants_enrichis"
+[0m21:00:24.592770 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.005 seconds
+[0m21:00:24.602011 [debug] [Thread-2 (]: On model.dcode212_academique.int_enseignants_enrichis: Close
+[0m21:00:24.599207 [debug] [Thread-1 (]: On model.dcode212_academique.int_etudiants_enrichis: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_etudiants_enrichis"} */
+alter table "etudiants_db"."public_intermediate"."int_etudiants_enrichis__dbt_tmp" rename to "int_etudiants_enrichis"
+[0m21:00:24.603158 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.009 seconds
+[0m21:00:24.607736 [debug] [Thread-4 (]: On model.dcode212_academique.int_formations_enrichies: COMMIT
+[0m21:00:24.604680 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48f4283d10>]}
+[0m21:00:24.608666 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.006 seconds
+[0m21:00:24.609562 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.int_formations_enrichies"
+[0m21:00:24.611064 [info ] [Thread-2 (]: 9 of 14 OK created sql view model public_intermediate.int_enseignants_enrichis . [[32mCREATE VIEW[0m in 0.14s]
+[0m21:00:24.614988 [debug] [Thread-1 (]: On model.dcode212_academique.int_etudiants_enrichis: COMMIT
+[0m21:00:24.616511 [debug] [Thread-4 (]: On model.dcode212_academique.int_formations_enrichies: COMMIT
+[0m21:00:24.617647 [debug] [Thread-2 (]: Finished running node model.dcode212_academique.int_enseignants_enrichis
+[0m21:00:24.618597 [debug] [Thread-1 (]: Using postgres connection "model.dcode212_academique.int_etudiants_enrichis"
+[0m21:00:24.620137 [debug] [Thread-1 (]: On model.dcode212_academique.int_etudiants_enrichis: COMMIT
+[0m21:00:24.623409 [debug] [Thread-4 (]: SQL status: COMMIT in 0.004 seconds
+[0m21:00:24.626121 [debug] [Thread-4 (]: Applying DROP to: "etudiants_db"."public_intermediate"."int_formations_enrichies__dbt_backup"
+[0m21:00:24.627045 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.int_formations_enrichies"
+[0m21:00:24.627937 [debug] [Thread-4 (]: On model.dcode212_academique.int_formations_enrichies: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_formations_enrichies"} */
+drop view if exists "etudiants_db"."public_intermediate"."int_formations_enrichies__dbt_backup" cascade
+[0m21:00:24.628592 [debug] [Thread-1 (]: SQL status: COMMIT in 0.008 seconds
+[0m21:00:24.632396 [debug] [Thread-1 (]: Applying DROP to: "etudiants_db"."public_intermediate"."int_etudiants_enrichis__dbt_backup"
+[0m21:00:24.633824 [debug] [Thread-1 (]: Using postgres connection "model.dcode212_academique.int_etudiants_enrichis"
+[0m21:00:24.634517 [debug] [Thread-1 (]: On model.dcode212_academique.int_etudiants_enrichis: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_etudiants_enrichis"} */
+drop view if exists "etudiants_db"."public_intermediate"."int_etudiants_enrichis__dbt_backup" cascade
+[0m21:00:24.635423 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0.006 seconds
+[0m21:00:24.638983 [debug] [Thread-4 (]: On model.dcode212_academique.int_formations_enrichies: Close
+[0m21:00:24.640645 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.005 seconds
+[0m21:00:24.645312 [debug] [Thread-1 (]: On model.dcode212_academique.int_etudiants_enrichis: Close
+[0m21:00:24.642392 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48f4280fb0>]}
+[0m21:00:24.650078 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48f43d41d0>]}
+[0m21:00:24.647975 [info ] [Thread-4 (]: 10 of 14 OK created sql view model public_intermediate.int_formations_enrichies  [[32mCREATE VIEW[0m in 0.12s]
+[0m21:00:24.654616 [debug] [Thread-4 (]: Finished running node model.dcode212_academique.int_formations_enrichies
+[0m21:00:24.656090 [debug] [Thread-3 (]: Began running node model.dcode212_academique.int_cours_enrichis
+[0m21:00:24.652089 [info ] [Thread-1 (]: 11 of 14 OK created sql view model public_intermediate.int_etudiants_enrichis .. [[32mCREATE VIEW[0m in 0.12s]
+[0m21:00:24.657994 [debug] [Thread-1 (]: Finished running node model.dcode212_academique.int_etudiants_enrichis
+[0m21:00:24.656843 [info ] [Thread-3 (]: 12 of 14 START sql view model public_intermediate.int_cours_enrichis ........... [RUN]
+[0m21:00:24.659359 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.dcode212_academique.stg_etudiants, now model.dcode212_academique.int_cours_enrichis)
+[0m21:00:24.660357 [debug] [Thread-3 (]: Began compiling node model.dcode212_academique.int_cours_enrichis
+[0m21:00:24.664579 [debug] [Thread-3 (]: Writing injected SQL for node "model.dcode212_academique.int_cours_enrichis"
+[0m21:00:24.666205 [debug] [Thread-2 (]: Began running node model.dcode212_academique.int_inscriptions_enrichies
+[0m21:00:24.667436 [info ] [Thread-2 (]: 13 of 14 START sql view model public_intermediate.int_inscriptions_enrichies ... [RUN]
+[0m21:00:24.668739 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dcode212_academique.int_enseignants_enrichis, now model.dcode212_academique.int_inscriptions_enrichies)
+[0m21:00:24.669639 [debug] [Thread-2 (]: Began compiling node model.dcode212_academique.int_inscriptions_enrichies
+[0m21:00:24.675593 [debug] [Thread-2 (]: Writing injected SQL for node "model.dcode212_academique.int_inscriptions_enrichies"
+[0m21:00:24.677244 [debug] [Thread-3 (]: Began executing node model.dcode212_academique.int_cours_enrichis
+[0m21:00:24.684859 [debug] [Thread-3 (]: Writing runtime sql for node "model.dcode212_academique.int_cours_enrichis"
+[0m21:00:24.686615 [debug] [Thread-2 (]: Began executing node model.dcode212_academique.int_inscriptions_enrichies
+[0m21:00:24.692357 [debug] [Thread-2 (]: Writing runtime sql for node "model.dcode212_academique.int_inscriptions_enrichies"
+[0m21:00:24.693678 [debug] [Thread-3 (]: Using postgres connection "model.dcode212_academique.int_cours_enrichis"
+[0m21:00:24.694253 [debug] [Thread-3 (]: On model.dcode212_academique.int_cours_enrichis: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_cours_enrichis"} */
+
+  create view "etudiants_db"."public_intermediate"."int_cours_enrichis__dbt_tmp"
+    
+    
+  as (
+    with cours as (
+    select * from "etudiants_db"."public_staging"."stg_cours"
+),
+formations as (
+    select * from "etudiants_db"."public_intermediate"."int_formations_enrichies"
+),
+enseignants as (
+    select * from "etudiants_db"."public_intermediate"."int_enseignants_enrichis"
+),
+annees as (
+    select * from "etudiants_db"."public_staging"."stg_annees_academiques"
+)
+select
+    c.id_cours,
+    c.code_cours,
+    c.intitule,
+    c.credits_ects,
+    c.volume_horaire,
+    f.id_formation,
+    f.nom_formation,
+    f.nom_departement,
+    ens.id_enseignant,
+    ens.nom_complet    as nom_enseignant,
+    ens.grade          as grade_enseignant,
+    a.id_annee,
+    a.libelle          as annee_academique,
+    a.semestre
+from cours c
+left join formations f  on c.id_formation  = f.id_formation
+left join enseignants ens on c.id_enseignant = ens.id_enseignant
+left join annees a      on c.id_annee       = a.id_annee
+  );
+[0m21:00:24.694816 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:00:24.695684 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.int_inscriptions_enrichies"
+[0m21:00:24.696655 [debug] [Thread-2 (]: On model.dcode212_academique.int_inscriptions_enrichies: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_inscriptions_enrichies"} */
+
+  create view "etudiants_db"."public_intermediate"."int_inscriptions_enrichies__dbt_tmp"
+    
+    
+  as (
+    with inscriptions as (
+    select * from "etudiants_db"."public_staging"."stg_inscriptions"
+),
+etudiants as (
+    select * from "etudiants_db"."public_intermediate"."int_etudiants_enrichis"
+),
+formations as (
+    select * from "etudiants_db"."public_intermediate"."int_formations_enrichies"
+),
+annees as (
+    select * from "etudiants_db"."public_staging"."stg_annees_academiques"
+)
+select
+    i.id_inscription,
+    i.date_inscription,
+    i.statut_inscription,
+    i.mode,
+    e.id_etudiant,
+    e.nom_complet          as nom_etudiant,
+    e.tranche_age,
+    e.sexe,
+    e.statut               as statut_etudiant,
+    f.id_formation,
+    f.nom_formation,
+    f.nom_departement,
+    a.id_annee,
+    a.libelle              as annee_academique,
+    a.semestre
+from inscriptions i
+left join etudiants e  on i.id_etudiant  = e.id_etudiant
+left join formations f on i.id_formation = f.id_formation
+left join annees a     on i.id_annee     = a.id_annee
+  );
+[0m21:00:24.697483 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:00:24.719227 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.024 seconds
+[0m21:00:24.722433 [debug] [Thread-3 (]: Using postgres connection "model.dcode212_academique.int_cours_enrichis"
+[0m21:00:24.723068 [debug] [Thread-3 (]: On model.dcode212_academique.int_cours_enrichis: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_cours_enrichis"} */
+alter table "etudiants_db"."public_intermediate"."int_cours_enrichis__dbt_tmp" rename to "int_cours_enrichis"
+[0m21:00:24.723774 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.026 seconds
+[0m21:00:24.726444 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.int_inscriptions_enrichies"
+[0m21:00:24.726893 [debug] [Thread-2 (]: On model.dcode212_academique.int_inscriptions_enrichies: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_inscriptions_enrichies"} */
+alter table "etudiants_db"."public_intermediate"."int_inscriptions_enrichies__dbt_tmp" rename to "int_inscriptions_enrichies"
+[0m21:00:24.727695 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.004 seconds
+[0m21:00:24.730220 [debug] [Thread-3 (]: On model.dcode212_academique.int_cours_enrichis: COMMIT
+[0m21:00:24.731194 [debug] [Thread-3 (]: Using postgres connection "model.dcode212_academique.int_cours_enrichis"
+[0m21:00:24.732931 [debug] [Thread-3 (]: On model.dcode212_academique.int_cours_enrichis: COMMIT
+[0m21:00:24.732187 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.005 seconds
+[0m21:00:24.735388 [debug] [Thread-2 (]: On model.dcode212_academique.int_inscriptions_enrichies: COMMIT
+[0m21:00:24.736156 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.int_inscriptions_enrichies"
+[0m21:00:24.736697 [debug] [Thread-2 (]: On model.dcode212_academique.int_inscriptions_enrichies: COMMIT
+[0m21:00:24.738251 [debug] [Thread-3 (]: SQL status: COMMIT in 0.005 seconds
+[0m21:00:24.740664 [debug] [Thread-3 (]: Applying DROP to: "etudiants_db"."public_intermediate"."int_cours_enrichis__dbt_backup"
+[0m21:00:24.742738 [debug] [Thread-3 (]: Using postgres connection "model.dcode212_academique.int_cours_enrichis"
+[0m21:00:24.743368 [debug] [Thread-3 (]: On model.dcode212_academique.int_cours_enrichis: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_cours_enrichis"} */
+drop view if exists "etudiants_db"."public_intermediate"."int_cours_enrichis__dbt_backup" cascade
+[0m21:00:24.741474 [debug] [Thread-2 (]: SQL status: COMMIT in 0.004 seconds
+[0m21:00:24.746253 [debug] [Thread-2 (]: Applying DROP to: "etudiants_db"."public_intermediate"."int_inscriptions_enrichies__dbt_backup"
+[0m21:00:24.747922 [debug] [Thread-2 (]: Using postgres connection "model.dcode212_academique.int_inscriptions_enrichies"
+[0m21:00:24.748655 [debug] [Thread-2 (]: On model.dcode212_academique.int_inscriptions_enrichies: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_inscriptions_enrichies"} */
+drop view if exists "etudiants_db"."public_intermediate"."int_inscriptions_enrichies__dbt_backup" cascade
+[0m21:00:24.749327 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.005 seconds
+[0m21:00:24.751517 [debug] [Thread-3 (]: On model.dcode212_academique.int_cours_enrichis: Close
+[0m21:00:24.752281 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.003 seconds
+[0m21:00:24.754292 [debug] [Thread-2 (]: On model.dcode212_academique.int_inscriptions_enrichies: Close
+[0m21:00:24.755440 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48f42fd850>]}
+[0m21:00:24.757753 [info ] [Thread-3 (]: 12 of 14 OK created sql view model public_intermediate.int_cours_enrichis ...... [[32mCREATE VIEW[0m in 0.10s]
+[0m21:00:24.756668 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48f42fd370>]}
+[0m21:00:24.760574 [info ] [Thread-2 (]: 13 of 14 OK created sql view model public_intermediate.int_inscriptions_enrichies  [[32mCREATE VIEW[0m in 0.09s]
+[0m21:00:24.762222 [debug] [Thread-2 (]: Finished running node model.dcode212_academique.int_inscriptions_enrichies
+[0m21:00:24.759010 [debug] [Thread-3 (]: Finished running node model.dcode212_academique.int_cours_enrichis
+[0m21:00:24.766122 [debug] [Thread-4 (]: Began running node model.dcode212_academique.int_notes_enrichies
+[0m21:00:24.767960 [info ] [Thread-4 (]: 14 of 14 START sql view model public_intermediate.int_notes_enrichies .......... [RUN]
+[0m21:00:24.770223 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.dcode212_academique.int_formations_enrichies, now model.dcode212_academique.int_notes_enrichies)
+[0m21:00:24.770786 [debug] [Thread-4 (]: Began compiling node model.dcode212_academique.int_notes_enrichies
+[0m21:00:24.773835 [debug] [Thread-4 (]: Writing injected SQL for node "model.dcode212_academique.int_notes_enrichies"
+[0m21:00:24.774577 [debug] [Thread-4 (]: Began executing node model.dcode212_academique.int_notes_enrichies
+[0m21:00:24.778470 [debug] [Thread-4 (]: Writing runtime sql for node "model.dcode212_academique.int_notes_enrichies"
+[0m21:00:24.780259 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.int_notes_enrichies"
+[0m21:00:24.781428 [debug] [Thread-4 (]: On model.dcode212_academique.int_notes_enrichies: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_notes_enrichies"} */
+
+  create view "etudiants_db"."public_intermediate"."int_notes_enrichies__dbt_tmp"
+    
+    
+  as (
+    with notes as (
+    select * from "etudiants_db"."public_staging"."stg_notes"
+),
+etudiants as (
+    select * from "etudiants_db"."public_intermediate"."int_etudiants_enrichis"
+),
+cours as (
+    select * from "etudiants_db"."public_intermediate"."int_cours_enrichis"
+),
+enrichies as (
+    select
+        n.id_note,
+        n.type_evaluation,
+        n.note,
+        n.date_evaluation,
+        e.id_etudiant,
+        e.nom_complet     as nom_etudiant,
+        e.tranche_age,
+        e.sexe,
+        c.id_cours,
+        c.intitule        as intitule_cours,
+        c.credits_ects,
+        c.nom_formation,
+        c.nom_departement,
+        c.nom_enseignant,
+        c.annee_academique,
+        c.semestre
+    from notes n
+    left join etudiants e on n.id_etudiant = e.id_etudiant
+    left join cours c     on n.id_cours    = c.id_cours
+)
+select
+    *,
+    case
+        when note < 10 then 'Insuffisant'
+        when note < 12 then 'Passable'
+        when note < 14 then 'Assez Bien'
+        when note < 16 then 'Bien'
+        else 'Très Bien'
+    end                     as mention,
+    (note >= 10)            as est_validee
+from enrichies
+  );
+[0m21:00:24.782216 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:00:24.804521 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.022 seconds
+[0m21:00:24.807138 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.int_notes_enrichies"
+[0m21:00:24.807566 [debug] [Thread-4 (]: On model.dcode212_academique.int_notes_enrichies: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_notes_enrichies"} */
+alter table "etudiants_db"."public_intermediate"."int_notes_enrichies__dbt_tmp" rename to "int_notes_enrichies"
+[0m21:00:24.809922 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m21:00:24.811982 [debug] [Thread-4 (]: On model.dcode212_academique.int_notes_enrichies: COMMIT
+[0m21:00:24.812530 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.int_notes_enrichies"
+[0m21:00:24.813186 [debug] [Thread-4 (]: On model.dcode212_academique.int_notes_enrichies: COMMIT
+[0m21:00:24.819792 [debug] [Thread-4 (]: SQL status: COMMIT in 0.006 seconds
+[0m21:00:24.821870 [debug] [Thread-4 (]: Applying DROP to: "etudiants_db"."public_intermediate"."int_notes_enrichies__dbt_backup"
+[0m21:00:24.822723 [debug] [Thread-4 (]: Using postgres connection "model.dcode212_academique.int_notes_enrichies"
+[0m21:00:24.823111 [debug] [Thread-4 (]: On model.dcode212_academique.int_notes_enrichies: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "model.dcode212_academique.int_notes_enrichies"} */
+drop view if exists "etudiants_db"."public_intermediate"."int_notes_enrichies__dbt_backup" cascade
+[0m21:00:24.824724 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m21:00:24.826520 [debug] [Thread-4 (]: On model.dcode212_academique.int_notes_enrichies: Close
+[0m21:00:24.827456 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e18c566-0120-4c1f-82da-b60dbc825a2d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48fa1bf830>]}
+[0m21:00:24.828849 [info ] [Thread-4 (]: 14 of 14 OK created sql view model public_intermediate.int_notes_enrichies ..... [[32mCREATE VIEW[0m in 0.06s]
+[0m21:00:24.830250 [debug] [Thread-4 (]: Finished running node model.dcode212_academique.int_notes_enrichies
+[0m21:00:24.835849 [debug] [MainThread]: On master: COMMIT
+[0m21:00:24.836407 [debug] [MainThread]: Using postgres connection "master"
+[0m21:00:24.836645 [debug] [MainThread]: On master: COMMIT
+[0m21:00:24.836845 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:00:24.852530 [debug] [MainThread]: SQL status: COMMIT in 0.016 seconds
+[0m21:00:24.853124 [debug] [MainThread]: On master: Close
+[0m21:00:24.853782 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:00:24.854246 [debug] [MainThread]: Connection 'model.dcode212_academique.int_inscriptions_enrichies' was properly closed.
+[0m21:00:24.854508 [debug] [MainThread]: Connection 'model.dcode212_academique.int_etudiants_enrichis' was properly closed.
+[0m21:00:24.854743 [debug] [MainThread]: Connection 'model.dcode212_academique.int_notes_enrichies' was properly closed.
+[0m21:00:24.855178 [debug] [MainThread]: Connection 'model.dcode212_academique.int_cours_enrichis' was properly closed.
+[0m21:00:24.855894 [info ] [MainThread]: 
+[0m21:00:24.856666 [info ] [MainThread]: Finished running 14 view models in 0 hours 0 minutes and 1.47 seconds (1.47s).
+[0m21:00:24.861333 [debug] [MainThread]: Command end result
+[0m21:00:24.908566 [debug] [MainThread]: Wrote artifact WritableManifest to /home/abdelhamid/code212/dbt_project/target/manifest.json
+[0m21:00:24.911541 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/abdelhamid/code212/dbt_project/target/semantic_manifest.json
+[0m21:00:24.915129 [debug] [MainThread]: Wrote artifact OsiDocument to /home/abdelhamid/code212/dbt_project/target/osi_document.json
+[0m21:00:24.924163 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/abdelhamid/code212/dbt_project/target/run_results.json
+[0m21:00:24.924758 [info ] [MainThread]: 
+[0m21:00:24.925691 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:00:24.926431 [info ] [MainThread]: 
+[0m21:00:24.927157 [info ] [MainThread]: Done. PASS=14 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=14
+[0m21:00:24.929859 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.433043, "process_in_blocks": "0", "process_kernel_time": 0.668041, "process_mem_max_rss": "174756", "process_out_blocks": "4496", "process_user_time": 7.24045}
+[0m21:00:24.931425 [debug] [MainThread]: Command `dbt run` succeeded at 21:00:24.930731 after 5.44 seconds
+[0m21:00:24.932066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48f4470fb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48f4430590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c48f4430e30>]}
+[0m21:00:24.932501 [debug] [MainThread]: Flushing usage events
+[0m21:00:30.861427 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:00:40.140479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adfbb560440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adfbd588910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adfba11b9d0>]}
+
+
+============================== 21:00:40.144965 | e588a53c-2c83-4961-8fb2-58a58258da8d ==============================
+[0m21:00:40.144965 [info ] [MainThread]: Running with dbt=1.12.0
+[0m21:00:40.145793 [debug] [MainThread]: running dbt with arguments {'hints_enabled': 'True', 'debug': 'False', 'static_parser': 'True', 'invocation_command': 'dbt test', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'no_print': 'None', 'quiet': 'False', 'indirect_selection': 'eager', 'warn_error': 'None', 'target_path': 'None', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'profiles_dir': '/home/abdelhamid/.dbt', 'printer_width': '80', 'log_path': '/home/abdelhamid/code212/dbt_project/logs', 'version_check': 'True', 'write_json': 'True', 'maximum_seed_size_mib': '1', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'fail_fast': 'False'}
+[0m21:00:40.420541 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e588a53c-2c83-4961-8fb2-58a58258da8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adfba2d7ce0>]}
+[0m21:00:40.520396 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e588a53c-2c83-4961-8fb2-58a58258da8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adfbd723020>]}
+[0m21:00:40.522278 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m21:00:40.611240 [debug] [MainThread]: checksum: 6c18592e4f65e465e5d82dd4fa9931046eaa28fa66c0fda5b424c2ca2fc5145d, vars: {}, profile: dcode212_academique, target: dev, version: 1.12.0
+[0m21:00:40.807492 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:00:40.808009 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m21:00:40.808255 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:00:40.818371 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e588a53c-2c83-4961-8fb2-58a58258da8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adfb85f4f50>]}
+[0m21:00:41.061225 [debug] [MainThread]: Wrote artifact WritableManifest to /home/abdelhamid/code212/dbt_project/target/manifest.json
+[0m21:00:41.064294 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/abdelhamid/code212/dbt_project/target/semantic_manifest.json
+[0m21:00:41.083452 [debug] [MainThread]: Wrote artifact OsiDocument to /home/abdelhamid/code212/dbt_project/target/osi_document.json
+[0m21:00:41.151779 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e588a53c-2c83-4961-8fb2-58a58258da8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adfb8163020>]}
+[0m21:00:41.152632 [info ] [MainThread]: Found 14 models, 36 data tests, 8 sources, 477 macros
+[0m21:00:41.153249 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e588a53c-2c83-4961-8fb2-58a58258da8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adfb7d32970>]}
+[0m21:00:41.163715 [info ] [MainThread]: 
+[0m21:00:41.164825 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m21:00:41.165471 [info ] [MainThread]: 
+[0m21:00:41.166761 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m21:00:41.181564 [debug] [ThreadPool]: Acquiring new postgres connection 'list_etudiants_db_public_staging'
+[0m21:00:41.197981 [debug] [ThreadPool]: Acquiring new postgres connection 'list_etudiants_db_public_intermediate'
+[0m21:00:41.274491 [debug] [ThreadPool]: Using postgres connection "list_etudiants_db_public_staging"
+[0m21:00:41.275695 [debug] [ThreadPool]: On list_etudiants_db_public_staging: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "connection_name": "list_etudiants_db_public_staging"} */
+select
+      'etudiants_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'etudiants_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_staging'
+    union all
+    select
+      'etudiants_db' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_staging'
+    union all
+    select distinct
+     'etudiants_db' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'public_staging'
+  
+[0m21:00:41.277575 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:00:41.276668 [debug] [ThreadPool]: Using postgres connection "list_etudiants_db_public_intermediate"
+[0m21:00:41.279251 [debug] [ThreadPool]: On list_etudiants_db_public_intermediate: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "connection_name": "list_etudiants_db_public_intermediate"} */
+select
+      'etudiants_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_intermediate'
+    union all
+    select
+      'etudiants_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_intermediate'
+    union all
+    select
+      'etudiants_db' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_intermediate'
+    union all
+    select distinct
+     'etudiants_db' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'public_intermediate'
+  
+[0m21:00:41.280638 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:00:41.316794 [debug] [ThreadPool]: SQL status: SELECT 8 in 0.039 seconds
+[0m21:00:41.321592 [debug] [ThreadPool]: On list_etudiants_db_public_staging: ROLLBACK
+[0m21:00:41.322763 [debug] [ThreadPool]: SQL status: SELECT 6 in 0.042 seconds
+[0m21:00:41.326328 [debug] [ThreadPool]: On list_etudiants_db_public_intermediate: ROLLBACK
+[0m21:00:41.323754 [debug] [ThreadPool]: On list_etudiants_db_public_staging: Close
+[0m21:00:41.331601 [debug] [ThreadPool]: On list_etudiants_db_public_intermediate: Close
+[0m21:00:41.345538 [debug] [MainThread]: Using postgres connection "master"
+[0m21:00:41.346384 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m21:00:41.347422 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:00:41.369706 [debug] [MainThread]: SQL status: SELECT 24 in 0.022 seconds
+[0m21:00:41.376148 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e588a53c-2c83-4961-8fb2-58a58258da8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adfb7556c30>]}
+[0m21:00:41.376781 [debug] [MainThread]: On master: ROLLBACK
+[0m21:00:41.378149 [debug] [MainThread]: On master: COMMIT
+[0m21:00:41.378570 [debug] [MainThread]: Using postgres connection "master"
+[0m21:00:41.378838 [debug] [MainThread]: On master: COMMIT
+[0m21:00:41.380488 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m21:00:41.381055 [debug] [MainThread]: On master: Close
+[0m21:00:41.387122 [debug] [Thread-3 (]: Began running node test.dcode212_academique.accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon.f0deecd847
+[0m21:00:41.388409 [debug] [Thread-2 (]: Began running node test.dcode212_academique.accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien.55fa6bbbf2
+[0m21:00:41.389361 [debug] [Thread-4 (]: Began running node test.dcode212_academique.assert_notes_valid_range
+[0m21:00:41.390252 [debug] [Thread-1 (]: Began running node test.dcode212_academique.accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_.44d76187eb
+[0m21:00:41.391069 [info ] [Thread-3 (]: 3 of 36 START test accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon  [RUN]
+[0m21:00:41.392409 [info ] [Thread-2 (]: 2 of 36 START test accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien  [RUN]
+[0m21:00:41.393742 [info ] [Thread-4 (]: 4 of 36 START test assert_notes_valid_range .................................... [RUN]
+[0m21:00:41.398001 [debug] [Thread-3 (]: Acquiring new postgres connection 'test.dcode212_academique.accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon.f0deecd847'
+[0m21:00:41.395323 [info ] [Thread-1 (]: 1 of 36 START test accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_  [RUN]
+[0m21:00:41.399252 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_etudiants_db_public_staging, now test.dcode212_academique.accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien.55fa6bbbf2)
+[0m21:00:41.400523 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.dcode212_academique.assert_notes_valid_range'
+[0m21:00:41.401362 [debug] [Thread-3 (]: Began compiling node test.dcode212_academique.accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon.f0deecd847
+[0m21:00:41.402194 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_etudiants_db_public_intermediate, now test.dcode212_academique.accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_.44d76187eb)
+[0m21:00:41.403028 [debug] [Thread-2 (]: Began compiling node test.dcode212_academique.accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien.55fa6bbbf2
+[0m21:00:41.404027 [debug] [Thread-4 (]: Began compiling node test.dcode212_academique.assert_notes_valid_range
+[0m21:00:41.416144 [debug] [Thread-1 (]: Began compiling node test.dcode212_academique.accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_.44d76187eb
+[0m21:00:41.441560 [debug] [Thread-4 (]: Writing injected SQL for node "test.dcode212_academique.assert_notes_valid_range"
+[0m21:00:41.465420 [debug] [Thread-3 (]: Writing injected SQL for node "test.dcode212_academique.accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon.f0deecd847"
+[0m21:00:41.496936 [debug] [Thread-2 (]: Writing injected SQL for node "test.dcode212_academique.accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien.55fa6bbbf2"
+[0m21:00:41.499195 [debug] [Thread-1 (]: Writing injected SQL for node "test.dcode212_academique.accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_.44d76187eb"
+[0m21:00:41.500546 [debug] [Thread-3 (]: Began executing node test.dcode212_academique.accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon.f0deecd847
+[0m21:00:41.512196 [debug] [Thread-2 (]: Began executing node test.dcode212_academique.accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien.55fa6bbbf2
+[0m21:00:41.517484 [debug] [Thread-1 (]: Began executing node test.dcode212_academique.accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_.44d76187eb
+[0m21:00:41.562184 [debug] [Thread-1 (]: Writing runtime sql for node "test.dcode212_academique.accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_.44d76187eb"
+[0m21:00:41.563837 [debug] [Thread-2 (]: Writing runtime sql for node "test.dcode212_academique.accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien.55fa6bbbf2"
+[0m21:00:41.564645 [debug] [Thread-4 (]: Began executing node test.dcode212_academique.assert_notes_valid_range
+[0m21:00:41.566458 [debug] [Thread-4 (]: Writing runtime sql for node "test.dcode212_academique.assert_notes_valid_range"
+[0m21:00:41.567961 [debug] [Thread-4 (]: Using postgres connection "test.dcode212_academique.assert_notes_valid_range"
+[0m21:00:41.570711 [debug] [Thread-4 (]: On test.dcode212_academique.assert_notes_valid_range: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.assert_notes_valid_range"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  select id_note, note
+from "etudiants_db"."public_staging"."stg_notes"
+where note < 0 or note > 20
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:41.571475 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m21:00:41.569695 [debug] [Thread-3 (]: Writing runtime sql for node "test.dcode212_academique.accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon.f0deecd847"
+[0m21:00:41.574329 [debug] [Thread-1 (]: Using postgres connection "test.dcode212_academique.accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_.44d76187eb"
+[0m21:00:41.575169 [debug] [Thread-1 (]: On test.dcode212_academique.accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_.44d76187eb: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_.44d76187eb"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        tranche_age as value_field,
+        count(*) as n_records
+
+    from "etudiants_db"."public_intermediate"."int_etudiants_enrichis"
+    group by tranche_age
+
+)
+
+select *
+from all_values
+where value_field not in (
+    '18-19','20-22','23-25','26+'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:41.575873 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:00:41.576760 [debug] [Thread-3 (]: Using postgres connection "test.dcode212_academique.accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon.f0deecd847"
+[0m21:00:41.577813 [debug] [Thread-3 (]: On test.dcode212_academique.accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon.f0deecd847: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon.f0deecd847"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        statut as value_field,
+        count(*) as n_records
+
+    from "etudiants_db"."public_staging"."stg_etudiants"
+    group by statut
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'Actif','Diplômé','Abandon'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:41.578590 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m21:00:41.580777 [debug] [Thread-2 (]: Using postgres connection "test.dcode212_academique.accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien.55fa6bbbf2"
+[0m21:00:41.581765 [debug] [Thread-2 (]: On test.dcode212_academique.accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien.55fa6bbbf2: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien.55fa6bbbf2"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        mention as value_field,
+        count(*) as n_records
+
+    from "etudiants_db"."public_intermediate"."int_notes_enrichies"
+    group by mention
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'Insuffisant','Passable','Assez Bien','Bien','Très Bien'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:41.582711 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:00:41.610831 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.032 seconds
+[0m21:00:41.618278 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.046 seconds
+[0m21:00:41.625909 [debug] [Thread-4 (]: On test.dcode212_academique.assert_notes_valid_range: ROLLBACK
+[0m21:00:41.627401 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.051 seconds
+[0m21:00:41.636688 [debug] [Thread-1 (]: On test.dcode212_academique.accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_.44d76187eb: ROLLBACK
+[0m21:00:41.639010 [debug] [Thread-4 (]: On test.dcode212_academique.assert_notes_valid_range: Close
+[0m21:00:41.631894 [debug] [Thread-3 (]: On test.dcode212_academique.accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon.f0deecd847: ROLLBACK
+[0m21:00:41.641376 [info ] [Thread-4 (]: 4 of 36 PASS assert_notes_valid_range .......................................... [[32mPASS[0m in 0.24s]
+[0m21:00:41.642592 [debug] [Thread-1 (]: On test.dcode212_academique.accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_.44d76187eb: Close
+[0m21:00:41.644449 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.061 seconds
+[0m21:00:41.646730 [debug] [Thread-3 (]: On test.dcode212_academique.accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon.f0deecd847: Close
+[0m21:00:41.648435 [debug] [Thread-4 (]: Finished running node test.dcode212_academique.assert_notes_valid_range
+[0m21:00:41.650721 [info ] [Thread-1 (]: 1 of 36 PASS accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_  [[32mPASS[0m in 0.25s]
+[0m21:00:41.656605 [debug] [Thread-2 (]: On test.dcode212_academique.accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien.55fa6bbbf2: ROLLBACK
+[0m21:00:41.659967 [info ] [Thread-3 (]: 3 of 36 PASS accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon ..... [[32mPASS[0m in 0.26s]
+[0m21:00:41.661549 [debug] [Thread-4 (]: Began running node test.dcode212_academique.not_null_int_cours_enrichis_id_cours.bfe3a0a18a
+[0m21:00:41.663120 [debug] [Thread-1 (]: Finished running node test.dcode212_academique.accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_.44d76187eb
+[0m21:00:41.664227 [debug] [Thread-3 (]: Finished running node test.dcode212_academique.accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon.f0deecd847
+[0m21:00:41.664906 [info ] [Thread-4 (]: 5 of 36 START test not_null_int_cours_enrichis_id_cours ........................ [RUN]
+[0m21:00:41.665892 [debug] [Thread-1 (]: Began running node test.dcode212_academique.not_null_int_enseignants_enrichis_id_enseignant.8cb043d720
+[0m21:00:41.666519 [debug] [Thread-2 (]: On test.dcode212_academique.accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien.55fa6bbbf2: Close
+[0m21:00:41.667260 [debug] [Thread-3 (]: Began running node test.dcode212_academique.not_null_int_etudiants_enrichis_id_etudiant.0c3224b165
+[0m21:00:41.669585 [info ] [Thread-3 (]: 7 of 36 START test not_null_int_etudiants_enrichis_id_etudiant ................. [RUN]
+[0m21:00:41.668753 [info ] [Thread-1 (]: 6 of 36 START test not_null_int_enseignants_enrichis_id_enseignant ............. [RUN]
+[0m21:00:41.670763 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.accepted_values_stg_etudiants_statut__Actif__Dipl_m___Abandon.f0deecd847, now test.dcode212_academique.not_null_int_etudiants_enrichis_id_etudiant.0c3224b165)
+[0m21:00:41.668126 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.assert_notes_valid_range, now test.dcode212_academique.not_null_int_cours_enrichis_id_cours.bfe3a0a18a)
+[0m21:00:41.675270 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.accepted_values_int_etudiants_enrichis_tranche_age__18_19__20_22__23_25__26_.44d76187eb, now test.dcode212_academique.not_null_int_enseignants_enrichis_id_enseignant.8cb043d720)
+[0m21:00:41.673266 [info ] [Thread-2 (]: 2 of 36 PASS accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien  [[32mPASS[0m in 0.27s]
+[0m21:00:41.677567 [debug] [Thread-3 (]: Began compiling node test.dcode212_academique.not_null_int_etudiants_enrichis_id_etudiant.0c3224b165
+[0m21:00:41.678438 [debug] [Thread-4 (]: Began compiling node test.dcode212_academique.not_null_int_cours_enrichis_id_cours.bfe3a0a18a
+[0m21:00:41.679272 [debug] [Thread-1 (]: Began compiling node test.dcode212_academique.not_null_int_enseignants_enrichis_id_enseignant.8cb043d720
+[0m21:00:41.680422 [debug] [Thread-2 (]: Finished running node test.dcode212_academique.accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien.55fa6bbbf2
+[0m21:00:41.700647 [debug] [Thread-4 (]: Writing injected SQL for node "test.dcode212_academique.not_null_int_cours_enrichis_id_cours.bfe3a0a18a"
+[0m21:00:41.711449 [debug] [Thread-1 (]: Writing injected SQL for node "test.dcode212_academique.not_null_int_enseignants_enrichis_id_enseignant.8cb043d720"
+[0m21:00:41.696415 [debug] [Thread-3 (]: Writing injected SQL for node "test.dcode212_academique.not_null_int_etudiants_enrichis_id_etudiant.0c3224b165"
+[0m21:00:41.712821 [debug] [Thread-2 (]: Began running node test.dcode212_academique.not_null_int_formations_enrichies_id_formation.09da8a9969
+[0m21:00:41.714494 [info ] [Thread-2 (]: 8 of 36 START test not_null_int_formations_enrichies_id_formation .............. [RUN]
+[0m21:00:41.715330 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.accepted_values_int_notes_enrichies_mention__Insuffisant__Passable__Assez_Bien__Bien__Tr_s_Bien.55fa6bbbf2, now test.dcode212_academique.not_null_int_formations_enrichies_id_formation.09da8a9969)
+[0m21:00:41.716811 [debug] [Thread-2 (]: Began compiling node test.dcode212_academique.not_null_int_formations_enrichies_id_formation.09da8a9969
+[0m21:00:41.718383 [debug] [Thread-3 (]: Began executing node test.dcode212_academique.not_null_int_etudiants_enrichis_id_etudiant.0c3224b165
+[0m21:00:41.719170 [debug] [Thread-4 (]: Began executing node test.dcode212_academique.not_null_int_cours_enrichis_id_cours.bfe3a0a18a
+[0m21:00:41.720006 [debug] [Thread-1 (]: Began executing node test.dcode212_academique.not_null_int_enseignants_enrichis_id_enseignant.8cb043d720
+[0m21:00:41.729673 [debug] [Thread-2 (]: Writing injected SQL for node "test.dcode212_academique.not_null_int_formations_enrichies_id_formation.09da8a9969"
+[0m21:00:41.732042 [debug] [Thread-3 (]: Writing runtime sql for node "test.dcode212_academique.not_null_int_etudiants_enrichis_id_etudiant.0c3224b165"
+[0m21:00:41.734459 [debug] [Thread-4 (]: Writing runtime sql for node "test.dcode212_academique.not_null_int_cours_enrichis_id_cours.bfe3a0a18a"
+[0m21:00:41.736331 [debug] [Thread-1 (]: Writing runtime sql for node "test.dcode212_academique.not_null_int_enseignants_enrichis_id_enseignant.8cb043d720"
+[0m21:00:41.738049 [debug] [Thread-2 (]: Began executing node test.dcode212_academique.not_null_int_formations_enrichies_id_formation.09da8a9969
+[0m21:00:41.738953 [debug] [Thread-3 (]: Using postgres connection "test.dcode212_academique.not_null_int_etudiants_enrichis_id_etudiant.0c3224b165"
+[0m21:00:41.744816 [debug] [Thread-3 (]: On test.dcode212_academique.not_null_int_etudiants_enrichis_id_etudiant.0c3224b165: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_int_etudiants_enrichis_id_etudiant.0c3224b165"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id_etudiant
+from "etudiants_db"."public_intermediate"."int_etudiants_enrichis"
+where id_etudiant is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:41.745563 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:00:41.743688 [debug] [Thread-2 (]: Writing runtime sql for node "test.dcode212_academique.not_null_int_formations_enrichies_id_formation.09da8a9969"
+[0m21:00:41.746644 [debug] [Thread-4 (]: Using postgres connection "test.dcode212_academique.not_null_int_cours_enrichis_id_cours.bfe3a0a18a"
+[0m21:00:41.747367 [debug] [Thread-4 (]: On test.dcode212_academique.not_null_int_cours_enrichis_id_cours.bfe3a0a18a: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_int_cours_enrichis_id_cours.bfe3a0a18a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id_cours
+from "etudiants_db"."public_intermediate"."int_cours_enrichis"
+where id_cours is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:41.748064 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:00:41.749144 [debug] [Thread-1 (]: Using postgres connection "test.dcode212_academique.not_null_int_enseignants_enrichis_id_enseignant.8cb043d720"
+[0m21:00:41.750575 [debug] [Thread-1 (]: On test.dcode212_academique.not_null_int_enseignants_enrichis_id_enseignant.8cb043d720: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_int_enseignants_enrichis_id_enseignant.8cb043d720"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id_enseignant
+from "etudiants_db"."public_intermediate"."int_enseignants_enrichis"
+where id_enseignant is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:41.751593 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:00:41.753139 [debug] [Thread-2 (]: Using postgres connection "test.dcode212_academique.not_null_int_formations_enrichies_id_formation.09da8a9969"
+[0m21:00:41.753828 [debug] [Thread-2 (]: On test.dcode212_academique.not_null_int_formations_enrichies_id_formation.09da8a9969: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_int_formations_enrichies_id_formation.09da8a9969"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id_formation
+from "etudiants_db"."public_intermediate"."int_formations_enrichies"
+where id_formation is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:41.754440 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:00:41.768916 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.023 seconds
+[0m21:00:41.774198 [debug] [Thread-3 (]: On test.dcode212_academique.not_null_int_etudiants_enrichis_id_etudiant.0c3224b165: ROLLBACK
+[0m21:00:41.776018 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.028 seconds
+[0m21:00:41.778454 [debug] [Thread-4 (]: On test.dcode212_academique.not_null_int_cours_enrichis_id_cours.bfe3a0a18a: ROLLBACK
+[0m21:00:41.779511 [debug] [Thread-3 (]: On test.dcode212_academique.not_null_int_etudiants_enrichis_id_etudiant.0c3224b165: Close
+[0m21:00:41.781865 [info ] [Thread-3 (]: 7 of 36 PASS not_null_int_etudiants_enrichis_id_etudiant ....................... [[32mPASS[0m in 0.11s]
+[0m21:00:41.783087 [debug] [Thread-3 (]: Finished running node test.dcode212_academique.not_null_int_etudiants_enrichis_id_etudiant.0c3224b165
+[0m21:00:41.784018 [debug] [Thread-3 (]: Began running node test.dcode212_academique.not_null_int_inscriptions_enrichies_id_inscription.f177bbb428
+[0m21:00:41.784850 [info ] [Thread-3 (]: 9 of 36 START test not_null_int_inscriptions_enrichies_id_inscription .......... [RUN]
+[0m21:00:41.786500 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_int_etudiants_enrichis_id_etudiant.0c3224b165, now test.dcode212_academique.not_null_int_inscriptions_enrichies_id_inscription.f177bbb428)
+[0m21:00:41.788325 [debug] [Thread-3 (]: Began compiling node test.dcode212_academique.not_null_int_inscriptions_enrichies_id_inscription.f177bbb428
+[0m21:00:41.780513 [debug] [Thread-4 (]: On test.dcode212_academique.not_null_int_cours_enrichis_id_cours.bfe3a0a18a: Close
+[0m21:00:41.789986 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.035 seconds
+[0m21:00:41.791265 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.040 seconds
+[0m21:00:41.799498 [debug] [Thread-3 (]: Writing injected SQL for node "test.dcode212_academique.not_null_int_inscriptions_enrichies_id_inscription.f177bbb428"
+[0m21:00:41.802663 [debug] [Thread-2 (]: On test.dcode212_academique.not_null_int_formations_enrichies_id_formation.09da8a9969: ROLLBACK
+[0m21:00:41.804739 [info ] [Thread-4 (]: 5 of 36 PASS not_null_int_cours_enrichis_id_cours .............................. [[32mPASS[0m in 0.14s]
+[0m21:00:41.814443 [debug] [Thread-4 (]: Finished running node test.dcode212_academique.not_null_int_cours_enrichis_id_cours.bfe3a0a18a
+[0m21:00:41.815171 [debug] [Thread-4 (]: Began running node test.dcode212_academique.not_null_int_notes_enrichies_id_note.18a4a9c5ed
+[0m21:00:41.817010 [info ] [Thread-4 (]: 10 of 36 START test not_null_int_notes_enrichies_id_note ....................... [RUN]
+[0m21:00:41.816002 [debug] [Thread-2 (]: On test.dcode212_academique.not_null_int_formations_enrichies_id_formation.09da8a9969: Close
+[0m21:00:41.812383 [debug] [Thread-1 (]: On test.dcode212_academique.not_null_int_enseignants_enrichis_id_enseignant.8cb043d720: ROLLBACK
+[0m21:00:41.818161 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_int_cours_enrichis_id_cours.bfe3a0a18a, now test.dcode212_academique.not_null_int_notes_enrichies_id_note.18a4a9c5ed)
+[0m21:00:41.818854 [debug] [Thread-3 (]: Began executing node test.dcode212_academique.not_null_int_inscriptions_enrichies_id_inscription.f177bbb428
+[0m21:00:41.820992 [info ] [Thread-2 (]: 8 of 36 PASS not_null_int_formations_enrichies_id_formation .................... [[32mPASS[0m in 0.11s]
+[0m21:00:41.822632 [debug] [Thread-1 (]: On test.dcode212_academique.not_null_int_enseignants_enrichis_id_enseignant.8cb043d720: Close
+[0m21:00:41.824375 [debug] [Thread-4 (]: Began compiling node test.dcode212_academique.not_null_int_notes_enrichies_id_note.18a4a9c5ed
+[0m21:00:41.828378 [debug] [Thread-3 (]: Writing runtime sql for node "test.dcode212_academique.not_null_int_inscriptions_enrichies_id_inscription.f177bbb428"
+[0m21:00:41.829351 [debug] [Thread-2 (]: Finished running node test.dcode212_academique.not_null_int_formations_enrichies_id_formation.09da8a9969
+[0m21:00:41.836279 [info ] [Thread-1 (]: 6 of 36 PASS not_null_int_enseignants_enrichis_id_enseignant ................... [[32mPASS[0m in 0.16s]
+[0m21:00:41.844599 [debug] [Thread-4 (]: Writing injected SQL for node "test.dcode212_academique.not_null_int_notes_enrichies_id_note.18a4a9c5ed"
+[0m21:00:41.845782 [debug] [Thread-2 (]: Began running node test.dcode212_academique.not_null_stg_annees_academiques_id_annee.9a46ef1cc3
+[0m21:00:41.847153 [debug] [Thread-1 (]: Finished running node test.dcode212_academique.not_null_int_enseignants_enrichis_id_enseignant.8cb043d720
+[0m21:00:41.848963 [debug] [Thread-3 (]: Using postgres connection "test.dcode212_academique.not_null_int_inscriptions_enrichies_id_inscription.f177bbb428"
+[0m21:00:41.850563 [info ] [Thread-2 (]: 11 of 36 START test not_null_stg_annees_academiques_id_annee ................... [RUN]
+[0m21:00:41.851967 [debug] [Thread-1 (]: Began running node test.dcode212_academique.not_null_stg_cours_id_cours.bf44dfdfcf
+[0m21:00:41.853290 [debug] [Thread-3 (]: On test.dcode212_academique.not_null_int_inscriptions_enrichies_id_inscription.f177bbb428: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_int_inscriptions_enrichies_id_inscription.f177bbb428"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id_inscription
+from "etudiants_db"."public_intermediate"."int_inscriptions_enrichies"
+where id_inscription is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:41.855021 [debug] [Thread-4 (]: Began executing node test.dcode212_academique.not_null_int_notes_enrichies_id_note.18a4a9c5ed
+[0m21:00:41.856543 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_int_formations_enrichies_id_formation.09da8a9969, now test.dcode212_academique.not_null_stg_annees_academiques_id_annee.9a46ef1cc3)
+[0m21:00:41.859038 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:00:41.857722 [info ] [Thread-1 (]: 12 of 36 START test not_null_stg_cours_id_cours ................................ [RUN]
+[0m21:00:41.864307 [debug] [Thread-4 (]: Writing runtime sql for node "test.dcode212_academique.not_null_int_notes_enrichies_id_note.18a4a9c5ed"
+[0m21:00:41.865215 [debug] [Thread-2 (]: Began compiling node test.dcode212_academique.not_null_stg_annees_academiques_id_annee.9a46ef1cc3
+[0m21:00:41.866411 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_int_enseignants_enrichis_id_enseignant.8cb043d720, now test.dcode212_academique.not_null_stg_cours_id_cours.bf44dfdfcf)
+[0m21:00:41.881156 [debug] [Thread-2 (]: Writing injected SQL for node "test.dcode212_academique.not_null_stg_annees_academiques_id_annee.9a46ef1cc3"
+[0m21:00:41.882223 [debug] [Thread-4 (]: Using postgres connection "test.dcode212_academique.not_null_int_notes_enrichies_id_note.18a4a9c5ed"
+[0m21:00:41.884690 [debug] [Thread-4 (]: On test.dcode212_academique.not_null_int_notes_enrichies_id_note.18a4a9c5ed: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_int_notes_enrichies_id_note.18a4a9c5ed"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id_note
+from "etudiants_db"."public_intermediate"."int_notes_enrichies"
+where id_note is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:41.885472 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:00:41.883279 [debug] [Thread-1 (]: Began compiling node test.dcode212_academique.not_null_stg_cours_id_cours.bf44dfdfcf
+[0m21:00:41.886800 [debug] [Thread-2 (]: Began executing node test.dcode212_academique.not_null_stg_annees_academiques_id_annee.9a46ef1cc3
+[0m21:00:41.903466 [debug] [Thread-2 (]: Writing runtime sql for node "test.dcode212_academique.not_null_stg_annees_academiques_id_annee.9a46ef1cc3"
+[0m21:00:41.900853 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.042 seconds
+[0m21:00:41.899941 [debug] [Thread-1 (]: Writing injected SQL for node "test.dcode212_academique.not_null_stg_cours_id_cours.bf44dfdfcf"
+[0m21:00:41.907753 [debug] [Thread-3 (]: On test.dcode212_academique.not_null_int_inscriptions_enrichies_id_inscription.f177bbb428: ROLLBACK
+[0m21:00:41.909227 [debug] [Thread-2 (]: Using postgres connection "test.dcode212_academique.not_null_stg_annees_academiques_id_annee.9a46ef1cc3"
+[0m21:00:41.911351 [debug] [Thread-2 (]: On test.dcode212_academique.not_null_stg_annees_academiques_id_annee.9a46ef1cc3: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_stg_annees_academiques_id_annee.9a46ef1cc3"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id_annee
+from "etudiants_db"."public_staging"."stg_annees_academiques"
+where id_annee is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:41.912373 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:00:41.913337 [debug] [Thread-1 (]: Began executing node test.dcode212_academique.not_null_stg_cours_id_cours.bf44dfdfcf
+[0m21:00:41.916595 [debug] [Thread-1 (]: Writing runtime sql for node "test.dcode212_academique.not_null_stg_cours_id_cours.bf44dfdfcf"
+[0m21:00:41.917633 [debug] [Thread-3 (]: On test.dcode212_academique.not_null_int_inscriptions_enrichies_id_inscription.f177bbb428: Close
+[0m21:00:41.918648 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.033 seconds
+[0m21:00:41.921988 [debug] [Thread-4 (]: On test.dcode212_academique.not_null_int_notes_enrichies_id_note.18a4a9c5ed: ROLLBACK
+[0m21:00:41.923453 [info ] [Thread-3 (]: 9 of 36 PASS not_null_int_inscriptions_enrichies_id_inscription ................ [[32mPASS[0m in 0.14s]
+[0m21:00:41.926603 [debug] [Thread-3 (]: Finished running node test.dcode212_academique.not_null_int_inscriptions_enrichies_id_inscription.f177bbb428
+[0m21:00:41.927391 [debug] [Thread-3 (]: Began running node test.dcode212_academique.not_null_stg_departements_id_departement.18de8fb695
+[0m21:00:41.925279 [debug] [Thread-4 (]: On test.dcode212_academique.not_null_int_notes_enrichies_id_note.18a4a9c5ed: Close
+[0m21:00:41.930073 [debug] [Thread-1 (]: Using postgres connection "test.dcode212_academique.not_null_stg_cours_id_cours.bf44dfdfcf"
+[0m21:00:41.931067 [debug] [Thread-1 (]: On test.dcode212_academique.not_null_stg_cours_id_cours.bf44dfdfcf: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_stg_cours_id_cours.bf44dfdfcf"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id_cours
+from "etudiants_db"."public_staging"."stg_cours"
+where id_cours is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:41.932003 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:00:41.928658 [info ] [Thread-3 (]: 13 of 36 START test not_null_stg_departements_id_departement ................... [RUN]
+[0m21:00:41.935823 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_int_inscriptions_enrichies_id_inscription.f177bbb428, now test.dcode212_academique.not_null_stg_departements_id_departement.18de8fb695)
+[0m21:00:41.937277 [debug] [Thread-3 (]: Began compiling node test.dcode212_academique.not_null_stg_departements_id_departement.18de8fb695
+[0m21:00:41.938678 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.026 seconds
+[0m21:00:41.934556 [info ] [Thread-4 (]: 10 of 36 PASS not_null_int_notes_enrichies_id_note ............................. [[32mPASS[0m in 0.12s]
+[0m21:00:41.948272 [debug] [Thread-2 (]: On test.dcode212_academique.not_null_stg_annees_academiques_id_annee.9a46ef1cc3: ROLLBACK
+[0m21:00:41.956395 [debug] [Thread-3 (]: Writing injected SQL for node "test.dcode212_academique.not_null_stg_departements_id_departement.18de8fb695"
+[0m21:00:41.958375 [debug] [Thread-4 (]: Finished running node test.dcode212_academique.not_null_int_notes_enrichies_id_note.18a4a9c5ed
+[0m21:00:41.960881 [debug] [Thread-4 (]: Began running node test.dcode212_academique.not_null_stg_enseignants_id_enseignant.0cca02c691
+[0m21:00:41.961777 [debug] [Thread-3 (]: Began executing node test.dcode212_academique.not_null_stg_departements_id_departement.18de8fb695
+[0m21:00:41.962654 [debug] [Thread-2 (]: On test.dcode212_academique.not_null_stg_annees_academiques_id_annee.9a46ef1cc3: Close
+[0m21:00:41.964580 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.033 seconds
+[0m21:00:41.969097 [debug] [Thread-3 (]: Writing runtime sql for node "test.dcode212_academique.not_null_stg_departements_id_departement.18de8fb695"
+[0m21:00:41.963648 [info ] [Thread-4 (]: 14 of 36 START test not_null_stg_enseignants_id_enseignant ..................... [RUN]
+[0m21:00:41.973977 [debug] [Thread-1 (]: On test.dcode212_academique.not_null_stg_cours_id_cours.bf44dfdfcf: ROLLBACK
+[0m21:00:41.975442 [info ] [Thread-2 (]: 11 of 36 PASS not_null_stg_annees_academiques_id_annee ......................... [[32mPASS[0m in 0.12s]
+[0m21:00:41.977471 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_int_notes_enrichies_id_note.18a4a9c5ed, now test.dcode212_academique.not_null_stg_enseignants_id_enseignant.0cca02c691)
+[0m21:00:41.980552 [debug] [Thread-3 (]: Using postgres connection "test.dcode212_academique.not_null_stg_departements_id_departement.18de8fb695"
+[0m21:00:41.981993 [debug] [Thread-2 (]: Finished running node test.dcode212_academique.not_null_stg_annees_academiques_id_annee.9a46ef1cc3
+[0m21:00:41.982667 [debug] [Thread-1 (]: On test.dcode212_academique.not_null_stg_cours_id_cours.bf44dfdfcf: Close
+[0m21:00:41.983605 [debug] [Thread-4 (]: Began compiling node test.dcode212_academique.not_null_stg_enseignants_id_enseignant.0cca02c691
+[0m21:00:41.984413 [debug] [Thread-3 (]: On test.dcode212_academique.not_null_stg_departements_id_departement.18de8fb695: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_stg_departements_id_departement.18de8fb695"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id_departement
+from "etudiants_db"."public_staging"."stg_departements"
+where id_departement is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:41.985181 [debug] [Thread-2 (]: Began running node test.dcode212_academique.not_null_stg_etudiants_id_etudiant.d2b35d8523
+[0m21:00:41.992574 [info ] [Thread-1 (]: 12 of 36 PASS not_null_stg_cours_id_cours ...................................... [[32mPASS[0m in 0.13s]
+[0m21:00:41.993667 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:00:41.998710 [debug] [Thread-4 (]: Writing injected SQL for node "test.dcode212_academique.not_null_stg_enseignants_id_enseignant.0cca02c691"
+[0m21:00:41.999746 [info ] [Thread-2 (]: 15 of 36 START test not_null_stg_etudiants_id_etudiant ......................... [RUN]
+[0m21:00:42.002897 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_stg_annees_academiques_id_annee.9a46ef1cc3, now test.dcode212_academique.not_null_stg_etudiants_id_etudiant.d2b35d8523)
+[0m21:00:42.004963 [debug] [Thread-2 (]: Began compiling node test.dcode212_academique.not_null_stg_etudiants_id_etudiant.d2b35d8523
+[0m21:00:42.001223 [debug] [Thread-1 (]: Finished running node test.dcode212_academique.not_null_stg_cours_id_cours.bf44dfdfcf
+[0m21:00:42.018669 [debug] [Thread-1 (]: Began running node test.dcode212_academique.not_null_stg_etudiants_matricule.2b337dc8ab
+[0m21:00:42.017856 [debug] [Thread-2 (]: Writing injected SQL for node "test.dcode212_academique.not_null_stg_etudiants_id_etudiant.d2b35d8523"
+[0m21:00:42.016983 [debug] [Thread-4 (]: Began executing node test.dcode212_academique.not_null_stg_enseignants_id_enseignant.0cca02c691
+[0m21:00:42.026529 [debug] [Thread-4 (]: Writing runtime sql for node "test.dcode212_academique.not_null_stg_enseignants_id_enseignant.0cca02c691"
+[0m21:00:42.027264 [debug] [Thread-2 (]: Began executing node test.dcode212_academique.not_null_stg_etudiants_id_etudiant.d2b35d8523
+[0m21:00:42.020095 [info ] [Thread-1 (]: 16 of 36 START test not_null_stg_etudiants_matricule ........................... [RUN]
+[0m21:00:42.028226 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.035 seconds
+[0m21:00:42.030903 [debug] [Thread-2 (]: Writing runtime sql for node "test.dcode212_academique.not_null_stg_etudiants_id_etudiant.d2b35d8523"
+[0m21:00:42.031931 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_stg_cours_id_cours.bf44dfdfcf, now test.dcode212_academique.not_null_stg_etudiants_matricule.2b337dc8ab)
+[0m21:00:42.034603 [debug] [Thread-3 (]: On test.dcode212_academique.not_null_stg_departements_id_departement.18de8fb695: ROLLBACK
+[0m21:00:42.036390 [debug] [Thread-4 (]: Using postgres connection "test.dcode212_academique.not_null_stg_enseignants_id_enseignant.0cca02c691"
+[0m21:00:42.037421 [debug] [Thread-1 (]: Began compiling node test.dcode212_academique.not_null_stg_etudiants_matricule.2b337dc8ab
+[0m21:00:42.038252 [debug] [Thread-2 (]: Using postgres connection "test.dcode212_academique.not_null_stg_etudiants_id_etudiant.d2b35d8523"
+[0m21:00:42.039367 [debug] [Thread-4 (]: On test.dcode212_academique.not_null_stg_enseignants_id_enseignant.0cca02c691: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_stg_enseignants_id_enseignant.0cca02c691"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id_enseignant
+from "etudiants_db"."public_staging"."stg_enseignants"
+where id_enseignant is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.045808 [debug] [Thread-3 (]: On test.dcode212_academique.not_null_stg_departements_id_departement.18de8fb695: Close
+[0m21:00:42.048282 [debug] [Thread-1 (]: Writing injected SQL for node "test.dcode212_academique.not_null_stg_etudiants_matricule.2b337dc8ab"
+[0m21:00:42.048980 [debug] [Thread-2 (]: On test.dcode212_academique.not_null_stg_etudiants_id_etudiant.d2b35d8523: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_stg_etudiants_id_etudiant.d2b35d8523"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id_etudiant
+from "etudiants_db"."public_staging"."stg_etudiants"
+where id_etudiant is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.049707 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:00:42.051899 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:00:42.055013 [debug] [Thread-1 (]: Began executing node test.dcode212_academique.not_null_stg_etudiants_matricule.2b337dc8ab
+[0m21:00:42.060679 [debug] [Thread-1 (]: Writing runtime sql for node "test.dcode212_academique.not_null_stg_etudiants_matricule.2b337dc8ab"
+[0m21:00:42.050969 [info ] [Thread-3 (]: 13 of 36 PASS not_null_stg_departements_id_departement ......................... [[32mPASS[0m in 0.12s]
+[0m21:00:42.062709 [debug] [Thread-3 (]: Finished running node test.dcode212_academique.not_null_stg_departements_id_departement.18de8fb695
+[0m21:00:42.063998 [debug] [Thread-3 (]: Began running node test.dcode212_academique.not_null_stg_formations_id_formation.928ade5f1e
+[0m21:00:42.065571 [debug] [Thread-1 (]: Using postgres connection "test.dcode212_academique.not_null_stg_etudiants_matricule.2b337dc8ab"
+[0m21:00:42.066454 [debug] [Thread-1 (]: On test.dcode212_academique.not_null_stg_etudiants_matricule.2b337dc8ab: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_stg_etudiants_matricule.2b337dc8ab"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select matricule
+from "etudiants_db"."public_staging"."stg_etudiants"
+where matricule is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.067141 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:00:42.064796 [info ] [Thread-3 (]: 17 of 36 START test not_null_stg_formations_id_formation ....................... [RUN]
+[0m21:00:42.068511 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_stg_departements_id_departement.18de8fb695, now test.dcode212_academique.not_null_stg_formations_id_formation.928ade5f1e)
+[0m21:00:42.069252 [debug] [Thread-3 (]: Began compiling node test.dcode212_academique.not_null_stg_formations_id_formation.928ade5f1e
+[0m21:00:42.085286 [debug] [Thread-3 (]: Writing injected SQL for node "test.dcode212_academique.not_null_stg_formations_id_formation.928ade5f1e"
+[0m21:00:42.088015 [debug] [Thread-3 (]: Began executing node test.dcode212_academique.not_null_stg_formations_id_formation.928ade5f1e
+[0m21:00:42.092722 [debug] [Thread-3 (]: Writing runtime sql for node "test.dcode212_academique.not_null_stg_formations_id_formation.928ade5f1e"
+[0m21:00:42.094175 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.027 seconds
+[0m21:00:42.097002 [debug] [Thread-1 (]: On test.dcode212_academique.not_null_stg_etudiants_matricule.2b337dc8ab: ROLLBACK
+[0m21:00:42.097785 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.048 seconds
+[0m21:00:42.099754 [debug] [Thread-4 (]: On test.dcode212_academique.not_null_stg_enseignants_id_enseignant.0cca02c691: ROLLBACK
+[0m21:00:42.094950 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.043 seconds
+[0m21:00:42.101824 [debug] [Thread-2 (]: On test.dcode212_academique.not_null_stg_etudiants_id_etudiant.d2b35d8523: ROLLBACK
+[0m21:00:42.102582 [debug] [Thread-1 (]: On test.dcode212_academique.not_null_stg_etudiants_matricule.2b337dc8ab: Close
+[0m21:00:42.103502 [debug] [Thread-2 (]: On test.dcode212_academique.not_null_stg_etudiants_id_etudiant.d2b35d8523: Close
+[0m21:00:42.105393 [info ] [Thread-1 (]: 16 of 36 PASS not_null_stg_etudiants_matricule ................................. [[32mPASS[0m in 0.07s]
+[0m21:00:42.107065 [debug] [Thread-1 (]: Finished running node test.dcode212_academique.not_null_stg_etudiants_matricule.2b337dc8ab
+[0m21:00:42.110209 [debug] [Thread-1 (]: Began running node test.dcode212_academique.not_null_stg_inscriptions_id_inscription.ae770aee8d
+[0m21:00:42.112498 [debug] [Thread-3 (]: Using postgres connection "test.dcode212_academique.not_null_stg_formations_id_formation.928ade5f1e"
+[0m21:00:42.117184 [debug] [Thread-3 (]: On test.dcode212_academique.not_null_stg_formations_id_formation.928ade5f1e: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_stg_formations_id_formation.928ade5f1e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id_formation
+from "etudiants_db"."public_staging"."stg_formations"
+where id_formation is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.113866 [info ] [Thread-2 (]: 15 of 36 PASS not_null_stg_etudiants_id_etudiant ............................... [[32mPASS[0m in 0.11s]
+[0m21:00:42.119187 [debug] [Thread-2 (]: Finished running node test.dcode212_academique.not_null_stg_etudiants_id_etudiant.d2b35d8523
+[0m21:00:42.118160 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:00:42.115546 [debug] [Thread-4 (]: On test.dcode212_academique.not_null_stg_enseignants_id_enseignant.0cca02c691: Close
+[0m21:00:42.120041 [debug] [Thread-2 (]: Began running node test.dcode212_academique.not_null_stg_notes_id_note.5505eed1c5
+[0m21:00:42.114830 [info ] [Thread-1 (]: 18 of 36 START test not_null_stg_inscriptions_id_inscription ................... [RUN]
+[0m21:00:42.123488 [info ] [Thread-4 (]: 14 of 36 PASS not_null_stg_enseignants_id_enseignant ........................... [[32mPASS[0m in 0.15s]
+[0m21:00:42.126115 [info ] [Thread-2 (]: 19 of 36 START test not_null_stg_notes_id_note ................................. [RUN]
+[0m21:00:42.128459 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_stg_etudiants_matricule.2b337dc8ab, now test.dcode212_academique.not_null_stg_inscriptions_id_inscription.ae770aee8d)
+[0m21:00:42.129738 [debug] [Thread-4 (]: Finished running node test.dcode212_academique.not_null_stg_enseignants_id_enseignant.0cca02c691
+[0m21:00:42.130738 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_stg_etudiants_id_etudiant.d2b35d8523, now test.dcode212_academique.not_null_stg_notes_id_note.5505eed1c5)
+[0m21:00:42.131542 [debug] [Thread-1 (]: Began compiling node test.dcode212_academique.not_null_stg_inscriptions_id_inscription.ae770aee8d
+[0m21:00:42.132545 [debug] [Thread-4 (]: Began running node test.dcode212_academique.not_null_stg_notes_note.8eb9445fae
+[0m21:00:42.133373 [debug] [Thread-2 (]: Began compiling node test.dcode212_academique.not_null_stg_notes_id_note.5505eed1c5
+[0m21:00:42.142262 [info ] [Thread-4 (]: 20 of 36 START test not_null_stg_notes_note .................................... [RUN]
+[0m21:00:42.149841 [debug] [Thread-1 (]: Writing injected SQL for node "test.dcode212_academique.not_null_stg_inscriptions_id_inscription.ae770aee8d"
+[0m21:00:42.150854 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.033 seconds
+[0m21:00:42.162982 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_stg_enseignants_id_enseignant.0cca02c691, now test.dcode212_academique.not_null_stg_notes_note.8eb9445fae)
+[0m21:00:42.165498 [debug] [Thread-2 (]: Writing injected SQL for node "test.dcode212_academique.not_null_stg_notes_id_note.5505eed1c5"
+[0m21:00:42.168504 [debug] [Thread-3 (]: On test.dcode212_academique.not_null_stg_formations_id_formation.928ade5f1e: ROLLBACK
+[0m21:00:42.169344 [debug] [Thread-4 (]: Began compiling node test.dcode212_academique.not_null_stg_notes_note.8eb9445fae
+[0m21:00:42.173130 [debug] [Thread-1 (]: Began executing node test.dcode212_academique.not_null_stg_inscriptions_id_inscription.ae770aee8d
+[0m21:00:42.181833 [debug] [Thread-1 (]: Writing runtime sql for node "test.dcode212_academique.not_null_stg_inscriptions_id_inscription.ae770aee8d"
+[0m21:00:42.185095 [debug] [Thread-4 (]: Writing injected SQL for node "test.dcode212_academique.not_null_stg_notes_note.8eb9445fae"
+[0m21:00:42.186849 [debug] [Thread-3 (]: On test.dcode212_academique.not_null_stg_formations_id_formation.928ade5f1e: Close
+[0m21:00:42.185746 [debug] [Thread-2 (]: Began executing node test.dcode212_academique.not_null_stg_notes_id_note.5505eed1c5
+[0m21:00:42.192258 [debug] [Thread-2 (]: Writing runtime sql for node "test.dcode212_academique.not_null_stg_notes_id_note.5505eed1c5"
+[0m21:00:42.193561 [debug] [Thread-4 (]: Began executing node test.dcode212_academique.not_null_stg_notes_note.8eb9445fae
+[0m21:00:42.195914 [debug] [Thread-4 (]: Writing runtime sql for node "test.dcode212_academique.not_null_stg_notes_note.8eb9445fae"
+[0m21:00:42.196816 [info ] [Thread-3 (]: 17 of 36 PASS not_null_stg_formations_id_formation ............................. [[32mPASS[0m in 0.13s]
+[0m21:00:42.200293 [debug] [Thread-3 (]: Finished running node test.dcode212_academique.not_null_stg_formations_id_formation.928ade5f1e
+[0m21:00:42.198191 [debug] [Thread-1 (]: Using postgres connection "test.dcode212_academique.not_null_stg_inscriptions_id_inscription.ae770aee8d"
+[0m21:00:42.202118 [debug] [Thread-2 (]: Using postgres connection "test.dcode212_academique.not_null_stg_notes_id_note.5505eed1c5"
+[0m21:00:42.203169 [debug] [Thread-3 (]: Began running node test.dcode212_academique.relationships_stg_formations_id_departement__id_departement__ref_stg_departements_.f04cb88db3
+[0m21:00:42.204135 [debug] [Thread-4 (]: Using postgres connection "test.dcode212_academique.not_null_stg_notes_note.8eb9445fae"
+[0m21:00:42.205172 [debug] [Thread-1 (]: On test.dcode212_academique.not_null_stg_inscriptions_id_inscription.ae770aee8d: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_stg_inscriptions_id_inscription.ae770aee8d"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id_inscription
+from "etudiants_db"."public_staging"."stg_inscriptions"
+where id_inscription is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.206603 [debug] [Thread-2 (]: On test.dcode212_academique.not_null_stg_notes_id_note.5505eed1c5: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_stg_notes_id_note.5505eed1c5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id_note
+from "etudiants_db"."public_staging"."stg_notes"
+where id_note is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.208227 [debug] [Thread-4 (]: On test.dcode212_academique.not_null_stg_notes_note.8eb9445fae: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.not_null_stg_notes_note.8eb9445fae"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select note
+from "etudiants_db"."public_staging"."stg_notes"
+where note is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.207428 [info ] [Thread-3 (]: 21 of 36 START test relationships_stg_formations_id_departement__id_departement__ref_stg_departements_  [RUN]
+[0m21:00:42.209130 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:00:42.209912 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:00:42.210919 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:00:42.212310 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_stg_formations_id_formation.928ade5f1e, now test.dcode212_academique.relationships_stg_formations_id_departement__id_departement__ref_stg_departements_.f04cb88db3)
+[0m21:00:42.214129 [debug] [Thread-3 (]: Began compiling node test.dcode212_academique.relationships_stg_formations_id_departement__id_departement__ref_stg_departements_.f04cb88db3
+[0m21:00:42.241166 [debug] [Thread-3 (]: Writing injected SQL for node "test.dcode212_academique.relationships_stg_formations_id_departement__id_departement__ref_stg_departements_.f04cb88db3"
+[0m21:00:42.242601 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.033 seconds
+[0m21:00:42.245185 [debug] [Thread-2 (]: On test.dcode212_academique.not_null_stg_notes_id_note.5505eed1c5: ROLLBACK
+[0m21:00:42.246531 [debug] [Thread-3 (]: Began executing node test.dcode212_academique.relationships_stg_formations_id_departement__id_departement__ref_stg_departements_.f04cb88db3
+[0m21:00:42.250347 [debug] [Thread-3 (]: Writing runtime sql for node "test.dcode212_academique.relationships_stg_formations_id_departement__id_departement__ref_stg_departements_.f04cb88db3"
+[0m21:00:42.247490 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.037 seconds
+[0m21:00:42.251064 [debug] [Thread-2 (]: On test.dcode212_academique.not_null_stg_notes_id_note.5505eed1c5: Close
+[0m21:00:42.252262 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.043 seconds
+[0m21:00:42.257344 [debug] [Thread-1 (]: On test.dcode212_academique.not_null_stg_inscriptions_id_inscription.ae770aee8d: ROLLBACK
+[0m21:00:42.258160 [debug] [Thread-3 (]: Using postgres connection "test.dcode212_academique.relationships_stg_formations_id_departement__id_departement__ref_stg_departements_.f04cb88db3"
+[0m21:00:42.254551 [debug] [Thread-4 (]: On test.dcode212_academique.not_null_stg_notes_note.8eb9445fae: ROLLBACK
+[0m21:00:42.259376 [info ] [Thread-2 (]: 19 of 36 PASS not_null_stg_notes_id_note ....................................... [[32mPASS[0m in 0.13s]
+[0m21:00:42.260560 [debug] [Thread-3 (]: On test.dcode212_academique.relationships_stg_formations_id_departement__id_departement__ref_stg_departements_.f04cb88db3: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.relationships_stg_formations_id_departement__id_departement__ref_stg_departements_.f04cb88db3"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select id_departement as from_field
+    from "etudiants_db"."public_staging"."stg_formations"
+    where id_departement is not null
+),
+
+parent as (
+    select id_departement as to_field
+    from "etudiants_db"."public_staging"."stg_departements"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.261514 [debug] [Thread-1 (]: On test.dcode212_academique.not_null_stg_inscriptions_id_inscription.ae770aee8d: Close
+[0m21:00:42.263057 [debug] [Thread-2 (]: Finished running node test.dcode212_academique.not_null_stg_notes_id_note.5505eed1c5
+[0m21:00:42.264353 [debug] [Thread-4 (]: On test.dcode212_academique.not_null_stg_notes_note.8eb9445fae: Close
+[0m21:00:42.265057 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:00:42.266210 [info ] [Thread-1 (]: 18 of 36 PASS not_null_stg_inscriptions_id_inscription ......................... [[32mPASS[0m in 0.14s]
+[0m21:00:42.267144 [debug] [Thread-2 (]: Began running node test.dcode212_academique.unique_int_cours_enrichis_id_cours.90ffa2efd8
+[0m21:00:42.270033 [info ] [Thread-4 (]: 20 of 36 PASS not_null_stg_notes_note .......................................... [[32mPASS[0m in 0.11s]
+[0m21:00:42.272273 [debug] [Thread-1 (]: Finished running node test.dcode212_academique.not_null_stg_inscriptions_id_inscription.ae770aee8d
+[0m21:00:42.274667 [info ] [Thread-2 (]: 22 of 36 START test unique_int_cours_enrichis_id_cours ......................... [RUN]
+[0m21:00:42.277013 [debug] [Thread-4 (]: Finished running node test.dcode212_academique.not_null_stg_notes_note.8eb9445fae
+[0m21:00:42.278039 [debug] [Thread-1 (]: Began running node test.dcode212_academique.unique_int_enseignants_enrichis_id_enseignant.42e36356ad
+[0m21:00:42.279242 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_stg_notes_id_note.5505eed1c5, now test.dcode212_academique.unique_int_cours_enrichis_id_cours.90ffa2efd8)
+[0m21:00:42.280652 [debug] [Thread-4 (]: Began running node test.dcode212_academique.unique_int_etudiants_enrichis_id_etudiant.59b80a7bfb
+[0m21:00:42.281812 [info ] [Thread-1 (]: 23 of 36 START test unique_int_enseignants_enrichis_id_enseignant .............. [RUN]
+[0m21:00:42.285188 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_stg_inscriptions_id_inscription.ae770aee8d, now test.dcode212_academique.unique_int_enseignants_enrichis_id_enseignant.42e36356ad)
+[0m21:00:42.285977 [debug] [Thread-1 (]: Began compiling node test.dcode212_academique.unique_int_enseignants_enrichis_id_enseignant.42e36356ad
+[0m21:00:42.284196 [info ] [Thread-4 (]: 24 of 36 START test unique_int_etudiants_enrichis_id_etudiant .................. [RUN]
+[0m21:00:42.283275 [debug] [Thread-2 (]: Began compiling node test.dcode212_academique.unique_int_cours_enrichis_id_cours.90ffa2efd8
+[0m21:00:42.293322 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.not_null_stg_notes_note.8eb9445fae, now test.dcode212_academique.unique_int_etudiants_enrichis_id_etudiant.59b80a7bfb)
+[0m21:00:42.302270 [debug] [Thread-1 (]: Writing injected SQL for node "test.dcode212_academique.unique_int_enseignants_enrichis_id_enseignant.42e36356ad"
+[0m21:00:42.303589 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.038 seconds
+[0m21:00:42.313323 [debug] [Thread-2 (]: Writing injected SQL for node "test.dcode212_academique.unique_int_cours_enrichis_id_cours.90ffa2efd8"
+[0m21:00:42.314279 [debug] [Thread-4 (]: Began compiling node test.dcode212_academique.unique_int_etudiants_enrichis_id_etudiant.59b80a7bfb
+[0m21:00:42.316937 [debug] [Thread-3 (]: On test.dcode212_academique.relationships_stg_formations_id_departement__id_departement__ref_stg_departements_.f04cb88db3: ROLLBACK
+[0m21:00:42.326945 [debug] [Thread-4 (]: Writing injected SQL for node "test.dcode212_academique.unique_int_etudiants_enrichis_id_etudiant.59b80a7bfb"
+[0m21:00:42.327686 [debug] [Thread-1 (]: Began executing node test.dcode212_academique.unique_int_enseignants_enrichis_id_enseignant.42e36356ad
+[0m21:00:42.331326 [debug] [Thread-1 (]: Writing runtime sql for node "test.dcode212_academique.unique_int_enseignants_enrichis_id_enseignant.42e36356ad"
+[0m21:00:42.328592 [debug] [Thread-2 (]: Began executing node test.dcode212_academique.unique_int_cours_enrichis_id_cours.90ffa2efd8
+[0m21:00:42.334674 [debug] [Thread-2 (]: Writing runtime sql for node "test.dcode212_academique.unique_int_cours_enrichis_id_cours.90ffa2efd8"
+[0m21:00:42.335446 [debug] [Thread-1 (]: Using postgres connection "test.dcode212_academique.unique_int_enseignants_enrichis_id_enseignant.42e36356ad"
+[0m21:00:42.336172 [debug] [Thread-1 (]: On test.dcode212_academique.unique_int_enseignants_enrichis_id_enseignant.42e36356ad: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_int_enseignants_enrichis_id_enseignant.42e36356ad"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id_enseignant as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_intermediate"."int_enseignants_enrichis"
+where id_enseignant is not null
+group by id_enseignant
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.336682 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:00:42.332158 [debug] [Thread-3 (]: On test.dcode212_academique.relationships_stg_formations_id_departement__id_departement__ref_stg_departements_.f04cb88db3: Close
+[0m21:00:42.338875 [info ] [Thread-3 (]: 21 of 36 PASS relationships_stg_formations_id_departement__id_departement__ref_stg_departements_  [[32mPASS[0m in 0.13s]
+[0m21:00:42.342081 [debug] [Thread-3 (]: Finished running node test.dcode212_academique.relationships_stg_formations_id_departement__id_departement__ref_stg_departements_.f04cb88db3
+[0m21:00:42.343066 [debug] [Thread-3 (]: Began running node test.dcode212_academique.unique_int_formations_enrichies_id_formation.f9d58417d4
+[0m21:00:42.344333 [info ] [Thread-3 (]: 25 of 36 START test unique_int_formations_enrichies_id_formation ............... [RUN]
+[0m21:00:42.347266 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.relationships_stg_formations_id_departement__id_departement__ref_stg_departements_.f04cb88db3, now test.dcode212_academique.unique_int_formations_enrichies_id_formation.f9d58417d4)
+[0m21:00:42.340827 [debug] [Thread-2 (]: Using postgres connection "test.dcode212_academique.unique_int_cours_enrichis_id_cours.90ffa2efd8"
+[0m21:00:42.348781 [debug] [Thread-2 (]: On test.dcode212_academique.unique_int_cours_enrichis_id_cours.90ffa2efd8: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_int_cours_enrichis_id_cours.90ffa2efd8"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id_cours as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_intermediate"."int_cours_enrichis"
+where id_cours is not null
+group by id_cours
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.346327 [debug] [Thread-4 (]: Began executing node test.dcode212_academique.unique_int_etudiants_enrichis_id_etudiant.59b80a7bfb
+[0m21:00:42.352158 [debug] [Thread-4 (]: Writing runtime sql for node "test.dcode212_academique.unique_int_etudiants_enrichis_id_etudiant.59b80a7bfb"
+[0m21:00:42.347996 [debug] [Thread-3 (]: Began compiling node test.dcode212_academique.unique_int_formations_enrichies_id_formation.f9d58417d4
+[0m21:00:42.349447 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:00:42.366758 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.030 seconds
+[0m21:00:42.370699 [debug] [Thread-1 (]: On test.dcode212_academique.unique_int_enseignants_enrichis_id_enseignant.42e36356ad: ROLLBACK
+[0m21:00:42.368057 [debug] [Thread-3 (]: Writing injected SQL for node "test.dcode212_academique.unique_int_formations_enrichies_id_formation.f9d58417d4"
+[0m21:00:42.371840 [debug] [Thread-4 (]: Using postgres connection "test.dcode212_academique.unique_int_etudiants_enrichis_id_etudiant.59b80a7bfb"
+[0m21:00:42.374031 [debug] [Thread-4 (]: On test.dcode212_academique.unique_int_etudiants_enrichis_id_etudiant.59b80a7bfb: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_int_etudiants_enrichis_id_etudiant.59b80a7bfb"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id_etudiant as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_intermediate"."int_etudiants_enrichis"
+where id_etudiant is not null
+group by id_etudiant
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.374922 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:00:42.376397 [debug] [Thread-1 (]: On test.dcode212_academique.unique_int_enseignants_enrichis_id_enseignant.42e36356ad: Close
+[0m21:00:42.377343 [debug] [Thread-3 (]: Began executing node test.dcode212_academique.unique_int_formations_enrichies_id_formation.f9d58417d4
+[0m21:00:42.383397 [debug] [Thread-3 (]: Writing runtime sql for node "test.dcode212_academique.unique_int_formations_enrichies_id_formation.f9d58417d4"
+[0m21:00:42.378734 [info ] [Thread-1 (]: 23 of 36 PASS unique_int_enseignants_enrichis_id_enseignant .................... [[32mPASS[0m in 0.09s]
+[0m21:00:42.385408 [debug] [Thread-1 (]: Finished running node test.dcode212_academique.unique_int_enseignants_enrichis_id_enseignant.42e36356ad
+[0m21:00:42.386135 [debug] [Thread-1 (]: Began running node test.dcode212_academique.unique_int_inscriptions_enrichies_id_inscription.a65aca2099
+[0m21:00:42.388506 [info ] [Thread-1 (]: 26 of 36 START test unique_int_inscriptions_enrichies_id_inscription ........... [RUN]
+[0m21:00:42.391479 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.unique_int_enseignants_enrichis_id_enseignant.42e36356ad, now test.dcode212_academique.unique_int_inscriptions_enrichies_id_inscription.a65aca2099)
+[0m21:00:42.394833 [debug] [Thread-1 (]: Began compiling node test.dcode212_academique.unique_int_inscriptions_enrichies_id_inscription.a65aca2099
+[0m21:00:42.394060 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.044 seconds
+[0m21:00:42.402487 [debug] [Thread-1 (]: Writing injected SQL for node "test.dcode212_academique.unique_int_inscriptions_enrichies_id_inscription.a65aca2099"
+[0m21:00:42.409276 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.034 seconds
+[0m21:00:42.412723 [debug] [Thread-4 (]: On test.dcode212_academique.unique_int_etudiants_enrichis_id_etudiant.59b80a7bfb: ROLLBACK
+[0m21:00:42.407534 [debug] [Thread-2 (]: On test.dcode212_academique.unique_int_cours_enrichis_id_cours.90ffa2efd8: ROLLBACK
+[0m21:00:42.410214 [debug] [Thread-3 (]: Using postgres connection "test.dcode212_academique.unique_int_formations_enrichies_id_formation.f9d58417d4"
+[0m21:00:42.414671 [debug] [Thread-3 (]: On test.dcode212_academique.unique_int_formations_enrichies_id_formation.f9d58417d4: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_int_formations_enrichies_id_formation.f9d58417d4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id_formation as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_intermediate"."int_formations_enrichies"
+where id_formation is not null
+group by id_formation
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.415293 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:00:42.413813 [debug] [Thread-1 (]: Began executing node test.dcode212_academique.unique_int_inscriptions_enrichies_id_inscription.a65aca2099
+[0m21:00:42.418177 [debug] [Thread-1 (]: Writing runtime sql for node "test.dcode212_academique.unique_int_inscriptions_enrichies_id_inscription.a65aca2099"
+[0m21:00:42.420385 [debug] [Thread-2 (]: On test.dcode212_academique.unique_int_cours_enrichis_id_cours.90ffa2efd8: Close
+[0m21:00:42.421523 [debug] [Thread-4 (]: On test.dcode212_academique.unique_int_etudiants_enrichis_id_etudiant.59b80a7bfb: Close
+[0m21:00:42.424715 [info ] [Thread-2 (]: 22 of 36 PASS unique_int_cours_enrichis_id_cours ............................... [[32mPASS[0m in 0.15s]
+[0m21:00:42.426205 [debug] [Thread-2 (]: Finished running node test.dcode212_academique.unique_int_cours_enrichis_id_cours.90ffa2efd8
+[0m21:00:42.427328 [debug] [Thread-2 (]: Began running node test.dcode212_academique.unique_int_notes_enrichies_id_note.7e0cbbca07
+[0m21:00:42.428810 [info ] [Thread-2 (]: 27 of 36 START test unique_int_notes_enrichies_id_note ......................... [RUN]
+[0m21:00:42.432010 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.unique_int_cours_enrichis_id_cours.90ffa2efd8, now test.dcode212_academique.unique_int_notes_enrichies_id_note.7e0cbbca07)
+[0m21:00:42.434021 [debug] [Thread-2 (]: Began compiling node test.dcode212_academique.unique_int_notes_enrichies_id_note.7e0cbbca07
+[0m21:00:42.430403 [info ] [Thread-4 (]: 24 of 36 PASS unique_int_etudiants_enrichis_id_etudiant ........................ [[32mPASS[0m in 0.14s]
+[0m21:00:42.442282 [debug] [Thread-4 (]: Finished running node test.dcode212_academique.unique_int_etudiants_enrichis_id_etudiant.59b80a7bfb
+[0m21:00:42.433038 [debug] [Thread-1 (]: Using postgres connection "test.dcode212_academique.unique_int_inscriptions_enrichies_id_inscription.a65aca2099"
+[0m21:00:42.443302 [debug] [Thread-4 (]: Began running node test.dcode212_academique.unique_stg_annees_academiques_id_annee.6b96aaad25
+[0m21:00:42.449147 [debug] [Thread-2 (]: Writing injected SQL for node "test.dcode212_academique.unique_int_notes_enrichies_id_note.7e0cbbca07"
+[0m21:00:42.450326 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.035 seconds
+[0m21:00:42.451379 [debug] [Thread-1 (]: On test.dcode212_academique.unique_int_inscriptions_enrichies_id_inscription.a65aca2099: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_int_inscriptions_enrichies_id_inscription.a65aca2099"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id_inscription as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_intermediate"."int_inscriptions_enrichies"
+where id_inscription is not null
+group by id_inscription
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.452479 [info ] [Thread-4 (]: 28 of 36 START test unique_stg_annees_academiques_id_annee ..................... [RUN]
+[0m21:00:42.457843 [debug] [Thread-3 (]: On test.dcode212_academique.unique_int_formations_enrichies_id_formation.f9d58417d4: ROLLBACK
+[0m21:00:42.459938 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:00:42.460864 [debug] [Thread-2 (]: Began executing node test.dcode212_academique.unique_int_notes_enrichies_id_note.7e0cbbca07
+[0m21:00:42.465476 [debug] [Thread-2 (]: Writing runtime sql for node "test.dcode212_academique.unique_int_notes_enrichies_id_note.7e0cbbca07"
+[0m21:00:42.466601 [debug] [Thread-3 (]: On test.dcode212_academique.unique_int_formations_enrichies_id_formation.f9d58417d4: Close
+[0m21:00:42.468114 [debug] [Thread-2 (]: Using postgres connection "test.dcode212_academique.unique_int_notes_enrichies_id_note.7e0cbbca07"
+[0m21:00:42.472308 [debug] [Thread-2 (]: On test.dcode212_academique.unique_int_notes_enrichies_id_note.7e0cbbca07: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_int_notes_enrichies_id_note.7e0cbbca07"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id_note as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_intermediate"."int_notes_enrichies"
+where id_note is not null
+group by id_note
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.461781 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.unique_int_etudiants_enrichis_id_etudiant.59b80a7bfb, now test.dcode212_academique.unique_stg_annees_academiques_id_annee.6b96aaad25)
+[0m21:00:42.469900 [info ] [Thread-3 (]: 25 of 36 PASS unique_int_formations_enrichies_id_formation ..................... [[32mPASS[0m in 0.12s]
+[0m21:00:42.473924 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:00:42.475328 [debug] [Thread-4 (]: Began compiling node test.dcode212_academique.unique_stg_annees_academiques_id_annee.6b96aaad25
+[0m21:00:42.476653 [debug] [Thread-3 (]: Finished running node test.dcode212_academique.unique_int_formations_enrichies_id_formation.f9d58417d4
+[0m21:00:42.492881 [debug] [Thread-3 (]: Began running node test.dcode212_academique.unique_stg_cours_id_cours.bda7a50489
+[0m21:00:42.493666 [info ] [Thread-3 (]: 29 of 36 START test unique_stg_cours_id_cours .................................. [RUN]
+[0m21:00:42.490917 [debug] [Thread-4 (]: Writing injected SQL for node "test.dcode212_academique.unique_stg_annees_academiques_id_annee.6b96aaad25"
+[0m21:00:42.495153 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.unique_int_formations_enrichies_id_formation.f9d58417d4, now test.dcode212_academique.unique_stg_cours_id_cours.bda7a50489)
+[0m21:00:42.496390 [debug] [Thread-3 (]: Began compiling node test.dcode212_academique.unique_stg_cours_id_cours.bda7a50489
+[0m21:00:42.510726 [debug] [Thread-3 (]: Writing injected SQL for node "test.dcode212_academique.unique_stg_cours_id_cours.bda7a50489"
+[0m21:00:42.511812 [debug] [Thread-4 (]: Began executing node test.dcode212_academique.unique_stg_annees_academiques_id_annee.6b96aaad25
+[0m21:00:42.514990 [debug] [Thread-4 (]: Writing runtime sql for node "test.dcode212_academique.unique_stg_annees_academiques_id_annee.6b96aaad25"
+[0m21:00:42.516216 [debug] [Thread-3 (]: Began executing node test.dcode212_academique.unique_stg_cours_id_cours.bda7a50489
+[0m21:00:42.519056 [debug] [Thread-3 (]: Writing runtime sql for node "test.dcode212_academique.unique_stg_cours_id_cours.bda7a50489"
+[0m21:00:42.520095 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.060 seconds
+[0m21:00:42.523970 [debug] [Thread-1 (]: On test.dcode212_academique.unique_int_inscriptions_enrichies_id_inscription.a65aca2099: ROLLBACK
+[0m21:00:42.526302 [debug] [Thread-4 (]: Using postgres connection "test.dcode212_academique.unique_stg_annees_academiques_id_annee.6b96aaad25"
+[0m21:00:42.527012 [debug] [Thread-4 (]: On test.dcode212_academique.unique_stg_annees_academiques_id_annee.6b96aaad25: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_stg_annees_academiques_id_annee.6b96aaad25"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id_annee as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_staging"."stg_annees_academiques"
+where id_annee is not null
+group by id_annee
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.527610 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:00:42.528678 [debug] [Thread-1 (]: On test.dcode212_academique.unique_int_inscriptions_enrichies_id_inscription.a65aca2099: Close
+[0m21:00:42.525251 [debug] [Thread-3 (]: Using postgres connection "test.dcode212_academique.unique_stg_cours_id_cours.bda7a50489"
+[0m21:00:42.530181 [debug] [Thread-3 (]: On test.dcode212_academique.unique_stg_cours_id_cours.bda7a50489: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_stg_cours_id_cours.bda7a50489"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id_cours as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_staging"."stg_cours"
+where id_cours is not null
+group by id_cours
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.531564 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:00:42.533650 [info ] [Thread-1 (]: 26 of 36 PASS unique_int_inscriptions_enrichies_id_inscription ................. [[32mPASS[0m in 0.14s]
+[0m21:00:42.535355 [debug] [Thread-1 (]: Finished running node test.dcode212_academique.unique_int_inscriptions_enrichies_id_inscription.a65aca2099
+[0m21:00:42.536570 [debug] [Thread-1 (]: Began running node test.dcode212_academique.unique_stg_departements_id_departement.dec427d826
+[0m21:00:42.538061 [info ] [Thread-1 (]: 30 of 36 START test unique_stg_departements_id_departement ..................... [RUN]
+[0m21:00:42.541381 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.unique_int_inscriptions_enrichies_id_inscription.a65aca2099, now test.dcode212_academique.unique_stg_departements_id_departement.dec427d826)
+[0m21:00:42.542708 [debug] [Thread-1 (]: Began compiling node test.dcode212_academique.unique_stg_departements_id_departement.dec427d826
+[0m21:00:42.556094 [debug] [Thread-1 (]: Writing injected SQL for node "test.dcode212_academique.unique_stg_departements_id_departement.dec427d826"
+[0m21:00:42.557506 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.084 seconds
+[0m21:00:42.560531 [debug] [Thread-2 (]: On test.dcode212_academique.unique_int_notes_enrichies_id_note.7e0cbbca07: ROLLBACK
+[0m21:00:42.561574 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.034 seconds
+[0m21:00:42.564542 [debug] [Thread-4 (]: On test.dcode212_academique.unique_stg_annees_academiques_id_annee.6b96aaad25: ROLLBACK
+[0m21:00:42.562563 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.031 seconds
+[0m21:00:42.566478 [debug] [Thread-3 (]: On test.dcode212_academique.unique_stg_cours_id_cours.bda7a50489: ROLLBACK
+[0m21:00:42.567159 [debug] [Thread-2 (]: On test.dcode212_academique.unique_int_notes_enrichies_id_note.7e0cbbca07: Close
+[0m21:00:42.568162 [debug] [Thread-1 (]: Began executing node test.dcode212_academique.unique_stg_departements_id_departement.dec427d826
+[0m21:00:42.574324 [debug] [Thread-1 (]: Writing runtime sql for node "test.dcode212_academique.unique_stg_departements_id_departement.dec427d826"
+[0m21:00:42.569514 [debug] [Thread-4 (]: On test.dcode212_academique.unique_stg_annees_academiques_id_annee.6b96aaad25: Close
+[0m21:00:42.580563 [debug] [Thread-1 (]: Using postgres connection "test.dcode212_academique.unique_stg_departements_id_departement.dec427d826"
+[0m21:00:42.568783 [debug] [Thread-3 (]: On test.dcode212_academique.unique_stg_cours_id_cours.bda7a50489: Close
+[0m21:00:42.578399 [info ] [Thread-4 (]: 28 of 36 PASS unique_stg_annees_academiques_id_annee ........................... [[32mPASS[0m in 0.12s]
+[0m21:00:42.575890 [info ] [Thread-2 (]: 27 of 36 PASS unique_int_notes_enrichies_id_note ............................... [[32mPASS[0m in 0.14s]
+[0m21:00:42.582572 [debug] [Thread-1 (]: On test.dcode212_academique.unique_stg_departements_id_departement.dec427d826: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_stg_departements_id_departement.dec427d826"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id_departement as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_staging"."stg_departements"
+where id_departement is not null
+group by id_departement
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.584050 [debug] [Thread-4 (]: Finished running node test.dcode212_academique.unique_stg_annees_academiques_id_annee.6b96aaad25
+[0m21:00:42.585946 [debug] [Thread-2 (]: Finished running node test.dcode212_academique.unique_int_notes_enrichies_id_note.7e0cbbca07
+[0m21:00:42.584924 [info ] [Thread-3 (]: 29 of 36 PASS unique_stg_cours_id_cours ........................................ [[32mPASS[0m in 0.09s]
+[0m21:00:42.587288 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:00:42.588980 [debug] [Thread-4 (]: Began running node test.dcode212_academique.unique_stg_enseignants_id_enseignant.469fc400a4
+[0m21:00:42.590827 [debug] [Thread-2 (]: Began running node test.dcode212_academique.unique_stg_etudiants_id_etudiant.6a2b9db5bf
+[0m21:00:42.593075 [debug] [Thread-3 (]: Finished running node test.dcode212_academique.unique_stg_cours_id_cours.bda7a50489
+[0m21:00:42.594455 [info ] [Thread-4 (]: 31 of 36 START test unique_stg_enseignants_id_enseignant ....................... [RUN]
+[0m21:00:42.598763 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.unique_stg_annees_academiques_id_annee.6b96aaad25, now test.dcode212_academique.unique_stg_enseignants_id_enseignant.469fc400a4)
+[0m21:00:42.596303 [info ] [Thread-2 (]: 32 of 36 START test unique_stg_etudiants_id_etudiant ........................... [RUN]
+[0m21:00:42.600818 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.unique_int_notes_enrichies_id_note.7e0cbbca07, now test.dcode212_academique.unique_stg_etudiants_id_etudiant.6a2b9db5bf)
+[0m21:00:42.597353 [debug] [Thread-3 (]: Began running node test.dcode212_academique.unique_stg_etudiants_matricule.020821c114
+[0m21:00:42.602237 [info ] [Thread-3 (]: 33 of 36 START test unique_stg_etudiants_matricule ............................. [RUN]
+[0m21:00:42.599694 [debug] [Thread-4 (]: Began compiling node test.dcode212_academique.unique_stg_enseignants_id_enseignant.469fc400a4
+[0m21:00:42.603194 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.unique_stg_cours_id_cours.bda7a50489, now test.dcode212_academique.unique_stg_etudiants_matricule.020821c114)
+[0m21:00:42.601549 [debug] [Thread-2 (]: Began compiling node test.dcode212_academique.unique_stg_etudiants_id_etudiant.6a2b9db5bf
+[0m21:00:42.610417 [debug] [Thread-3 (]: Began compiling node test.dcode212_academique.unique_stg_etudiants_matricule.020821c114
+[0m21:00:42.616138 [debug] [Thread-4 (]: Writing injected SQL for node "test.dcode212_academique.unique_stg_enseignants_id_enseignant.469fc400a4"
+[0m21:00:42.628294 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.041 seconds
+[0m21:00:42.631375 [debug] [Thread-2 (]: Writing injected SQL for node "test.dcode212_academique.unique_stg_etudiants_id_etudiant.6a2b9db5bf"
+[0m21:00:42.633805 [debug] [Thread-3 (]: Writing injected SQL for node "test.dcode212_academique.unique_stg_etudiants_matricule.020821c114"
+[0m21:00:42.635857 [debug] [Thread-1 (]: On test.dcode212_academique.unique_stg_departements_id_departement.dec427d826: ROLLBACK
+[0m21:00:42.639327 [debug] [Thread-4 (]: Began executing node test.dcode212_academique.unique_stg_enseignants_id_enseignant.469fc400a4
+[0m21:00:42.644235 [debug] [Thread-4 (]: Writing runtime sql for node "test.dcode212_academique.unique_stg_enseignants_id_enseignant.469fc400a4"
+[0m21:00:42.641661 [debug] [Thread-1 (]: On test.dcode212_academique.unique_stg_departements_id_departement.dec427d826: Close
+[0m21:00:42.640877 [debug] [Thread-3 (]: Began executing node test.dcode212_academique.unique_stg_etudiants_matricule.020821c114
+[0m21:00:42.646926 [debug] [Thread-4 (]: Using postgres connection "test.dcode212_academique.unique_stg_enseignants_id_enseignant.469fc400a4"
+[0m21:00:42.647808 [debug] [Thread-2 (]: Began executing node test.dcode212_academique.unique_stg_etudiants_id_etudiant.6a2b9db5bf
+[0m21:00:42.652277 [debug] [Thread-3 (]: Writing runtime sql for node "test.dcode212_academique.unique_stg_etudiants_matricule.020821c114"
+[0m21:00:42.645895 [info ] [Thread-1 (]: 30 of 36 PASS unique_stg_departements_id_departement ........................... [[32mPASS[0m in 0.11s]
+[0m21:00:42.653723 [debug] [Thread-4 (]: On test.dcode212_academique.unique_stg_enseignants_id_enseignant.469fc400a4: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_stg_enseignants_id_enseignant.469fc400a4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id_enseignant as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_staging"."stg_enseignants"
+where id_enseignant is not null
+group by id_enseignant
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.657369 [debug] [Thread-2 (]: Writing runtime sql for node "test.dcode212_academique.unique_stg_etudiants_id_etudiant.6a2b9db5bf"
+[0m21:00:42.658512 [debug] [Thread-1 (]: Finished running node test.dcode212_academique.unique_stg_departements_id_departement.dec427d826
+[0m21:00:42.660732 [debug] [Thread-1 (]: Began running node test.dcode212_academique.unique_stg_formations_id_formation.be45cd8b39
+[0m21:00:42.662386 [info ] [Thread-1 (]: 34 of 36 START test unique_stg_formations_id_formation ......................... [RUN]
+[0m21:00:42.659232 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:00:42.661431 [debug] [Thread-3 (]: Using postgres connection "test.dcode212_academique.unique_stg_etudiants_matricule.020821c114"
+[0m21:00:42.663386 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.unique_stg_departements_id_departement.dec427d826, now test.dcode212_academique.unique_stg_formations_id_formation.be45cd8b39)
+[0m21:00:42.664954 [debug] [Thread-2 (]: Using postgres connection "test.dcode212_academique.unique_stg_etudiants_id_etudiant.6a2b9db5bf"
+[0m21:00:42.669344 [debug] [Thread-2 (]: On test.dcode212_academique.unique_stg_etudiants_id_etudiant.6a2b9db5bf: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_stg_etudiants_id_etudiant.6a2b9db5bf"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id_etudiant as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_staging"."stg_etudiants"
+where id_etudiant is not null
+group by id_etudiant
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.667861 [debug] [Thread-1 (]: Began compiling node test.dcode212_academique.unique_stg_formations_id_formation.be45cd8b39
+[0m21:00:42.666727 [debug] [Thread-3 (]: On test.dcode212_academique.unique_stg_etudiants_matricule.020821c114: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_stg_etudiants_matricule.020821c114"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    matricule as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_staging"."stg_etudiants"
+where matricule is not null
+group by matricule
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.671195 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:00:42.682761 [debug] [Thread-1 (]: Writing injected SQL for node "test.dcode212_academique.unique_stg_formations_id_formation.be45cd8b39"
+[0m21:00:42.683808 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:00:42.688733 [debug] [Thread-1 (]: Began executing node test.dcode212_academique.unique_stg_formations_id_formation.be45cd8b39
+[0m21:00:42.696475 [debug] [Thread-1 (]: Writing runtime sql for node "test.dcode212_academique.unique_stg_formations_id_formation.be45cd8b39"
+[0m21:00:42.693245 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.034 seconds
+[0m21:00:42.698676 [debug] [Thread-4 (]: On test.dcode212_academique.unique_stg_enseignants_id_enseignant.469fc400a4: ROLLBACK
+[0m21:00:42.700216 [debug] [Thread-1 (]: Using postgres connection "test.dcode212_academique.unique_stg_formations_id_formation.be45cd8b39"
+[0m21:00:42.701117 [debug] [Thread-1 (]: On test.dcode212_academique.unique_stg_formations_id_formation.be45cd8b39: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_stg_formations_id_formation.be45cd8b39"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id_formation as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_staging"."stg_formations"
+where id_formation is not null
+group by id_formation
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.701682 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:00:42.702538 [debug] [Thread-4 (]: On test.dcode212_academique.unique_stg_enseignants_id_enseignant.469fc400a4: Close
+[0m21:00:42.704134 [info ] [Thread-4 (]: 31 of 36 PASS unique_stg_enseignants_id_enseignant ............................. [[32mPASS[0m in 0.11s]
+[0m21:00:42.706473 [debug] [Thread-4 (]: Finished running node test.dcode212_academique.unique_stg_enseignants_id_enseignant.469fc400a4
+[0m21:00:42.708453 [debug] [Thread-4 (]: Began running node test.dcode212_academique.unique_stg_inscriptions_id_inscription.1451242185
+[0m21:00:42.710018 [info ] [Thread-4 (]: 35 of 36 START test unique_stg_inscriptions_id_inscription ..................... [RUN]
+[0m21:00:42.712572 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.unique_stg_enseignants_id_enseignant.469fc400a4, now test.dcode212_academique.unique_stg_inscriptions_id_inscription.1451242185)
+[0m21:00:42.714016 [debug] [Thread-4 (]: Began compiling node test.dcode212_academique.unique_stg_inscriptions_id_inscription.1451242185
+[0m21:00:42.726722 [debug] [Thread-4 (]: Writing injected SQL for node "test.dcode212_academique.unique_stg_inscriptions_id_inscription.1451242185"
+[0m21:00:42.727453 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.056 seconds
+[0m21:00:42.730947 [debug] [Thread-2 (]: On test.dcode212_academique.unique_stg_etudiants_id_etudiant.6a2b9db5bf: ROLLBACK
+[0m21:00:42.728377 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.045 seconds
+[0m21:00:42.732379 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.030 seconds
+[0m21:00:42.733278 [debug] [Thread-4 (]: Began executing node test.dcode212_academique.unique_stg_inscriptions_id_inscription.1451242185
+[0m21:00:42.734337 [debug] [Thread-2 (]: On test.dcode212_academique.unique_stg_etudiants_id_etudiant.6a2b9db5bf: Close
+[0m21:00:42.736972 [debug] [Thread-3 (]: On test.dcode212_academique.unique_stg_etudiants_matricule.020821c114: ROLLBACK
+[0m21:00:42.739817 [debug] [Thread-1 (]: On test.dcode212_academique.unique_stg_formations_id_formation.be45cd8b39: ROLLBACK
+[0m21:00:42.742527 [debug] [Thread-4 (]: Writing runtime sql for node "test.dcode212_academique.unique_stg_inscriptions_id_inscription.1451242185"
+[0m21:00:42.744763 [debug] [Thread-3 (]: On test.dcode212_academique.unique_stg_etudiants_matricule.020821c114: Close
+[0m21:00:42.743857 [info ] [Thread-2 (]: 32 of 36 PASS unique_stg_etudiants_id_etudiant ................................. [[32mPASS[0m in 0.14s]
+[0m21:00:42.748126 [info ] [Thread-3 (]: 33 of 36 PASS unique_stg_etudiants_matricule ................................... [[32mPASS[0m in 0.14s]
+[0m21:00:42.749787 [debug] [Thread-1 (]: On test.dcode212_academique.unique_stg_formations_id_formation.be45cd8b39: Close
+[0m21:00:42.751228 [debug] [Thread-4 (]: Using postgres connection "test.dcode212_academique.unique_stg_inscriptions_id_inscription.1451242185"
+[0m21:00:42.752511 [debug] [Thread-2 (]: Finished running node test.dcode212_academique.unique_stg_etudiants_id_etudiant.6a2b9db5bf
+[0m21:00:42.753867 [debug] [Thread-3 (]: Finished running node test.dcode212_academique.unique_stg_etudiants_matricule.020821c114
+[0m21:00:42.755567 [debug] [Thread-4 (]: On test.dcode212_academique.unique_stg_inscriptions_id_inscription.1451242185: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_stg_inscriptions_id_inscription.1451242185"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id_inscription as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_staging"."stg_inscriptions"
+where id_inscription is not null
+group by id_inscription
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.759123 [debug] [Thread-2 (]: Began running node test.dcode212_academique.unique_stg_notes_id_note.b36796b848
+[0m21:00:42.757257 [info ] [Thread-1 (]: 34 of 36 PASS unique_stg_formations_id_formation ............................... [[32mPASS[0m in 0.09s]
+[0m21:00:42.761238 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:00:42.762015 [info ] [Thread-2 (]: 36 of 36 START test unique_stg_notes_id_note ................................... [RUN]
+[0m21:00:42.764469 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dcode212_academique.unique_stg_etudiants_id_etudiant.6a2b9db5bf, now test.dcode212_academique.unique_stg_notes_id_note.b36796b848)
+[0m21:00:42.763095 [debug] [Thread-1 (]: Finished running node test.dcode212_academique.unique_stg_formations_id_formation.be45cd8b39
+[0m21:00:42.765322 [debug] [Thread-2 (]: Began compiling node test.dcode212_academique.unique_stg_notes_id_note.b36796b848
+[0m21:00:42.776764 [debug] [Thread-2 (]: Writing injected SQL for node "test.dcode212_academique.unique_stg_notes_id_note.b36796b848"
+[0m21:00:42.777727 [debug] [Thread-2 (]: Began executing node test.dcode212_academique.unique_stg_notes_id_note.b36796b848
+[0m21:00:42.781422 [debug] [Thread-2 (]: Writing runtime sql for node "test.dcode212_academique.unique_stg_notes_id_note.b36796b848"
+[0m21:00:42.782680 [debug] [Thread-2 (]: Using postgres connection "test.dcode212_academique.unique_stg_notes_id_note.b36796b848"
+[0m21:00:42.783523 [debug] [Thread-2 (]: On test.dcode212_academique.unique_stg_notes_id_note.b36796b848: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dcode212_academique", "target_name": "dev", "node_id": "test.dcode212_academique.unique_stg_notes_id_note.b36796b848"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id_note as unique_field,
+    count(*) as n_records
+
+from "etudiants_db"."public_staging"."stg_notes"
+where id_note is not null
+group by id_note
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:00:42.784246 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:00:42.791597 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.030 seconds
+[0m21:00:42.793930 [debug] [Thread-4 (]: On test.dcode212_academique.unique_stg_inscriptions_id_inscription.1451242185: ROLLBACK
+[0m21:00:42.795486 [debug] [Thread-4 (]: On test.dcode212_academique.unique_stg_inscriptions_id_inscription.1451242185: Close
+[0m21:00:42.796862 [info ] [Thread-4 (]: 35 of 36 PASS unique_stg_inscriptions_id_inscription ........................... [[32mPASS[0m in 0.08s]
+[0m21:00:42.797798 [debug] [Thread-4 (]: Finished running node test.dcode212_academique.unique_stg_inscriptions_id_inscription.1451242185
+[0m21:00:42.814691 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.030 seconds
+[0m21:00:42.816758 [debug] [Thread-2 (]: On test.dcode212_academique.unique_stg_notes_id_note.b36796b848: ROLLBACK
+[0m21:00:42.817930 [debug] [Thread-2 (]: On test.dcode212_academique.unique_stg_notes_id_note.b36796b848: Close
+[0m21:00:42.818937 [info ] [Thread-2 (]: 36 of 36 PASS unique_stg_notes_id_note ......................................... [[32mPASS[0m in 0.05s]
+[0m21:00:42.820214 [debug] [Thread-2 (]: Finished running node test.dcode212_academique.unique_stg_notes_id_note.b36796b848
+[0m21:00:42.826760 [debug] [MainThread]: On master: COMMIT
+[0m21:00:42.827946 [debug] [MainThread]: Using postgres connection "master"
+[0m21:00:42.828509 [debug] [MainThread]: On master: COMMIT
+[0m21:00:42.828882 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:00:42.842669 [debug] [MainThread]: SQL status: COMMIT in 0.014 seconds
+[0m21:00:42.843193 [debug] [MainThread]: On master: Close
+[0m21:00:42.844258 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:00:42.844716 [debug] [MainThread]: Connection 'test.dcode212_academique.unique_stg_notes_id_note.b36796b848' was properly closed.
+[0m21:00:42.844983 [debug] [MainThread]: Connection 'test.dcode212_academique.unique_stg_formations_id_formation.be45cd8b39' was properly closed.
+[0m21:00:42.845218 [debug] [MainThread]: Connection 'test.dcode212_academique.unique_stg_etudiants_matricule.020821c114' was properly closed.
+[0m21:00:42.845463 [debug] [MainThread]: Connection 'test.dcode212_academique.unique_stg_inscriptions_id_inscription.1451242185' was properly closed.
+[0m21:00:42.845874 [info ] [MainThread]: 
+[0m21:00:42.846378 [info ] [MainThread]: Finished running 36 data tests in 0 hours 0 minutes and 1.68 seconds (1.68s).
+[0m21:00:42.853867 [debug] [MainThread]: Command end result
+[0m21:00:42.901167 [debug] [MainThread]: Wrote artifact WritableManifest to /home/abdelhamid/code212/dbt_project/target/manifest.json
+[0m21:00:42.905316 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/abdelhamid/code212/dbt_project/target/semantic_manifest.json
+[0m21:00:42.908705 [debug] [MainThread]: Wrote artifact OsiDocument to /home/abdelhamid/code212/dbt_project/target/osi_document.json
+[0m21:00:42.918760 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/abdelhamid/code212/dbt_project/target/run_results.json
+[0m21:00:42.920432 [info ] [MainThread]: 
+[0m21:00:42.921123 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:00:42.921809 [info ] [MainThread]: 
+[0m21:00:42.922483 [info ] [MainThread]: Done. PASS=36 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=36
+[0m21:00:42.925202 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 2.909305, "process_in_blocks": "0", "process_kernel_time": 0.783544, "process_mem_max_rss": "151716", "process_out_blocks": "3752", "process_user_time": 5.088997}
+[0m21:00:42.926547 [debug] [MainThread]: Command `dbt test` succeeded at 21:00:42.926331 after 2.91 seconds
+[0m21:00:42.927164 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adfb7d34ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adfb45ac470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adfb45ac680>]}
+[0m21:00:42.927736 [debug] [MainThread]: Flushing usage events
+[0m21:00:43.654484 [debug] [MainThread]: An error was encountered while trying to flush usage events
