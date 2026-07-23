@@ -37,7 +37,7 @@ services:
           --role Admin --email admin@example.com
 
   airflow-webserver:
-    image: apache/airflow:2.9.1-python3.11
+    build: .
     container_name: airflow_webserver
     depends_on:
       - airflow-init
@@ -45,18 +45,18 @@ services:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${DB_USER}:${DB_PASSWORD}@postgres/airflow_db
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
-      _PIP_ADDITIONAL_REQUIREMENTS: "pandas Faker sqlalchemy psycopg2-binary"
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./src:/opt/airflow/src
       - ./data:/opt/airflow/data
       - airflow_logs:/opt/airflow/logs
+      - ./dbt_project:/opt/airflow/dbt_project
     ports:
       - "8080:8080"
     command: webserver
 
   airflow-scheduler:
-    image: apache/airflow:2.9.1-python3.11
+    build: .
     container_name: airflow_scheduler
     depends_on:
       - airflow-init
@@ -64,14 +64,53 @@ services:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${DB_USER}:${DB_PASSWORD}@postgres/airflow_db
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
-      _PIP_ADDITIONAL_REQUIREMENTS: "pandas Faker sqlalchemy psycopg2-binary"
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./src:/opt/airflow/src
       - ./data:/opt/airflow/data
       - airflow_logs:/opt/airflow/logs
+      - ./dbt_project:/opt/airflow/dbt_project
     command: scheduler
+
+  superset-init:
+    image: apache/superset:latest
+    container_name: superset_init
+    user: root
+    environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - ./superset/superset_config.py:/app/pythonpath/superset_config.py
+      - ./docker/requirements-local.txt:/app/docker/requirements-local.txt
+      - superset_home:/app/superset_home
+    depends_on:
+      - postgres
+    command: ["/app/docker/docker-init.sh"]
+
+  superset:
+    image: apache/superset:latest
+    container_name: superset_bi
+    user: root
+    environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - ./superset/superset_config.py:/app/pythonpath/superset_config.py
+      - ./docker/requirements-local.txt:/app/docker/requirements-local.txt
+      - superset_home:/app/superset_home
+    ports:
+      - "8088:8088"
+    depends_on:
+      - superset-init
+    command: ["/app/docker/docker-bootstrap.sh", "app-gunicorn"]
 
 volumes:
   postgres_data:
   airflow_logs:
+  superset_home:
