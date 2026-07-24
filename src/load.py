@@ -36,7 +36,7 @@ LOAD_ORDER = [
 def get_engine() -> Engine:
     user = "etudiants_user"
     password = "etudiantscode212_passcode"
-    host = "localhost"
+    host = "postgres"
     port = "5432"
     name = "etudiants_db"
     url = f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{name}"

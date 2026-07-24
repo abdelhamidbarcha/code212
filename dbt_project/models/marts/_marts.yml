@@ -33,29 +33,24 @@ models:
       - name: id_etudiant
         tests:
           - relationships:
-              arguments:
-                to: ref('dim_etudiant')
-                field: id_etudiant
+              to: ref('dim_etudiant')
+              field: id_etudiant
       - name: id_cours
         tests:
           - relationships:
-              arguments:
-                to: ref('dim_cours')
-                field: id_cours
+              to: ref('dim_cours')
+              field: id_cours
       - name: id_formation
         tests:
           - relationships:
-              arguments:
-                to: ref('dim_formation')
-                field: id_formation
+              to: ref('dim_formation')
+              field: id_formation
       - name: id_annee
         tests:
           - relationships:
-              arguments:
-                to: ref('dim_temps')
-                field: id_annee
+              to: ref('dim_temps')
+              field: id_annee
       - name: mention
         tests:
           - accepted_values:
-              arguments:
-                values: ["Insuffisant", "Passable", "Assez Bien", "Bien", "Très Bien"]
+              values: ["Insuffisant", "Passable", "Assez Bien", "Bien", "Très Bien"]

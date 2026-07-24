@@ -1,0 +1,12 @@
+dcode212_academique:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres
+      user: etudiants_user
+      password: etudiantscode212_passcode
+      port: 5432
+      dbname: etudiants_db
+      schema: public
+      threads: 4

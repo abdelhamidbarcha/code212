@@ -15,9 +15,8 @@ models:
       - name: id_departement
         tests:
           - relationships:
-              arguments:
-                to: ref('stg_departements')
-                field: id_departement
+              to: ref('stg_departements')
+              field: id_departement
 
   - name: stg_enseignants
     description: "Corps professoral, rattaché à un département."
@@ -35,8 +34,7 @@ models:
       - name: statut
         tests:
           - accepted_values:
-              arguments:
-                values: ["Actif", "Diplômé", "Abandon"]
+              values: ["Actif", "Diplômé", "Abandon"]
 
   - name: stg_annees_academiques
     description: "Référentiel temporel (année académique + semestre)."

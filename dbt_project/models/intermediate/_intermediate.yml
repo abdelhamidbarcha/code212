@@ -9,8 +9,7 @@ models:
       - name: tranche_age
         tests:
           - accepted_values:
-              arguments:
-                values: ["18-19", "20-22", "23-25", "26+"]
+              values: ["18-19", "20-22", "23-25", "26+"]
 
   - name: int_formations_enrichies
     description: "Formations jointes à leur département (nom, faculté)."
@@ -44,5 +43,4 @@ models:
       - name: mention
         tests:
           - accepted_values:
-              arguments:
-                values: ["Insuffisant", "Passable", "Assez Bien", "Bien", "Très Bien"]
+              values: ["Insuffisant", "Passable", "Assez Bien", "Bien", "Très Bien"]
