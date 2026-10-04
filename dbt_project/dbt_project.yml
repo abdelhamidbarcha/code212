@@ -54,3 +54,13 @@ seeds:
       +column_types: {cod_dep: text, lib_province: text, lib_region: text}
     ref_etat_iae:
       +column_types: {eta_iae: text, lib_etat_iae: text, compte_dans_effectif: text}
+
+
+# ---------------------------------------------------------------------
+#  Variables métier (adaptables aux conventions de l'université)
+# ---------------------------------------------------------------------
+vars:
+  # Codes utilisateur Apogée correspondant à des traitements automatiques (saisie en masse)
+  utilisateurs_batch: ['APOBATCH']
+  # Mois de référence pour le calcul de l'âge à l'inscription (octobre de l'année universitaire)
+  mois_reference_age: 10

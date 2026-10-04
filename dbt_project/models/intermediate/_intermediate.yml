@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: int_etape_principale_annuelle
+    description: >
+      Étape principale de chaque étudiant pour chaque année (déduite des contrats
+      pédagogiques). Grain : (cod_ind, cod_anu).
+    data_tests:
+      - unique_combinaison:
+          colonnes: [cod_ind, cod_anu]
+    columns:
+      - name: cle_etape
+        description: "Clé de l'étape : cod_etp-cod_vrs_vet."
+        data_tests: [not_null]
+      - name: nb_modules
+        description: "Nombre total de modules (contrats) de l'étudiant cette année."
+      - name: nb_etapes
+        description: "Nombre d'étapes distinctes suivies cette année (normalement 1)."
+
+  - name: int_parcours_annuel
+    description: >
+      Parcours annuel : type d'inscription, redoublement et devenir l'année suivante.
+      Grain : (cod_ind, cod_anu).
+    data_tests:
+      - unique_combinaison:
+          colonnes: [cod_ind, cod_anu]
+    columns:
+      - name: type_inscription
+        data_tests:
+          - accepted_values:
+              values: ['Nouvel inscrit', 'Réinscrit', 'Non déterminé']
+      - name: statut_annee_suivante
+        data_tests:
+          - accepted_values:
+              values: ['Passage au niveau supérieur', 'Redoublement', 'Poursuite des études',
+                       'Réorientation', 'Réinscription', 'Sortie en fin de cycle',
+                       'Sortie en cours de cycle', 'Non disponible']
