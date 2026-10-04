@@ -16,6 +16,7 @@ comptabilisees as (
     select
         cod_anu,
         annee_universitaire,
+        date_rentree,
         cod_cmp,
         composante,
         type_etablissement,
@@ -30,7 +31,7 @@ comptabilisees as (
         count(distinct cod_ind) filter (where est_reinscrit_annee_suivante is not null) as base_reinscription
     from inscriptions
     where est_comptabilise
-    group by 1, 2, 3, 4, 5
+    group by 1, 2, 3, 4, 5, 6
 
 ),
 

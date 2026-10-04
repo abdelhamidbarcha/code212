@@ -10,6 +10,7 @@ select
     a.cod_anu,
     a.lib_annee_universitaire                                   as annee_universitaire,
     a.est_derniere_annee,
+    a.date_debut                                                as date_rentree,
 
     -- Organisation
     c.cod_cmp,

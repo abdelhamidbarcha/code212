@@ -8,6 +8,7 @@ select
     -- Temps
     a.cod_anu,
     a.lib_annee_universitaire                                   as annee_universitaire,
+    a.date_debut                                                as date_rentree,
 
     -- Organisation
     e.cod_cmp,
