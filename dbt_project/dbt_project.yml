@@ -17,6 +17,10 @@ clean-targets: ["target", "dbt_packages"]
 flags:
   send_anonymous_usage_stats: false
 
+# Accès en lecture seule de Superset au schéma reporting (voir macros/accorder_acces_bi.sql)
+on-run-end:
+  - "{{ accorder_acces_bi() }}"
+
 # ---------------------------------------------------------------------
 #  Modèles : un schéma PostgreSQL par couche
 # ---------------------------------------------------------------------
@@ -68,3 +72,5 @@ vars:
   utilisateurs_batch: ['APOBATCH']
   # Mois de référence pour le calcul de l'âge à l'inscription (octobre de l'année universitaire)
   mois_reference_age: 10
+  # Rôle PostgreSQL en lecture seule utilisé par Superset
+  role_bi: 'bi_lecteur'

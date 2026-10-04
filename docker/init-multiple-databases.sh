@@ -18,3 +18,19 @@ if [ -n "${POSTGRES_MULTIPLE_DATABASES:-}" ]; then
     done
     echo "[init] Bases créées : ${POSTGRES_MULTIPLE_DATABASES}"
 fi
+
+
+# Rôle en lecture seule pour Superset (accès limité au schéma reporting par dbt)
+if [ -n "${BI_PASSWORD:-}" ]; then
+    echo "[init] Création du rôle de lecture BI 'bi_lecteur'"
+    psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname postgres <<EOSQL
+DO \$\$
+BEGIN
+    IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = 'bi_lecteur') THEN
+        CREATE ROLE bi_lecteur LOGIN PASSWORD '${BI_PASSWORD}';
+    END IF;
+END
+\$\$;
+GRANT CONNECT ON DATABASE etudiants_db TO bi_lecteur;
+EOSQL
+fi
