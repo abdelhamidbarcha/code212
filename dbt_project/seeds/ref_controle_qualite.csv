@@ -1,0 +1,12 @@
+code_controle,libelle_controle,categorie,gravite,table_source
+Q01,Contrat pédagogique sans inscription administrative,Cohérence,Critique,IND_CONTRAT_ELP
+Q02,Inscription administrative valide sans contrat pédagogique,Cohérence,Avertissement,INS_ADM_ETP
+Q03,Contrat pédagogique saisi en double,Doublon,Avertissement,IND_CONTRAT_ELP
+Q04,Inscription administrative saisie en double,Doublon,Avertissement,INS_ADM_ETP
+Q05,Email manquant,Complétude,Information,INDIVIDU
+Q06,Email au format invalide,Format,Avertissement,INDIVIDU
+Q07,INE manquant pour un étudiant marocain,Complétude,Critique,INDIVIDU
+Q08,Date de naissance manquante ou incohérente,Complétude,Critique,INDIVIDU
+Q09,Code composante non référencé,Référentiel,Avertissement,INS_ADM_ETP
+Q10,Code étape ou module non référencé,Référentiel,Avertissement,IND_CONTRAT_ELP
+Q11,Saisie non standard corrigée automatiquement,Format,Information,INDIVIDU

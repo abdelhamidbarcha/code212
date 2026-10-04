@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: rpt_inscriptions_administratives
+    description: >
+      Inscriptions administratives avec tous les libellés (aucune jointure à faire dans Superset).
+      Effectif = COUNT(DISTINCT cod_ind) avec le filtre est_comptabilise.
+    data_tests:
+      - unique_combinaison:
+          colonnes: [cod_ind, cod_anu, cod_cmp]
+
+  - name: rpt_inscriptions_pedagogiques
+    description: "Inscriptions pédagogiques (étudiant x module) avec libellés et informations de saisie."
+
+  - name: rpt_kpi_composante_annee
+    description: >
+      Indicateurs clés par composante et par année : effectif, nouveaux inscrits,
+      redoublement, réinscription, part des femmes et des étrangers, évolution annuelle.
+    data_tests:
+      - unique_combinaison:
+          colonnes: [cod_anu, cod_cmp]
+    columns:
+      - name: effectif
+        data_tests: [not_null]
+
+  - name: rpt_anomalies_qualite
+    description: "Une ligne par anomalie de qualité détectée (voir le seed ref_controle_qualite)."
+    columns:
+      - name: code_controle
+        data_tests:
+          - relationships:
+              to: ref('ref_controle_qualite')
+              field: code_controle
+
+  - name: rpt_qualite_synthese
+    description: "Synthèse par contrôle qualité : nombre d'anomalies, taux de conformité, statut."
+    columns:
+      - name: code_controle
+        data_tests: [unique, not_null]
+
+  - name: rpt_suivi_chargements
+    description: "Historique des chargements et date de dernière mise à jour par table."

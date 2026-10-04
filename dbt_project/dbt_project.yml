@@ -28,10 +28,12 @@ models:
     intermediate:       # logique métier réutilisable
       +schema: intermediate
       +materialized: view
-    marts:              # modèle en étoile exposé à Superset
+    marts:              # modèle en étoile (dimensions + faits)
       +schema: marts
       +materialized: table
-
+    reporting:          # tables "prêtes à l'emploi" pour Superset (seul schéma exposé à la BI)
+      +schema: reporting
+      +materialized: table
 # ---------------------------------------------------------------------
 #  Seeds : nomenclatures (libellés) — à remplacer par celles de l'université
 #  Les codes sont forcés en texte pour conserver les zéros initiaux (ex : "001").
@@ -54,6 +56,8 @@ seeds:
       +column_types: {cod_dep: text, lib_province: text, lib_region: text}
     ref_etat_iae:
       +column_types: {eta_iae: text, lib_etat_iae: text, compte_dans_effectif: text}
+    ref_controle_qualite:
+      +column_types: {code_controle: text, libelle_controle: text, categorie: text, gravite: text, table_source: text}
 
 
 # ---------------------------------------------------------------------

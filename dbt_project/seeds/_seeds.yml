@@ -48,3 +48,13 @@ seeds:
         data_tests:
           - accepted_values:
               values: ['O', 'N']
+  
+  - name: ref_controle_qualite
+    description: "Catalogue des contrôles de qualité des données : libellé, catégorie, gravité."
+    columns:
+      - name: code_controle
+        data_tests: [unique, not_null]
+      - name: gravite
+        data_tests:
+          - accepted_values:
+              values: ['Critique', 'Avertissement', 'Information']
