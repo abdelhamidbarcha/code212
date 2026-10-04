@@ -118,3 +118,17 @@ CREATE INDEX IF NOT EXISTS idx_raw_individu_cod_ind       ON raw.individu (cod_i
 CREATE INDEX IF NOT EXISTS idx_raw_ins_adm_etp_ind_anu    ON raw.ins_adm_etp (cod_ind, cod_anu);
 CREATE INDEX IF NOT EXISTS idx_raw_contrat_elp_ind_anu    ON raw.ind_contrat_elp (cod_ind, cod_anu);
 CREATE INDEX IF NOT EXISTS idx_raw_contrat_elp_etp_elp    ON raw.ind_contrat_elp (cod_etp, cod_elp);
+
+
+-- =====================================================================
+--  Journal des chargements (historique conservé, jamais vidé)
+-- =====================================================================
+CREATE TABLE IF NOT EXISTS raw.journal_chargement (
+    id_chargement  BIGSERIAL   PRIMARY KEY,
+    charge_le      TIMESTAMPTZ NOT NULL DEFAULT now(),
+    table_cible    TEXT        NOT NULL,
+    fichier        TEXT,
+    nb_lignes      INTEGER     NOT NULL,
+    source         TEXT        NOT NULL
+);
+COMMENT ON TABLE raw.journal_chargement IS 'Historique des chargements : date, table, volume et origine des données.';
