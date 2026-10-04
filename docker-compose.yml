@@ -9,6 +9,10 @@ x-airflow-common: &airflow-common
     AIRFLOW__WEBSERVER__SECRET_KEY: ${AIRFLOW_SECRET_KEY}
     AIRFLOW__CORE__DEFAULT_TIMEZONE: Africa/Casablanca
     TZ: Africa/Casablanca
+    DBT_PROJECT_DIR: /opt/airflow/dbt_project
+    DBT_PROFILES_DIR: /opt/airflow/dbt_project
+    DBT_TARGET_PATH: /opt/airflow/dbt_target/target
+    DBT_LOG_PATH: /opt/airflow/dbt_target/logs
   volumes:
     - ./airflow/dags:/opt/airflow/dags
     - ./src:/opt/airflow/src

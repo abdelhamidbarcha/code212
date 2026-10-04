@@ -1,0 +1,93 @@
+version: 2
+
+sources:
+  - name: apogee
+    description: >
+      Tables brutes issues d'Apogée (ou du générateur en attendant les données réelles),
+      chargées telles quelles dans le schéma raw par load.py.
+    schema: raw
+    loaded_at_field: _loaded_at
+    freshness:
+      warn_after: {count: 2, period: day}
+      error_after: {count: 7, period: day}
+
+    tables:
+      - name: individu
+        description: "Référentiel des individus (étudiants)."
+        columns:
+          - name: cod_ind
+            description: "Code individu : identifiant interne de l'individu dans Apogée."
+            data_tests:
+              - not_null:
+                  config: {severity: warn}
+          - name: cod_etu
+            description: "Code étudiant : numéro étudiant à 8 chiffres."
+          - name: numero_ine
+            description: "Numéro d'Inscription National Étudiant."
+          - name: cle_ine
+            description: "Clé de contrôle du numéro INE."
+          - name: lib_nom_pat_ind
+            description: "Nom de naissance."
+          - name: lib_prenom_ind
+            description: "Prénom(s) de l'étudiant."
+          - name: cod_sex_etu
+            description: "Sexe de l'étudiant."
+          - name: date_naissance
+            description: "Date de naissance."
+          - name: lib_vil_nai_etu
+            description: "Ville de naissance."
+          - name: cod_pay_nai_etu
+            description: "Code du pays de naissance."
+          - name: cod_nat_etu
+            description: "Code de la nationalité."
+          - name: cod_dep_nai_etu
+            description: "Code du département (province) de naissance."
+          - name: adr_mail_etu
+            description: "Adresse électronique de l'étudiant."
+
+      - name: ins_adm_etp
+        description: "Inscriptions administratives annuelles."
+        columns:
+          - name: cod_ind
+            description: "Code individu (jointure avec INDIVIDU)."
+            data_tests:
+              - not_null:
+                  config: {severity: warn}
+          - name: cod_anu
+            description: "Année universitaire (année de début)."
+            data_tests:
+              - not_null:
+                  config: {severity: warn}
+          - name: eta_iae
+            description: "État de l'inscription administrative."
+          - name: cod_cmp
+            description: "Code de la composante de rattachement."
+
+      - name: ind_contrat_elp
+        description: "Inscriptions pédagogiques aux éléments pédagogiques (modules)."
+        columns:
+          - name: cod_ind
+            description: "Code individu (jointure avec INDIVIDU)."
+            data_tests:
+              - not_null:
+                  config: {severity: warn}
+          - name: cod_elp
+            description: "Code de l'élément pédagogique."
+          - name: cod_anu
+            description: "Année universitaire de l'inscription pédagogique."
+          - name: cod_etp
+            description: "Code de l'étape (formation)."
+          - name: cod_vrs_vet
+            description: "Numéro de version de l'étape."
+          - name: tem_prc_ice
+            description: "Témoin de prise en compte (O/N)."
+          - name: dat_cre_elp_con
+            description: "Date de création du contrat pédagogique."
+          - name: dat_mod_ice
+            description: "Date de dernière modification."
+          - name: cod_uti
+            description: "Code de l'utilisateur ayant créé/modifié l'inscription."
+
+      - name: journal_chargement
+        description: "Historique technique des chargements réalisés par load.py."
+        freshness: null
