@@ -1,12 +1,14 @@
+# Les identifiants sont lus depuis les variables d'environnement (.env).
+# Aucun mot de passe en clair dans le dépôt.
 dcode212_academique:
   target: dev
   outputs:
     dev:
       type: postgres
-      host: postgres
-      user: etudiants_user
-      password: etudiantscode212_passcode
-      port: 5432
-      dbname: etudiants_db
+      host: "{{ env_var('DB_HOST', 'postgres') }}"
+      port: "{{ env_var('DB_PORT', '5432') | int }}"
+      user: "{{ env_var('DB_USER') }}"
+      password: "{{ env_var('DB_PASSWORD') }}"
+      dbname: "{{ env_var('DB_NAME', 'etudiants_db') }}"
       schema: public
       threads: 4

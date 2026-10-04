@@ -1,0 +1,5 @@
+# Fins de ligne LF pour tout ce qui s'exécute dans Linux (Docker)
+*.sh  text eol=lf
+*.sql text eol=lf
+*.py  text eol=lf
+*.yml text eol=lf
