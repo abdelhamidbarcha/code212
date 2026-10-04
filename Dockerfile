@@ -4,9 +4,9 @@ USER root
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libpq-dev \
+    git \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-
 RUN mkdir -p /opt/airflow/dbt_target && chown -R airflow:root /opt/airflow/dbt_target
 
 USER airflow
