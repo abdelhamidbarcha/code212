@@ -13,6 +13,7 @@ x-airflow-common: &airflow-common
     DBT_PROFILES_DIR: /opt/airflow/dbt_project
     DBT_TARGET_PATH: /opt/airflow/dbt_target/target
     DBT_LOG_PATH: /opt/airflow/dbt_target/logs
+    AIRFLOW__WEBSERVER__DEFAULT_UI_TIMEZONE: Africa/Casablanca
   volumes:
     - ./airflow/dags:/opt/airflow/dags
     - ./src:/opt/airflow/src
