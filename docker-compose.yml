@@ -21,6 +21,7 @@ x-airflow-common: &airflow-common
     - ./data:/opt/airflow/data
     - ./dbt_project:/opt/airflow/dbt_project
     - airflow_logs:/opt/airflow/logs
+    - ./docs:/opt/airflow/docs
 
 services:
   # ---------------- PostgreSQL ----------------

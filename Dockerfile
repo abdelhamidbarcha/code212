@@ -11,4 +11,4 @@ RUN mkdir -p /opt/airflow/dbt_target && chown -R airflow:root /opt/airflow/dbt_t
 
 USER airflow
 
-RUN pip install --no-cache-dir pandas Faker sqlalchemy psycopg2-binary dbt-core==1.8.0 dbt-postgres==1.8.0
+RUN pip install --no-cache-dir pandas Faker sqlalchemy psycopg2-binary dbt-core==1.8.0 dbt-postgres==1.8.0 openpyxl

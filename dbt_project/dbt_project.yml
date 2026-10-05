@@ -26,6 +26,11 @@ on-run-end:
 # ---------------------------------------------------------------------
 models:
   dcode212_academique:
+    # Les descriptions dbt sont copiées en commentaires PostgreSQL (visibles dans
+    # Superset, DBeaver, et utilisées par le dictionnaire de données)
+    +persist_docs:
+      relation: true
+      columns: true
     staging:            # nettoyage / typage / dédoublonnage des sources
       +schema: staging
       +materialized: table   # tables (et non vues) : le dédoublonnage n'est calculé qu'une fois
@@ -44,6 +49,9 @@ models:
 # ---------------------------------------------------------------------
 seeds:
   dcode212_academique:
+    +persist_docs:
+      relation: true
+      columns: true
     +schema: referentiel
     +quote_columns: false
     ref_composante:

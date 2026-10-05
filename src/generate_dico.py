@@ -1,188 +1,184 @@
 """
-Génère le dictionnaire de données (data dictionary) du modèle académique
-sous forme de classeur Excel : un onglet Sommaire + un onglet par table.
+Génère le DICTIONNAIRE DE DONNÉES du Data Warehouse (classeur Excel).
+
+Le dictionnaire est construit automatiquement à partir du catalogue PostgreSQL :
+tables, colonnes, types et descriptions (les descriptions dbt sont copiées en
+commentaires PostgreSQL grâce à persist_docs). Il est donc toujours à jour.
+
+Onglets :
+  1. Sommaire       : une ligne par table (couche, description, volumétrie)
+  2. Dictionnaire   : une ligne par colonne (type, description) — filtrable
+  3. Indicateurs    : définition des indicateurs des tableaux de bord
+  4. Contrôles      : catalogue des contrôles de qualité
+
+Usage : python src/generate_dico.py   (fichier produit : docs/Dictionnaire_de_donnees.xlsx)
 """
+from datetime import datetime
+from pathlib import Path
+
 from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
+from sqlalchemy import text
 
-NAVY = "1F3864"
-LIGHT_BG = "F2F2F2"
-WHITE = "FFFFFF"
+from config import get_engine
 
-FONT_NAME = "Calibri"
+SORTIE = Path(__file__).resolve().parents[1] / "docs" / "Dictionnaire_de_donnees.xlsx"
 
-header_font = Font(name=FONT_NAME, bold=True, color=WHITE, size=11)
-header_fill = PatternFill(start_color=NAVY, end_color=NAVY, fill_type="solid")
-title_font = Font(name=FONT_NAME, bold=True, color=NAVY, size=14)
-normal_font = Font(name=FONT_NAME, size=10.5)
-thin = Side(style="thin", color="BFBFBF")
-border = Border(left=thin, right=thin, top=thin, bottom=thin)
-
-# ---------- Définition des 8 tables (Colonne, Type, Clé, Description) ----------
-TABLES = {
-    "departements": [
-        ("id_departement", "SERIAL", "PK", "Identifiant unique du département"),
-        ("nom_departement", "VARCHAR(150)", "", "Nom du département (ex: Informatique)"),
-        ("faculte", "VARCHAR(150)", "", "Faculté de rattachement"),
-        ("responsable", "VARCHAR(150)", "", "Nom du responsable de département"),
-    ],
-    "formations": [
-        ("id_formation", "SERIAL", "PK", "Identifiant unique de la formation"),
-        ("nom_formation", "VARCHAR(150)", "", "Intitulé de la formation"),
-        ("id_departement", "INTEGER", "FK", "Référence vers departements"),
-        ("niveau", "VARCHAR(30)", "", "Licence / Master / Doctorat"),
-        ("type_diplome", "VARCHAR(50)", "", "Diplôme national, ingénierie, etc."),
-        ("duree_annees", "SMALLINT", "", "Durée standard de la formation"),
-    ],
-    "enseignants": [
-        ("id_enseignant", "SERIAL", "PK", "Identifiant unique de l'enseignant"),
-        ("nom", "VARCHAR(100)", "", "Nom de famille"),
-        ("prenom", "VARCHAR(100)", "", "Prénom"),
-        ("grade", "VARCHAR(50)", "", "Professeur, Maître de conférences, Vacataire"),
-        ("id_departement", "INTEGER", "FK", "Référence vers departements"),
-        ("email", "VARCHAR(150)", "", "Contact professionnel"),
-        ("date_recrutement", "DATE", "", "Date d'entrée en fonction"),
-    ],
-    "etudiants": [
-        ("id_etudiant", "SERIAL", "PK", "Identifiant unique de l'étudiant"),
-        ("matricule", "VARCHAR(20)", "UNIQUE", "Numéro d'immatriculation officiel"),
-        ("nom", "VARCHAR(100)", "", "Nom de famille"),
-        ("prenom", "VARCHAR(100)", "", "Prénom"),
-        ("date_naissance", "DATE", "", "Utilisée pour calculer l'âge / tranche d'âge"),
-        ("sexe", "CHAR(1)", "", "M / F"),
-        ("nationalite", "VARCHAR(60)", "", "Nationalité déclarée"),
-        ("email", "VARCHAR(150)", "", "Contact étudiant"),
-        ("date_premiere_inscription", "DATE", "", "Première inscription à l'université"),
-        ("statut", "VARCHAR(30)", "", "Actif / Diplômé / Abandon"),
-    ],
-    "annees_academiques": [
-        ("id_annee", "SERIAL", "PK", "Identifiant unique de la période"),
-        ("libelle", "VARCHAR(20)", "", "Ex: 2025-2026"),
-        ("semestre", "VARCHAR(5)", "", "S1 / S2"),
-        ("date_debut", "DATE", "", "Date de début de la période"),
-        ("date_fin", "DATE", "", "Date de fin de la période"),
-    ],
-    "cours": [
-        ("id_cours", "SERIAL", "PK", "Identifiant unique du cours"),
-        ("code_cours", "VARCHAR(20)", "", "Code interne (ex: INF301)"),
-        ("intitule", "VARCHAR(150)", "", "Nom du cours"),
-        ("credits_ects", "SMALLINT", "", "Nombre de crédits"),
-        ("id_formation", "INTEGER", "FK", "Référence vers formations"),
-        ("id_enseignant", "INTEGER", "FK", "Référence vers enseignants"),
-        ("id_annee", "INTEGER", "FK", "Référence vers annees_academiques"),
-        ("volume_horaire", "SMALLINT", "", "Nombre d'heures total"),
-    ],
-    "inscriptions": [
-        ("id_inscription", "SERIAL", "PK", "Identifiant unique de l'inscription"),
-        ("id_etudiant", "INTEGER", "FK", "Référence vers etudiants"),
-        ("id_formation", "INTEGER", "FK", "Référence vers formations"),
-        ("id_annee", "INTEGER", "FK", "Référence vers annees_academiques"),
-        ("date_inscription", "DATE", "", "Date effective d'inscription"),
-        ("statut_inscription", "VARCHAR(30)", "", "Validée / En attente / Annulée"),
-        ("mode", "VARCHAR(20)", "", "Présentiel / À distance"),
-    ],
-    "notes": [
-        ("id_note", "SERIAL", "PK", "Identifiant unique de la note"),
-        ("id_etudiant", "INTEGER", "FK", "Référence vers etudiants"),
-        ("id_cours", "INTEGER", "FK", "Référence vers cours"),
-        ("id_annee", "INTEGER", "FK", "Référence vers annees_academiques"),
-        ("type_evaluation", "VARCHAR(30)", "", "Examen / Contrôle continu / Rattrapage / Projet"),
-        ("note", "NUMERIC(4,2)", "", "Note obtenue, entre 0 et 20"),
-        ("date_evaluation", "DATE", "", "Date de l'évaluation"),
-    ],
+COUCHES = {
+    "raw":          ("1. Données brutes",   "Exports Apogée chargés tels quels"),
+    "referentiel":  ("2. Référentiel",      "Nomenclatures (libellés des codes)"),
+    "staging":      ("3. Staging",          "Données nettoyées, typées et dédoublonnées"),
+    "intermediate": ("4. Intermédiaire",    "Logique métier (parcours, étape principale)"),
+    "marts":        ("5. Marts",            "Modèle en étoile : dimensions et faits"),
+    "reporting":    ("6. Reporting",        "Tables exposées à Superset"),
 }
 
-HEADERS = ["Colonne", "Type", "Clé", "Description"]
-COL_WIDTHS = [26, 16, 8, 55]
+INDICATEURS = [
+    ("Effectif", "Nombre d'étudiants distincts ayant une inscription administrative valide (ETA_IAE = E).",
+     "COUNT(DISTINCT cod_ind) WHERE est_comptabilise"),
+    ("Nouveaux inscrits", "Étudiants dont c'est la première inscription observée (non calculable pour la première année de l'historique).",
+     "type_inscription = 'Nouvel inscrit'"),
+    ("Taux de redoublement", "Part des étudiants inscrits dans la même étape que l'année précédente.",
+     "redoublants / étudiants dont l'année précédente est connue"),
+    ("Taux de réinscription", "Part des étudiants de l'année N à nouveau inscrits en N+1.",
+     "réinscrits en N+1 / étudiants de N (hors dernière année)"),
+    ("Taux de sortie en cours de cycle", "Part des étudiants quittant l'université avant la fin de leur cycle (abandon probable).",
+     "statut_annee_suivante = 'Sortie en cours de cycle'"),
+    ("Part des femmes / des étrangers", "Part des étudiantes / des étudiants de nationalité non marocaine dans l'effectif.",
+     "femmes (ou étrangers) / effectif"),
+    ("Inscriptions aux modules", "Nombre de contrats pédagogiques (un étudiant inscrit à un module).",
+     "COUNT(*) sur rpt_inscriptions_pedagogiques"),
+    ("Saisie automatique", "Part des contrats créés par un traitement Apogée en masse (utilisateur batch).",
+     "type_saisie = 'Automatique'"),
+    ("Taux de prise en compte", "Part des contrats retenus pour le calcul des résultats (TEM_PRC_ICE = O).",
+     "est_pris_en_compte"),
+    ("Score de qualité", "Moyenne des taux de conformité des contrôles qualité.",
+     "AVG(taux_conformite_pct)"),
+]
+
+# --------------------------------------------------------------------- styles
+BLEU, GRIS, BLANC = "1F3864", "F2F2F2", "FFFFFF"
+POLICE = "Calibri"
+f_titre = Font(name=POLICE, bold=True, color=BLEU, size=16)
+f_sous_titre = Font(name=POLICE, italic=True, color="595959", size=10)
+f_entete = Font(name=POLICE, bold=True, color=BLANC, size=11)
+f_normal = Font(name=POLICE, size=10)
+fond_entete = PatternFill("solid", start_color=BLEU, end_color=BLEU)
+fond_gris = PatternFill("solid", start_color=GRIS, end_color=GRIS)
+trait = Side(style="thin", color="BFBFBF")
+bordure = Border(left=trait, right=trait, top=trait, bottom=trait)
 
 
-def style_header_row(ws, row, ncols):
-    for c in range(1, ncols + 1):
-        cell = ws.cell(row=row, column=c)
-        cell.font = header_font
-        cell.fill = header_fill
-        cell.border = border
-        cell.alignment = Alignment(vertical="center", wrap_text=True)
-
-
-def write_table_sheet(wb, sheet_name, columns):
-    ws = wb.create_sheet(sheet_name)
+def ecrire_tableau(ws, titre, entetes, lignes, largeurs):
     ws.sheet_view.showGridLines = False
+    ws["A1"] = titre
+    ws["A1"].font = f_titre
+    ws["A2"] = f"Généré automatiquement le {datetime.now():%d/%m/%Y à %H:%M}"
+    ws["A2"].font = f_sous_titre
 
-    # Titre
-    ws["A1"] = f"Table : {sheet_name}"
-    ws["A1"].font = title_font
-    ws.merge_cells("A1:D1")
+    ligne_entete = 4
+    for c, valeur in enumerate(entetes, start=1):
+        cellule = ws.cell(row=ligne_entete, column=c, value=valeur)
+        cellule.font, cellule.fill, cellule.border = f_entete, fond_entete, bordure
+        cellule.alignment = Alignment(vertical="center", wrap_text=True)
 
-    header_row = 3
-    for i, h in enumerate(HEADERS, start=1):
-        ws.cell(row=header_row, column=i, value=h)
-    style_header_row(ws, header_row, len(HEADERS))
+    for r, ligne in enumerate(lignes, start=ligne_entete + 1):
+        for c, valeur in enumerate(ligne, start=1):
+            cellule = ws.cell(row=r, column=c, value=valeur)
+            cellule.font, cellule.border = f_normal, bordure
+            cellule.alignment = Alignment(vertical="top", wrap_text=True)
+            if (r - ligne_entete) % 2 == 0:
+                cellule.fill = fond_gris
 
-    for r, (col, typ, key, desc) in enumerate(columns, start=header_row + 1):
-        values = [col, typ, key, desc]
-        for c, val in enumerate(values, start=1):
-            cell = ws.cell(row=r, column=c, value=val)
-            cell.font = normal_font
-            cell.border = border
-            cell.alignment = Alignment(vertical="center", wrap_text=(c == 4))
-            if key == "PK":
-                cell.fill = PatternFill(start_color="D9E1F2", end_color="D9E1F2", fill_type="solid")
-            elif (r - header_row) % 2 == 0:
-                cell.fill = PatternFill(start_color=LIGHT_BG, end_color=LIGHT_BG, fill_type="solid")
-
-    for i, w in enumerate(COL_WIDTHS, start=1):
-        ws.column_dimensions[get_column_letter(i)].width = w
-
-    ws.freeze_panes = f"A{header_row + 1}"
-    return ws
+    for i, largeur in enumerate(largeurs, start=1):
+        ws.column_dimensions[get_column_letter(i)].width = largeur
+    ws.freeze_panes = ws.cell(row=ligne_entete + 1, column=1)
+    if lignes:
+        ws.auto_filter.ref = f"A{ligne_entete}:{get_column_letter(len(entetes))}{ligne_entete + len(lignes)}"
 
 
-def write_summary_sheet(wb, tables):
-    ws = wb.active
-    ws.title = "Sommaire"
-    ws.sheet_view.showGridLines = False
+def main() -> None:
+    schemas = list(COUCHES)
+    with get_engine().connect() as cx:
+        tables = cx.execute(text("""
+            select n.nspname as schema, c.relname as nom,
+                   case c.relkind when 'v' then 'Vue' else 'Table' end as type,
+                   obj_description(c.oid, 'pg_class') as description
+            from pg_class c
+            join pg_namespace n on n.oid = c.relnamespace
+            where n.nspname = any(:schemas) and c.relkind in ('r', 'v')
+            order by n.nspname, c.relname
+        """), {"schemas": schemas}).mappings().all()
 
-    ws["A1"] = "Dictionnaire de Données — Système d'Information Académique"
-    ws["A1"].font = Font(name=FONT_NAME, bold=True, color=NAVY, size=16)
-    ws.merge_cells("A1:C1")
+        colonnes = cx.execute(text("""
+            select c.table_schema as schema, c.table_name as nom, c.ordinal_position as position,
+                   c.column_name as colonne, c.data_type as type,
+                   col_description(format('%I.%I', c.table_schema, c.table_name)::regclass,
+                                   c.ordinal_position) as description
+            from information_schema.columns c
+            where c.table_schema = any(:schemas)
+            order by c.table_schema, c.table_name, c.ordinal_position
+        """), {"schemas": schemas}).mappings().all()
 
-    ws["A3"] = "Table"
-    ws["B3"] = "Nombre de colonnes"
-    ws["C3"] = "Description"
-    style_header_row(ws, 3, 3)
+        volumes = {}
+        for t in tables:
+            volumes[(t["schema"], t["nom"])] = cx.execute(
+                text(f'select count(*) from "{t["schema"]}"."{t["nom"]}"')).scalar()
 
-    descriptions = {
-        "departements": "Unités administratives et académiques",
-        "formations": "Programmes d'études (filières)",
-        "enseignants": "Corps professoral",
-        "etudiants": "Profils individuels des étudiants",
-        "annees_academiques": "Référentiel temporel (année + semestre)",
-        "cours": "Unités d'enseignement",
-        "inscriptions": "Lien étudiant ↔ formation pour une période",
-        "notes": "Résultats d'évaluation des étudiants",
-    }
+        controles = cx.execute(text("""
+            select code_controle, libelle_controle, categorie, gravite, table_source
+            from referentiel.ref_controle_qualite order by code_controle
+        """)).all()
 
-    for r, (name, cols) in enumerate(tables.items(), start=4):
-        ws.cell(row=r, column=1, value=name).font = normal_font
-        ws.cell(row=r, column=2, value=len(cols)).font = normal_font
-        ws.cell(row=r, column=3, value=descriptions.get(name, "")).font = normal_font
-        for c in range(1, 4):
-            cell = ws.cell(row=r, column=c)
-            cell.border = border
-            if r % 2 == 0:
-                cell.fill = PatternFill(start_color=LIGHT_BG, end_color=LIGHT_BG, fill_type="solid")
+    # Une colonne sans description reprend celle d'une colonne de même nom documentée
+    # ailleurs (ex : cod_ind décrit dans raw.individu)
+    description_par_nom = {}
+    for col in colonnes:
+        if col["description"] and col["colonne"] not in description_par_nom:
+            description_par_nom[col["colonne"]] = col["description"]
+    colonnes = [dict(col, description=col["description"] or description_par_nom.get(col["colonne"], ""))
+                for col in colonnes]
 
-    ws.column_dimensions["A"].width = 26
-    ws.column_dimensions["B"].width = 20
-    ws.column_dimensions["C"].width = 50
+    nb_colonnes = {}
+    for col in colonnes:
+        nb_colonnes[(col["schema"], col["nom"])] = nb_colonnes.get((col["schema"], col["nom"]), 0) + 1
+
+    ordre = sorted(tables, key=lambda t: (COUCHES[t["schema"]][0], t["nom"]))
+    classeur = Workbook()
+
+    ecrire_tableau(
+        classeur.active, "Data Warehouse — Pilotage des inscriptions (Apogée)",
+        ["Couche", "Schéma", "Table", "Type", "Description", "Colonnes", "Lignes"],
+        [(COUCHES[t["schema"]][0], t["schema"], t["nom"], t["type"], t["description"] or "",
+          nb_colonnes.get((t["schema"], t["nom"]), 0), volumes[(t["schema"], t["nom"])]) for t in ordre],
+        [20, 14, 36, 8, 70, 10, 10],
+    )
+    classeur.active.title = "Sommaire"
+
+    ecrire_tableau(
+        classeur.create_sheet("Dictionnaire"), "Dictionnaire des colonnes",
+        ["Couche", "Table", "N°", "Colonne", "Type", "Description"],
+        [(COUCHES[c["schema"]][0], f'{c["schema"]}.{c["nom"]}', c["position"], c["colonne"], c["type"],
+          c["description"] or "") for c in sorted(colonnes, key=lambda c: (COUCHES[c["schema"]][0], c["nom"], c["position"]))],
+        [20, 44, 5, 30, 26, 80],
+    )
+
+    ecrire_tableau(
+        classeur.create_sheet("Indicateurs"), "Définition des indicateurs",
+        ["Indicateur", "Définition", "Mode de calcul"], INDICATEURS, [32, 80, 55],
+    )
+
+    ecrire_tableau(
+        classeur.create_sheet("Contrôles qualité"), "Catalogue des contrôles de qualité",
+        ["Code", "Contrôle", "Catégorie", "Gravité", "Table source"], [tuple(c) for c in controles],
+        [8, 60, 16, 16, 20],
+    )
+
+    SORTIE.parent.mkdir(parents=True, exist_ok=True)
+    classeur.save(SORTIE)
+    print(f"[DICO] {len(tables)} tables, {len(colonnes)} colonnes -> {SORTIE}")
 
 
-wb = Workbook()
-write_summary_sheet(wb, TABLES)
-for table_name, columns in TABLES.items():
-    write_table_sheet(wb, table_name, columns)
-
-wb.save("docs/Dictionnaire_Donnees_Academique.xlsx")
-print("OK - fichier généré")
+if __name__ == "__main__":
+    main()
