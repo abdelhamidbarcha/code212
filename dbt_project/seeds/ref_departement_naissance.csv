@@ -1,0 +1,21 @@
+cod_dep,lib_province,lib_region
+001,Marrakech,Marrakech-Safi
+002,Safi,Marrakech-Safi
+003,El Kelâa des Sraghna,Marrakech-Safi
+004,Essaouira,Marrakech-Safi
+005,Al Haouz,Marrakech-Safi
+006,Chichaoua,Marrakech-Safi
+007,Youssoufia,Marrakech-Safi
+008,Rehamna,Marrakech-Safi
+010,Béni Mellal,Béni Mellal-Khénifra
+011,Ouarzazate,Drâa-Tafilalet
+012,Zagora,Drâa-Tafilalet
+013,Agadir Ida-Outanane,Souss-Massa
+014,Casablanca,Casablanca-Settat
+015,El Jadida,Casablanca-Settat
+016,Rabat,Rabat-Salé-Kénitra
+017,Fès,Fès-Meknès
+018,Tanger-Assilah,Tanger-Tétouan-Al Hoceïma
+019,Laâyoune,Laâyoune-Sakia El Hamra
+020,Guelmim,Guelmim-Oued Noun
+099,Né(e) à l'étranger,Étranger

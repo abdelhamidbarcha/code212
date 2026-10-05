@@ -1,8 +1,31 @@
+# Python
 .venv/
+venv/
 __pycache__/
 *.pyc
-.env
-data/raw/*.csv
-data/processed/*.csv
-.DS_Store
 .ipynb_checkpoints/
+
+# Secrets
+.env
+.env.backup
+
+# Données générées
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# dbt (artefacts générés)
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
+
+# Logs
+logs/
+*.log
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

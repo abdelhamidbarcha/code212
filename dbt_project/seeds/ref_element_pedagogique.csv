@@ -1,0 +1,265 @@
+cod_elp,lib_elp,cod_etp,semestre,nature_elp
+SMI1011,Algorithmique,SMI1,S1,Module
+SMI1012,Programmation en C,SMI1,S1,Module
+SMI1013,Analyse mathématique,SMI1,S1,Module
+SMI1021,Algèbre linéaire,SMI1,S2,Module
+SMI1022,Architecture des ordinateurs,SMI1,S2,Module
+SMI1023,Bases de données,SMI1,S2,Module
+SMI2031,Systèmes d'exploitation,SMI2,S3,Module
+SMI2032,Réseaux informatiques,SMI2,S3,Module
+SMI2033,Programmation orientée objet,SMI2,S3,Module
+SMI2041,Génie logiciel,SMI2,S4,Module
+SMI2042,Développement web,SMI2,S4,Module
+SMI2043,Intelligence artificielle,SMI2,S4,Module
+SMI3051,Algorithmique (approfondissement),SMI3,S5,Module
+SMI3052,Programmation en C (approfondissement),SMI3,S5,Module
+SMI3053,Analyse mathématique (approfondissement),SMI3,S5,Module
+SMI3061,Algèbre linéaire (approfondissement),SMI3,S6,Module
+SMI3062,Architecture des ordinateurs (approfondissement),SMI3,S6,Module
+SMI3063,Bases de données (approfondissement),SMI3,S6,Module
+SMP1011,Mécanique du point,SMP1,S1,Module
+SMP1012,Thermodynamique,SMP1,S1,Module
+SMP1013,Électricité,SMP1,S1,Module
+SMP1021,Optique,SMP1,S2,Module
+SMP1022,Analyse,SMP1,S2,Module
+SMP1023,Algèbre,SMP1,S2,Module
+SMP2031,Électromagnétisme,SMP2,S3,Module
+SMP2032,Mécanique quantique,SMP2,S3,Module
+SMP2033,Physique des matériaux,SMP2,S3,Module
+SMP2041,Probabilités et statistiques,SMP2,S4,Module
+SMP2042,Méthodes numériques,SMP2,S4,Module
+SMP2043,Physique nucléaire,SMP2,S4,Module
+SMP3051,Mécanique du point (approfondissement),SMP3,S5,Module
+SMP3052,Thermodynamique (approfondissement),SMP3,S5,Module
+SMP3053,Électricité (approfondissement),SMP3,S5,Module
+SMP3061,Optique (approfondissement),SMP3,S6,Module
+SMP3062,Analyse (approfondissement),SMP3,S6,Module
+SMP3063,Algèbre (approfondissement),SMP3,S6,Module
+SVT1011,Biologie cellulaire,SVT1,S1,Module
+SVT1012,Géologie générale,SVT1,S1,Module
+SVT1013,Chimie générale,SVT1,S1,Module
+SVT1021,Biologie animale,SVT1,S2,Module
+SVT1022,Biologie végétale,SVT1,S2,Module
+SVT1023,Biochimie,SVT1,S2,Module
+SVT2031,Génétique,SVT2,S3,Module
+SVT2032,Microbiologie,SVT2,S3,Module
+SVT2033,Écologie,SVT2,S3,Module
+SVT2041,Physiologie,SVT2,S4,Module
+SVT2042,Immunologie,SVT2,S4,Module
+SVT2043,Biotechnologie,SVT2,S4,Module
+SVT3051,Biologie cellulaire (approfondissement),SVT3,S5,Module
+SVT3052,Géologie générale (approfondissement),SVT3,S5,Module
+SVT3053,Chimie générale (approfondissement),SVT3,S5,Module
+SVT3061,Biologie animale (approfondissement),SVT3,S6,Module
+SVT3062,Biologie végétale (approfondissement),SVT3,S6,Module
+SVT3063,Biochimie (approfondissement),SVT3,S6,Module
+MSD1011,Algorithmique,MSD1,S1,Module
+MSD1012,Programmation en C,MSD1,S1,Module
+MSD1013,Analyse mathématique,MSD1,S1,Module
+MSD1021,Algèbre linéaire,MSD1,S2,Module
+MSD1022,Architecture des ordinateurs,MSD1,S2,Module
+MSD1023,Bases de données,MSD1,S2,Module
+MSD2031,Systèmes d'exploitation,MSD2,S3,Module
+MSD2032,Réseaux informatiques,MSD2,S3,Module
+MSD2033,Programmation orientée objet,MSD2,S3,Module
+MSD2041,Génie logiciel,MSD2,S4,Module
+MSD2042,Développement web,MSD2,S4,Module
+MSD2043,Intelligence artificielle,MSD2,S4,Module
+DRF1011,Introduction au droit,DRF1,S1,Module
+DRF1012,Droit constitutionnel,DRF1,S1,Module
+DRF1013,Droit civil,DRF1,S1,Module
+DRF1021,Droit administratif,DRF1,S2,Module
+DRF1022,Droit pénal,DRF1,S2,Module
+DRF1023,Droit commercial,DRF1,S2,Module
+DRF2031,Droit du travail,DRF2,S3,Module
+DRF2032,Procédure civile,DRF2,S3,Module
+DRF2033,Droit international public,DRF2,S3,Module
+DRF2041,Droit des sociétés,DRF2,S4,Module
+DRF2042,Droit fiscal,DRF2,S4,Module
+DRF2043,Contentieux administratif,DRF2,S4,Module
+DRF3051,Introduction au droit (approfondissement),DRF3,S5,Module
+DRF3052,Droit constitutionnel (approfondissement),DRF3,S5,Module
+DRF3053,Droit civil (approfondissement),DRF3,S5,Module
+DRF3061,Droit administratif (approfondissement),DRF3,S6,Module
+DRF3062,Droit pénal (approfondissement),DRF3,S6,Module
+DRF3063,Droit commercial (approfondissement),DRF3,S6,Module
+SEG1011,Microéconomie,SEG1,S1,Module
+SEG1012,Macroéconomie,SEG1,S1,Module
+SEG1013,Comptabilité générale,SEG1,S1,Module
+SEG1021,Mathématiques financières,SEG1,S2,Module
+SEG1022,Statistiques descriptives,SEG1,S2,Module
+SEG1023,Management,SEG1,S2,Module
+SEG2031,Marketing,SEG2,S3,Module
+SEG2032,Comptabilité analytique,SEG2,S3,Module
+SEG2033,Finance d'entreprise,SEG2,S3,Module
+SEG2041,Économie monétaire,SEG2,S4,Module
+SEG2042,Contrôle de gestion,SEG2,S4,Module
+SEG2043,Audit,SEG2,S4,Module
+SEG3051,Microéconomie (approfondissement),SEG3,S5,Module
+SEG3052,Macroéconomie (approfondissement),SEG3,S5,Module
+SEG3053,Comptabilité générale (approfondissement),SEG3,S5,Module
+SEG3061,Mathématiques financières (approfondissement),SEG3,S6,Module
+SEG3062,Statistiques descriptives (approfondissement),SEG3,S6,Module
+SEG3063,Management (approfondissement),SEG3,S6,Module
+MFI1011,Microéconomie,MFI1,S1,Module
+MFI1012,Macroéconomie,MFI1,S1,Module
+MFI1013,Comptabilité générale,MFI1,S1,Module
+MFI1021,Mathématiques financières,MFI1,S2,Module
+MFI1022,Statistiques descriptives,MFI1,S2,Module
+MFI1023,Management,MFI1,S2,Module
+MFI2031,Marketing,MFI2,S3,Module
+MFI2032,Comptabilité analytique,MFI2,S3,Module
+MFI2033,Finance d'entreprise,MFI2,S3,Module
+MFI2041,Économie monétaire,MFI2,S4,Module
+MFI2042,Contrôle de gestion,MFI2,S4,Module
+MFI2043,Audit,MFI2,S4,Module
+ETA1011,Grammaire,ETA1,S1,Module
+ETA1012,Phonétique,ETA1,S1,Module
+ETA1013,Expression écrite,ETA1,S1,Module
+ETA1021,Littérature,ETA1,S2,Module
+ETA1022,Linguistique générale,ETA1,S2,Module
+ETA1023,Traduction,ETA1,S2,Module
+ETA2031,Civilisation,ETA2,S3,Module
+ETA2032,Analyse du discours,ETA2,S3,Module
+ETA2033,Sociolinguistique,ETA2,S3,Module
+ETA2041,Didactique,ETA2,S4,Module
+ETA2042,Littérature comparée,ETA2,S4,Module
+ETA2043,Méthodologie de recherche,ETA2,S4,Module
+ETA3051,Grammaire (approfondissement),ETA3,S5,Module
+ETA3052,Phonétique (approfondissement),ETA3,S5,Module
+ETA3053,Expression écrite (approfondissement),ETA3,S5,Module
+ETA3061,Littérature (approfondissement),ETA3,S6,Module
+ETA3062,Linguistique générale (approfondissement),ETA3,S6,Module
+ETA3063,Traduction (approfondissement),ETA3,S6,Module
+ETF1011,Grammaire,ETF1,S1,Module
+ETF1012,Phonétique,ETF1,S1,Module
+ETF1013,Expression écrite,ETF1,S1,Module
+ETF1021,Littérature,ETF1,S2,Module
+ETF1022,Linguistique générale,ETF1,S2,Module
+ETF1023,Traduction,ETF1,S2,Module
+ETF2031,Civilisation,ETF2,S3,Module
+ETF2032,Analyse du discours,ETF2,S3,Module
+ETF2033,Sociolinguistique,ETF2,S3,Module
+ETF2041,Didactique,ETF2,S4,Module
+ETF2042,Littérature comparée,ETF2,S4,Module
+ETF2043,Méthodologie de recherche,ETF2,S4,Module
+ETF3051,Grammaire (approfondissement),ETF3,S5,Module
+ETF3052,Phonétique (approfondissement),ETF3,S5,Module
+ETF3053,Expression écrite (approfondissement),ETF3,S5,Module
+ETF3061,Littérature (approfondissement),ETF3,S6,Module
+ETF3062,Linguistique générale (approfondissement),ETF3,S6,Module
+ETF3063,Traduction (approfondissement),ETF3,S6,Module
+LGI1011,Algorithmique,LGI1,S1,Module
+LGI1012,Programmation en C,LGI1,S1,Module
+LGI1013,Analyse mathématique,LGI1,S1,Module
+LGI1021,Algèbre linéaire,LGI1,S2,Module
+LGI1022,Architecture des ordinateurs,LGI1,S2,Module
+LGI1023,Bases de données,LGI1,S2,Module
+LGI2031,Systèmes d'exploitation,LGI2,S3,Module
+LGI2032,Réseaux informatiques,LGI2,S3,Module
+LGI2033,Programmation orientée objet,LGI2,S3,Module
+LGI2041,Génie logiciel,LGI2,S4,Module
+LGI2042,Développement web,LGI2,S4,Module
+LGI2043,Intelligence artificielle,LGI2,S4,Module
+LGI3051,Algorithmique (approfondissement),LGI3,S5,Module
+LGI3052,Programmation en C (approfondissement),LGI3,S5,Module
+LGI3053,Analyse mathématique (approfondissement),LGI3,S5,Module
+LGI3061,Algèbre linéaire (approfondissement),LGI3,S6,Module
+LGI3062,Architecture des ordinateurs (approfondissement),LGI3,S6,Module
+LGI3063,Bases de données (approfondissement),LGI3,S6,Module
+LGC1011,Résistance des matériaux,LGC1,S1,Module
+LGC1012,Topographie,LGC1,S1,Module
+LGC1013,Mécanique des sols,LGC1,S1,Module
+LGC1021,Béton armé,LGC1,S2,Module
+LGC1022,Hydraulique,LGC1,S2,Module
+LGC1023,Dessin technique,LGC1,S2,Module
+LGC2031,Construction métallique,LGC2,S3,Module
+LGC2032,Routes et ouvrages,LGC2,S3,Module
+LGC2033,Géotechnique,LGC2,S3,Module
+LGC2041,Gestion de chantier,LGC2,S4,Module
+LGC2042,Calcul des structures,LGC2,S4,Module
+LGC2043,Modélisation BIM,LGC2,S4,Module
+LGC3051,Résistance des matériaux (approfondissement),LGC3,S5,Module
+LGC3052,Topographie (approfondissement),LGC3,S5,Module
+LGC3053,Mécanique des sols (approfondissement),LGC3,S5,Module
+LGC3061,Béton armé (approfondissement),LGC3,S6,Module
+LGC3062,Hydraulique (approfondissement),LGC3,S6,Module
+LGC3063,Dessin technique (approfondissement),LGC3,S6,Module
+CPI1011,Mécanique du point,CPI1,S1,Module
+CPI1012,Thermodynamique,CPI1,S1,Module
+CPI1013,Électricité,CPI1,S1,Module
+CPI1021,Optique,CPI1,S2,Module
+CPI1022,Analyse,CPI1,S2,Module
+CPI1023,Algèbre,CPI1,S2,Module
+CPI2031,Électromagnétisme,CPI2,S3,Module
+CPI2032,Mécanique quantique,CPI2,S3,Module
+CPI2033,Physique des matériaux,CPI2,S3,Module
+CPI2041,Probabilités et statistiques,CPI2,S4,Module
+CPI2042,Méthodes numériques,CPI2,S4,Module
+CPI2043,Physique nucléaire,CPI2,S4,Module
+GIN1011,Algorithmique,GIN1,S1,Module
+GIN1012,Programmation en C,GIN1,S1,Module
+GIN1013,Analyse mathématique,GIN1,S1,Module
+GIN1021,Algèbre linéaire,GIN1,S2,Module
+GIN1022,Architecture des ordinateurs,GIN1,S2,Module
+GIN1023,Bases de données,GIN1,S2,Module
+GIN2031,Systèmes d'exploitation,GIN2,S3,Module
+GIN2032,Réseaux informatiques,GIN2,S3,Module
+GIN2033,Programmation orientée objet,GIN2,S3,Module
+GIN2041,Génie logiciel,GIN2,S4,Module
+GIN2042,Développement web,GIN2,S4,Module
+GIN2043,Intelligence artificielle,GIN2,S4,Module
+GIN3051,Algorithmique (approfondissement),GIN3,S5,Module
+GIN3052,Programmation en C (approfondissement),GIN3,S5,Module
+GIN3053,Analyse mathématique (approfondissement),GIN3,S5,Module
+GIN3061,Algèbre linéaire (approfondissement),GIN3,S6,Module
+GIN3062,Architecture des ordinateurs (approfondissement),GIN3,S6,Module
+GIN3063,Bases de données (approfondissement),GIN3,S6,Module
+GCV1011,Résistance des matériaux,GCV1,S1,Module
+GCV1012,Topographie,GCV1,S1,Module
+GCV1013,Mécanique des sols,GCV1,S1,Module
+GCV1021,Béton armé,GCV1,S2,Module
+GCV1022,Hydraulique,GCV1,S2,Module
+GCV1023,Dessin technique,GCV1,S2,Module
+GCV2031,Construction métallique,GCV2,S3,Module
+GCV2032,Routes et ouvrages,GCV2,S3,Module
+GCV2033,Géotechnique,GCV2,S3,Module
+GCV2041,Gestion de chantier,GCV2,S4,Module
+GCV2042,Calcul des structures,GCV2,S4,Module
+GCV2043,Modélisation BIM,GCV2,S4,Module
+GCV3051,Résistance des matériaux (approfondissement),GCV3,S5,Module
+GCV3052,Topographie (approfondissement),GCV3,S5,Module
+GCV3053,Mécanique des sols (approfondissement),GCV3,S5,Module
+GCV3061,Béton armé (approfondissement),GCV3,S6,Module
+GCV3062,Hydraulique (approfondissement),GCV3,S6,Module
+GCV3063,Dessin technique (approfondissement),GCV3,S6,Module
+PGE1011,Microéconomie,PGE1,S1,Module
+PGE1012,Macroéconomie,PGE1,S1,Module
+PGE1013,Comptabilité générale,PGE1,S1,Module
+PGE1021,Mathématiques financières,PGE1,S2,Module
+PGE1022,Statistiques descriptives,PGE1,S2,Module
+PGE1023,Management,PGE1,S2,Module
+PGE2031,Marketing,PGE2,S3,Module
+PGE2032,Comptabilité analytique,PGE2,S3,Module
+PGE2033,Finance d'entreprise,PGE2,S3,Module
+PGE2041,Économie monétaire,PGE2,S4,Module
+PGE2042,Contrôle de gestion,PGE2,S4,Module
+PGE2043,Audit,PGE2,S4,Module
+PGE3051,Microéconomie (approfondissement),PGE3,S5,Module
+PGE3052,Macroéconomie (approfondissement),PGE3,S5,Module
+PGE3053,Comptabilité générale (approfondissement),PGE3,S5,Module
+PGE3061,Mathématiques financières (approfondissement),PGE3,S6,Module
+PGE3062,Statistiques descriptives (approfondissement),PGE3,S6,Module
+PGE3063,Management (approfondissement),PGE3,S6,Module
+PGE4071,Marketing (approfondissement),PGE4,S7,Module
+PGE4072,Comptabilité analytique (approfondissement),PGE4,S7,Module
+PGE4073,Finance d'entreprise (approfondissement),PGE4,S7,Module
+PGE4081,Économie monétaire (approfondissement),PGE4,S8,Module
+PGE4082,Contrôle de gestion (approfondissement),PGE4,S8,Module
+PGE4083,Audit (approfondissement),PGE4,S8,Module
+PGE5091,Microéconomie (approfondissement),PGE5,S9,Module
+PGE5092,Macroéconomie (approfondissement),PGE5,S9,Module
+PGE5093,Comptabilité générale (approfondissement),PGE5,S9,Module
+PGE5101,Mathématiques financières (approfondissement),PGE5,S10,Module
+PGE5102,Statistiques descriptives (approfondissement),PGE5,S10,Module
+PGE5103,Management (approfondissement),PGE5,S10,Module

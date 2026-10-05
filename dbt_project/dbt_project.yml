@@ -1,28 +1,84 @@
+# =====================================================================
+#  Projet dbt — Pilotage des inscriptions (données Apogée)
+# =====================================================================
 name: 'dcode212_academique'
-version: '1.0.0'
+version: '2.0.0'
 config-version: 2
-
 profile: 'dcode212_academique'
 
 model-paths: ["models"]
-analysis-paths: ["analyses"]
-test-paths: ["tests"]
 seed-paths: ["seeds"]
+test-paths: ["tests"]
 macro-paths: ["macros"]
+analysis-paths: ["analyses"]
 snapshot-paths: ["snapshots"]
+clean-targets: ["target", "dbt_packages"]
 
-clean-targets:
-  - "target"
-  - "dbt_packages"
+flags:
+  send_anonymous_usage_stats: false
 
+# Accès en lecture seule de Superset au schéma reporting (voir macros/accorder_acces_bi.sql)
+on-run-end:
+  - "{{ accorder_acces_bi() }}"
+
+# ---------------------------------------------------------------------
+#  Modèles : un schéma PostgreSQL par couche
+# ---------------------------------------------------------------------
 models:
   dcode212_academique:
-    staging:
-      +materialized: view
+    # Les descriptions dbt sont copiées en commentaires PostgreSQL (visibles dans
+    # Superset, DBeaver, et utilisées par le dictionnaire de données)
+    +persist_docs:
+      relation: true
+      columns: true
+    staging:            # nettoyage / typage / dédoublonnage des sources
       +schema: staging
-    intermediate:
-      +materialized: view
+      +materialized: table   # tables (et non vues) : le dédoublonnage n'est calculé qu'une fois
+    intermediate:       # logique métier réutilisable
       +schema: intermediate
-    marts:
-      +materialized: table
+      +materialized: view
+    marts:              # modèle en étoile (dimensions + faits)
       +schema: marts
+      +materialized: table
+    reporting:          # tables "prêtes à l'emploi" pour Superset (seul schéma exposé à la BI)
+      +schema: reporting
+      +materialized: table
+# ---------------------------------------------------------------------
+#  Seeds : nomenclatures (libellés) — à remplacer par celles de l'université
+#  Les codes sont forcés en texte pour conserver les zéros initiaux (ex : "001").
+# ---------------------------------------------------------------------
+seeds:
+  dcode212_academique:
+    +persist_docs:
+      relation: true
+      columns: true
+    +schema: referentiel
+    +quote_columns: false
+    ref_composante:
+      +column_types: {cod_cmp: text, lib_cmp: text, type_etablissement: text, mode_acces: text}
+    ref_etape:
+      +column_types: {cod_etp: text, cod_vrs_vet: text, lib_etp: text, cod_cmp: text, cod_filiere: text,
+                      lib_filiere: text, cycle: text, annee_etude: integer, duree_cycle: integer,
+                      est_annee_terminale: text}
+    ref_element_pedagogique:
+      +column_types: {cod_elp: text, lib_elp: text, cod_etp: text, semestre: text, nature_elp: text}
+    ref_pays:
+      +column_types: {cod_pay: text, lib_pays: text, lib_nationalite: text, zone_geographique: text}
+    ref_departement_naissance:
+      +column_types: {cod_dep: text, lib_province: text, lib_region: text}
+    ref_etat_iae:
+      +column_types: {eta_iae: text, lib_etat_iae: text, compte_dans_effectif: text}
+    ref_controle_qualite:
+      +column_types: {code_controle: text, libelle_controle: text, categorie: text, gravite: text, table_source: text}
+
+
+# ---------------------------------------------------------------------
+#  Variables métier (adaptables aux conventions de l'université)
+# ---------------------------------------------------------------------
+vars:
+  # Codes utilisateur Apogée correspondant à des traitements automatiques (saisie en masse)
+  utilisateurs_batch: ['APOBATCH']
+  # Mois de référence pour le calcul de l'âge à l'inscription (octobre de l'année universitaire)
+  mois_reference_age: 10
+  # Rôle PostgreSQL en lecture seule utilisé par Superset
+  role_bi: 'bi_lecteur'

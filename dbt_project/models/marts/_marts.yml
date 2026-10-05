@@ -1,56 +1,133 @@
 version: 2
 
 models:
-  - name: dim_temps
-    description: "Dimension temporelle : années académiques et semestres."
+  # =================================================================
+  #  DIMENSIONS
+  # =================================================================
+  - name: dim_annee_universitaire
+    description: "Dimension temps : années universitaires (COD_ANU = année de début)."
     columns:
-      - name: id_annee
-        tests: [unique, not_null]
+      - name: cod_anu
+        description: "Année de début (2024 = 2024-2025)."
+        data_tests: [unique, not_null]
+      - name: lib_annee_universitaire
+        description: "Libellé, ex : 2024-2025."
+      - name: est_derniere_annee
+        description: "Vrai pour l'année universitaire la plus récente."
+      - name: anciennete
+        description: "0 = dernière année, 1 = année précédente, etc."
+
+  - name: dim_composante
+    description: "Dimension composante (faculté / école)."
+    columns:
+      - name: cod_cmp
+        data_tests: [unique, not_null]
+      - name: est_referencee
+        description: "Faux si le code n'existe pas dans le référentiel (à compléter)."
+
+  - name: dim_etape
+    description: "Dimension étape (année d'une filière, par version). Clé : cod_etp-cod_vrs_vet."
+    columns:
+      - name: cle_etape
+        data_tests: [unique, not_null]
+      - name: cycle
+        description: "Licence, Master, Cycle préparatoire, Cycle ingénieur, Grande École."
+      - name: est_annee_terminale
+        description: "Vrai pour la dernière année du cycle."
+
+  - name: dim_element_pedagogique
+    description: "Dimension élément pédagogique (module)."
+    columns:
+      - name: cod_elp
+        data_tests: [unique, not_null]
 
   - name: dim_etudiant
-    description: "Dimension étudiant : profil dénormalisé prêt pour la BI."
+    description: >
+      Dimension étudiant (profil démographique). L'email et l'INE ne sont pas
+      exposés (protection des données personnelles, loi 09-08).
     columns:
-      - name: id_etudiant
-        tests: [unique, not_null]
+      - name: cod_ind
+        data_tests: [unique, not_null]
+      - name: sexe
+        data_tests:
+          - accepted_values:
+              values: ['Femme', 'Homme', 'Non renseigné']
+      - name: est_etranger
+        description: "Vrai si la nationalité n'est pas marocaine."
 
-  - name: dim_formation
-    description: "Dimension formation : profil dénormalisé incluant département et faculté."
+  # =================================================================
+  #  FAITS
+  # =================================================================
+  - name: fct_inscription_administrative
+    description: >
+      Inscriptions administratives. Grain : (cod_ind, cod_anu, cod_cmp).
+      Effectif = COUNT(DISTINCT cod_ind) WHERE est_comptabilise.
+    data_tests:
+      - unique_combinaison:
+          colonnes: [cod_ind, cod_anu, cod_cmp]
     columns:
-      - name: id_formation
-        tests: [unique, not_null]
-
-  - name: dim_cours
-    description: "Dimension cours : profil dénormalisé incluant enseignant et formation."
-    columns:
-      - name: id_cours
-        tests: [unique, not_null]
-
-  - name: fct_performance_academique
-    description: "Table de faits : une ligne par évaluation. Grain = id_note."
-    columns:
-      - name: id_note
-        tests: [unique, not_null]
-      - name: id_etudiant
-        tests:
+      - name: cod_ind
+        data_tests:
           - relationships:
               to: ref('dim_etudiant')
-              field: id_etudiant
-      - name: id_cours
-        tests:
+              field: cod_ind
+      - name: cod_anu
+        data_tests:
           - relationships:
-              to: ref('dim_cours')
-              field: id_cours
-      - name: id_formation
-        tests:
+              to: ref('dim_annee_universitaire')
+              field: cod_anu
+      - name: cod_cmp
+        data_tests:
           - relationships:
-              to: ref('dim_formation')
-              field: id_formation
-      - name: id_annee
-        tests:
+              to: ref('dim_composante')
+              field: cod_cmp
+      - name: cle_etape
+        description: "Étape principale de l'année (NULL si aucun contrat pédagogique)."
+        data_tests:
           - relationships:
-              to: ref('dim_temps')
-              field: id_annee
-      - name: mention
-        tests:
+              to: ref('dim_etape')
+              field: cle_etape
+      - name: est_comptabilise
+        description: "Vrai si l'inscription compte dans les effectifs officiels."
+      - name: tranche_age
+        data_tests:
           - accepted_values:
-              values: ["Insuffisant", "Passable", "Assez Bien", "Bien", "Très Bien"]
+              values: ['Moins de 18 ans', '18-20 ans', '21-23 ans', '24-26 ans', '27 ans et plus', 'Non renseigné']
+      - name: type_inscription
+        description: "Nouvel inscrit / Réinscrit / Non déterminé (première année de l'historique)."
+      - name: statut_annee_suivante
+        description: "Devenir de l'étudiant l'année suivante (passage, redoublement, sortie...)."
+
+  - name: fct_inscription_pedagogique
+    description: "Inscriptions pédagogiques. Grain : (cod_ind, cod_anu, cle_etape, cod_elp)."
+    data_tests:
+      - unique_combinaison:
+          colonnes: [cod_ind, cod_anu, cle_etape, cod_elp]
+    columns:
+      - name: cod_ind
+        data_tests:
+          - relationships:
+              to: ref('dim_etudiant')
+              field: cod_ind
+      - name: cod_anu
+        data_tests:
+          - relationships:
+              to: ref('dim_annee_universitaire')
+              field: cod_anu
+      - name: cle_etape
+        data_tests:
+          - relationships:
+              to: ref('dim_etape')
+              field: cle_etape
+      - name: cod_elp
+        data_tests:
+          - relationships:
+              to: ref('dim_element_pedagogique')
+              field: cod_elp
+      - name: type_saisie
+        description: "Automatique (traitement batch) ou Manuelle (agent de scolarité)."
+        data_tests:
+          - accepted_values:
+              values: ['Automatique', 'Manuelle']
+      - name: a_inscription_administrative
+        description: "Faux = anomalie : contrat sans inscription administrative la même année."

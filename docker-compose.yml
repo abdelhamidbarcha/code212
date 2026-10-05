@@ -1,4 +1,30 @@
+# ---------- Configuration commune aux services Airflow ----------
+x-airflow-common: &airflow-common
+  build: .
+  env_file: .env
+  environment:
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/airflow_db
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__WEBSERVER__SECRET_KEY: ${AIRFLOW_SECRET_KEY}
+    AIRFLOW__CORE__DEFAULT_TIMEZONE: Africa/Casablanca
+    TZ: Africa/Casablanca
+    DBT_PROJECT_DIR: /opt/airflow/dbt_project
+    DBT_PROFILES_DIR: /opt/airflow/dbt_project
+    DBT_TARGET_PATH: /opt/airflow/dbt_target/target
+    DBT_LOG_PATH: /opt/airflow/dbt_target/logs
+    AIRFLOW__WEBSERVER__DEFAULT_UI_TIMEZONE: Africa/Casablanca
+  volumes:
+    - ./airflow/dags:/opt/airflow/dags
+    - ./src:/opt/airflow/src
+    - ./sql:/opt/airflow/sql
+    - ./data:/opt/airflow/data
+    - ./dbt_project:/opt/airflow/dbt_project
+    - airflow_logs:/opt/airflow/logs
+    - ./docs:/opt/airflow/docs
+
 services:
+  # ---------------- PostgreSQL ----------------
   postgres:
     image: postgres:16
     container_name: postgres_dwh
@@ -7,6 +33,8 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: postgres
       POSTGRES_MULTIPLE_DATABASES: "etudiants_db,airflow_db,superset_db"
+      TZ: Africa/Casablanca
+      BI_PASSWORD: ${BI_PASSWORD}
     volumes:
       - ./docker/init-multiple-databases.sh:/docker-entrypoint-initdb.d/init-multiple-databases.sh
       - postgres_data:/var/lib/postgresql/data
@@ -15,91 +43,81 @@ services:
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d postgres"]
       interval: 5s
-      retries: 5
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
 
+  # ---------------- Airflow ----------------
   airflow-init:
-    image: apache/airflow:2.9.1-python3.11
+    <<: *airflow-common
     container_name: airflow_init
     depends_on:
-      - postgres
-    environment:
-      AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${DB_USER}:${DB_PASSWORD}@postgres/airflow_db
-      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      postgres:
+        condition: service_healthy
     entrypoint: /bin/bash
     command:
       - -c
       - |
-        airflow db migrate
-        airflow users create \
-          --username admin --password admin \
+        airflow db migrate &&
+        (airflow users create \
+          --username "$${AIRFLOW_ADMIN_USER}" --password "$${AIRFLOW_ADMIN_PASSWORD}" \
           --firstname Admin --lastname Admin \
-          --role Admin --email admin@example.com
+          --role Admin --email admin@example.com || true)
+    restart: "no"
 
   airflow-webserver:
-    build: .
+    <<: *airflow-common
     container_name: airflow_webserver
     depends_on:
-      - airflow-init
-    environment:
-      AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${DB_USER}:${DB_PASSWORD}@postgres/airflow_db
-      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
-    volumes:
-      - ./airflow/dags:/opt/airflow/dags
-      - ./src:/opt/airflow/src
-      - ./data:/opt/airflow/data
-      - airflow_logs:/opt/airflow/logs
-      - ./dbt_project:/opt/airflow/dbt_project
+      postgres:
+        condition: service_healthy
+      airflow-init:
+        condition: service_completed_successfully
+    command: webserver
     ports:
       - "8080:8080"
-    command: webserver
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
 
   airflow-scheduler:
-    build: .
+    <<: *airflow-common
     container_name: airflow_scheduler
     depends_on:
-      - airflow-init
-    environment:
-      AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${DB_USER}:${DB_PASSWORD}@postgres/airflow_db
-      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
-    volumes:
-      - ./airflow/dags:/opt/airflow/dags
-      - ./src:/opt/airflow/src
-      - ./data:/opt/airflow/data
-      - airflow_logs:/opt/airflow/logs
-      - ./dbt_project:/opt/airflow/dbt_project
+      postgres:
+        condition: service_healthy
+      airflow-init:
+        condition: service_completed_successfully
     command: scheduler
+    restart: unless-stopped
 
+  # ---------------- Superset ----------------
   superset-init:
     image: apache/superset:latest
     container_name: superset_init
     user: root
+    env_file: .env
     environment:
       SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY}
-      DB_HOST: ${DB_HOST}
-      DB_PORT: ${DB_PORT}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
     volumes:
       - ./superset/superset_config.py:/app/pythonpath/superset_config.py
       - ./docker/requirements-local.txt:/app/docker/requirements-local.txt
       - superset_home:/app/superset_home
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     command: ["/app/docker/docker-init.sh"]
 
   superset:
     image: apache/superset:latest
     container_name: superset_bi
     user: root
+    env_file: .env
     environment:
       SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY}
-      DB_HOST: ${DB_HOST}
-      DB_PORT: ${DB_PORT}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
     volumes:
       - ./superset/superset_config.py:/app/pythonpath/superset_config.py
       - ./docker/requirements-local.txt:/app/docker/requirements-local.txt
@@ -107,8 +125,12 @@ services:
     ports:
       - "8088:8088"
     depends_on:
-      - superset-init
+      postgres:
+        condition: service_healthy
+      superset-init:
+        condition: service_completed_successfully
     command: ["/app/docker/docker-bootstrap.sh", "app-gunicorn"]
+    restart: unless-stopped
 
 volumes:
   postgres_data:

@@ -1,0 +1,72 @@
+cod_etp,cod_vrs_vet,lib_etp,cod_cmp,cod_filiere,lib_filiere,cycle,annee_etude,duree_cycle,est_annee_terminale
+SMI1,1,Licence Sciences Mathématiques et Informatique - 1ère année,FS,SMI,Sciences Mathématiques et Informatique,Licence,1,3,N
+SMI1,2,Licence Sciences Mathématiques et Informatique - 1ère année,FS,SMI,Sciences Mathématiques et Informatique,Licence,1,3,N
+SMI2,1,Licence Sciences Mathématiques et Informatique - 2ème année,FS,SMI,Sciences Mathématiques et Informatique,Licence,2,3,N
+SMI2,2,Licence Sciences Mathématiques et Informatique - 2ème année,FS,SMI,Sciences Mathématiques et Informatique,Licence,2,3,N
+SMI3,1,Licence Sciences Mathématiques et Informatique - 3ème année,FS,SMI,Sciences Mathématiques et Informatique,Licence,3,3,O
+SMI3,2,Licence Sciences Mathématiques et Informatique - 3ème année,FS,SMI,Sciences Mathématiques et Informatique,Licence,3,3,O
+SMP1,1,Licence Sciences de la Matière Physique - 1ère année,FS,SMP,Sciences de la Matière Physique,Licence,1,3,N
+SMP1,2,Licence Sciences de la Matière Physique - 1ère année,FS,SMP,Sciences de la Matière Physique,Licence,1,3,N
+SMP2,1,Licence Sciences de la Matière Physique - 2ème année,FS,SMP,Sciences de la Matière Physique,Licence,2,3,N
+SMP2,2,Licence Sciences de la Matière Physique - 2ème année,FS,SMP,Sciences de la Matière Physique,Licence,2,3,N
+SMP3,1,Licence Sciences de la Matière Physique - 3ème année,FS,SMP,Sciences de la Matière Physique,Licence,3,3,O
+SMP3,2,Licence Sciences de la Matière Physique - 3ème année,FS,SMP,Sciences de la Matière Physique,Licence,3,3,O
+SVT1,1,Licence Sciences de la Vie et de la Terre - 1ère année,FS,SVT,Sciences de la Vie et de la Terre,Licence,1,3,N
+SVT1,2,Licence Sciences de la Vie et de la Terre - 1ère année,FS,SVT,Sciences de la Vie et de la Terre,Licence,1,3,N
+SVT2,1,Licence Sciences de la Vie et de la Terre - 2ème année,FS,SVT,Sciences de la Vie et de la Terre,Licence,2,3,N
+SVT2,2,Licence Sciences de la Vie et de la Terre - 2ème année,FS,SVT,Sciences de la Vie et de la Terre,Licence,2,3,N
+SVT3,1,Licence Sciences de la Vie et de la Terre - 3ème année,FS,SVT,Sciences de la Vie et de la Terre,Licence,3,3,O
+SVT3,2,Licence Sciences de la Vie et de la Terre - 3ème année,FS,SVT,Sciences de la Vie et de la Terre,Licence,3,3,O
+MSD1,1,Master Science des Données - 1ère année,FS,MSD,Science des Données,Master,1,2,N
+MSD2,1,Master Science des Données - 2ème année,FS,MSD,Science des Données,Master,2,2,O
+DRF1,1,Licence Droit en langue française - 1ère année,FSJES,DRF,Droit en langue française,Licence,1,3,N
+DRF1,2,Licence Droit en langue française - 1ère année,FSJES,DRF,Droit en langue française,Licence,1,3,N
+DRF2,1,Licence Droit en langue française - 2ème année,FSJES,DRF,Droit en langue française,Licence,2,3,N
+DRF2,2,Licence Droit en langue française - 2ème année,FSJES,DRF,Droit en langue française,Licence,2,3,N
+DRF3,1,Licence Droit en langue française - 3ème année,FSJES,DRF,Droit en langue française,Licence,3,3,O
+DRF3,2,Licence Droit en langue française - 3ème année,FSJES,DRF,Droit en langue française,Licence,3,3,O
+SEG1,1,Licence Sciences Économiques et Gestion - 1ère année,FSJES,SEG,Sciences Économiques et Gestion,Licence,1,3,N
+SEG1,2,Licence Sciences Économiques et Gestion - 1ère année,FSJES,SEG,Sciences Économiques et Gestion,Licence,1,3,N
+SEG2,1,Licence Sciences Économiques et Gestion - 2ème année,FSJES,SEG,Sciences Économiques et Gestion,Licence,2,3,N
+SEG2,2,Licence Sciences Économiques et Gestion - 2ème année,FSJES,SEG,Sciences Économiques et Gestion,Licence,2,3,N
+SEG3,1,Licence Sciences Économiques et Gestion - 3ème année,FSJES,SEG,Sciences Économiques et Gestion,Licence,3,3,O
+SEG3,2,Licence Sciences Économiques et Gestion - 3ème année,FSJES,SEG,Sciences Économiques et Gestion,Licence,3,3,O
+MFI1,1,Master Finance et Banque - 1ère année,FSJES,MFI,Finance et Banque,Master,1,2,N
+MFI2,1,Master Finance et Banque - 2ème année,FSJES,MFI,Finance et Banque,Master,2,2,O
+ETA1,1,Licence Études Anglaises - 1ère année,FLSH,ETA,Études Anglaises,Licence,1,3,N
+ETA1,2,Licence Études Anglaises - 1ère année,FLSH,ETA,Études Anglaises,Licence,1,3,N
+ETA2,1,Licence Études Anglaises - 2ème année,FLSH,ETA,Études Anglaises,Licence,2,3,N
+ETA2,2,Licence Études Anglaises - 2ème année,FLSH,ETA,Études Anglaises,Licence,2,3,N
+ETA3,1,Licence Études Anglaises - 3ème année,FLSH,ETA,Études Anglaises,Licence,3,3,O
+ETA3,2,Licence Études Anglaises - 3ème année,FLSH,ETA,Études Anglaises,Licence,3,3,O
+ETF1,1,Licence Études Françaises - 1ère année,FLSH,ETF,Études Françaises,Licence,1,3,N
+ETF1,2,Licence Études Françaises - 1ère année,FLSH,ETF,Études Françaises,Licence,1,3,N
+ETF2,1,Licence Études Françaises - 2ème année,FLSH,ETF,Études Françaises,Licence,2,3,N
+ETF2,2,Licence Études Françaises - 2ème année,FLSH,ETF,Études Françaises,Licence,2,3,N
+ETF3,1,Licence Études Françaises - 3ème année,FLSH,ETF,Études Françaises,Licence,3,3,O
+ETF3,2,Licence Études Françaises - 3ème année,FLSH,ETF,Études Françaises,Licence,3,3,O
+LGI1,1,Licence Génie Informatique - 1ère année,FST,LGI,Génie Informatique,Licence,1,3,N
+LGI1,2,Licence Génie Informatique - 1ère année,FST,LGI,Génie Informatique,Licence,1,3,N
+LGI2,1,Licence Génie Informatique - 2ème année,FST,LGI,Génie Informatique,Licence,2,3,N
+LGI2,2,Licence Génie Informatique - 2ème année,FST,LGI,Génie Informatique,Licence,2,3,N
+LGI3,1,Licence Génie Informatique - 3ème année,FST,LGI,Génie Informatique,Licence,3,3,O
+LGI3,2,Licence Génie Informatique - 3ème année,FST,LGI,Génie Informatique,Licence,3,3,O
+LGC1,1,Licence Génie Civil - 1ère année,FST,LGC,Génie Civil,Licence,1,3,N
+LGC1,2,Licence Génie Civil - 1ère année,FST,LGC,Génie Civil,Licence,1,3,N
+LGC2,1,Licence Génie Civil - 2ème année,FST,LGC,Génie Civil,Licence,2,3,N
+LGC2,2,Licence Génie Civil - 2ème année,FST,LGC,Génie Civil,Licence,2,3,N
+LGC3,1,Licence Génie Civil - 3ème année,FST,LGC,Génie Civil,Licence,3,3,O
+LGC3,2,Licence Génie Civil - 3ème année,FST,LGC,Génie Civil,Licence,3,3,O
+CPI1,1,Cycle préparatoire Cycle Préparatoire Intégré - 1ère année,ENSA,CPI,Cycle Préparatoire Intégré,Cycle préparatoire,1,2,N
+CPI2,1,Cycle préparatoire Cycle Préparatoire Intégré - 2ème année,ENSA,CPI,Cycle Préparatoire Intégré,Cycle préparatoire,2,2,O
+GIN1,1,Cycle ingénieur Génie Informatique - 1ère année,ENSA,GIN,Génie Informatique,Cycle ingénieur,1,3,N
+GIN2,1,Cycle ingénieur Génie Informatique - 2ème année,ENSA,GIN,Génie Informatique,Cycle ingénieur,2,3,N
+GIN3,1,Cycle ingénieur Génie Informatique - 3ème année,ENSA,GIN,Génie Informatique,Cycle ingénieur,3,3,O
+GCV1,1,Cycle ingénieur Génie Civil - 1ère année,ENSA,GCV,Génie Civil,Cycle ingénieur,1,3,N
+GCV2,1,Cycle ingénieur Génie Civil - 2ème année,ENSA,GCV,Génie Civil,Cycle ingénieur,2,3,N
+GCV3,1,Cycle ingénieur Génie Civil - 3ème année,ENSA,GCV,Génie Civil,Cycle ingénieur,3,3,O
+PGE1,1,Grande École Programme Grande École - 1ère année,ENCG,PGE,Programme Grande École,Grande École,1,5,N
+PGE2,1,Grande École Programme Grande École - 2ème année,ENCG,PGE,Programme Grande École,Grande École,2,5,N
+PGE3,1,Grande École Programme Grande École - 3ème année,ENCG,PGE,Programme Grande École,Grande École,3,5,N
+PGE4,1,Grande École Programme Grande École - 4ème année,ENCG,PGE,Programme Grande École,Grande École,4,5,N
+PGE5,1,Grande École Programme Grande École - 5ème année,ENCG,PGE,Programme Grande École,Grande École,5,5,O

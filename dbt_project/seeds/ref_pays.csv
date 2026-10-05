@@ -1,0 +1,19 @@
+cod_pay,lib_pays,lib_nationalite,zone_geographique
+350,Maroc,Marocaine,Maghreb
+352,Algérie,Algérienne,Maghreb
+351,Tunisie,Tunisienne,Maghreb
+336,Mauritanie,Mauritanienne,Afrique subsaharienne
+341,Sénégal,Sénégalaise,Afrique subsaharienne
+335,Mali,Malienne,Afrique subsaharienne
+326,Côte d'Ivoire,Ivoirienne,Afrique subsaharienne
+330,Guinée,Guinéenne,Afrique subsaharienne
+337,Niger,Nigérienne,Afrique subsaharienne
+344,Tchad,Tchadienne,Afrique subsaharienne
+328,Gabon,Gabonaise,Afrique subsaharienne
+322,Cameroun,Camerounaise,Afrique subsaharienne
+251,Yémen,Yéménite,Moyen-Orient
+261,Palestine,Palestinienne,Moyen-Orient
+100,France,Française,Europe
+134,Espagne,Espagnole,Europe
+131,Belgique,Belge,Europe
+127,Italie,Italienne,Europe

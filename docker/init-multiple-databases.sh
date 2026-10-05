@@ -1,14 +1,36 @@
 #!/bin/bash
-# Crée plusieurs bases de données au démarrage du conteneur Postgres
-set -e
+# Crée les bases listées dans POSTGRES_MULTIPLE_DATABASES (séparées par des virgules).
+# Exécuté automatiquement par l'image postgres au PREMIER démarrage du volume uniquement.
+set -euo pipefail
 
-if [ -n "$POSTGRES_MULTIPLE_DATABASES" ]; then
-  echo "Création de plusieurs bases de données : $POSTGRES_MULTIPLE_DATABASES"
-  for db in $(echo "$POSTGRES_MULTIPLE_DATABASES" | tr ',' ' '); do
-    echo "  -> Création de la base '$db'"
-    psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname postgres <<-EOSQL
-      CREATE DATABASE $db;
-      GRANT ALL PRIVILEGES ON DATABASE $db TO $POSTGRES_USER;
+create_database() {
+    local database="$1"
+    echo "[init] Création de la base '${database}' (si absente)"
+    psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname postgres <<EOSQL
+SELECT 'CREATE DATABASE ${database} OWNER ${POSTGRES_USER}'
+WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = '${database}')\gexec
 EOSQL
-  done
+}
+
+if [ -n "${POSTGRES_MULTIPLE_DATABASES:-}" ]; then
+    for db in $(echo "$POSTGRES_MULTIPLE_DATABASES" | tr ',' ' '); do
+        create_database "$db"
+    done
+    echo "[init] Bases créées : ${POSTGRES_MULTIPLE_DATABASES}"
+fi
+
+
+# Rôle en lecture seule pour Superset (accès limité au schéma reporting par dbt)
+if [ -n "${BI_PASSWORD:-}" ]; then
+    echo "[init] Création du rôle de lecture BI 'bi_lecteur'"
+    psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname postgres <<EOSQL
+DO \$\$
+BEGIN
+    IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = 'bi_lecteur') THEN
+        CREATE ROLE bi_lecteur LOGIN PASSWORD '${BI_PASSWORD}';
+    END IF;
+END
+\$\$;
+GRANT CONNECT ON DATABASE etudiants_db TO bi_lecteur;
+EOSQL
 fi

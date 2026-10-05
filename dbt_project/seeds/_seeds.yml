@@ -1,0 +1,60 @@
+version: 2
+
+seeds:
+  - name: ref_composante
+    description: "Composantes (facultés et écoles) : libellé, type et mode d'accès."
+    columns:
+      - name: cod_cmp
+        data_tests: [unique, not_null]
+
+  - name: ref_etape
+    description: "Étapes (année d'une filière) par version : libellés, cycle, niveau."
+    data_tests:
+      - unique_combinaison:
+          colonnes: [cod_etp, cod_vrs_vet]
+    columns:
+      - name: cod_etp
+        data_tests: [not_null]
+      - name: cod_cmp
+        data_tests:
+          - relationships:
+              to: ref('ref_composante')
+              field: cod_cmp
+
+  - name: ref_element_pedagogique
+    description: "Éléments pédagogiques (modules) : libellé, étape, semestre."
+    columns:
+      - name: cod_elp
+        data_tests: [unique, not_null]
+
+  - name: ref_pays
+    description: "Pays et nationalités (codes à 3 chiffres)."
+    columns:
+      - name: cod_pay
+        data_tests: [unique, not_null]
+
+  - name: ref_departement_naissance
+    description: "Provinces de naissance et région ('099' = né à l'étranger)."
+    columns:
+      - name: cod_dep
+        data_tests: [unique, not_null]
+
+  - name: ref_etat_iae
+    description: "États de l'inscription administrative et prise en compte dans les effectifs."
+    columns:
+      - name: eta_iae
+        data_tests: [unique, not_null]
+      - name: compte_dans_effectif
+        data_tests:
+          - accepted_values:
+              values: ['O', 'N']
+  
+  - name: ref_controle_qualite
+    description: "Catalogue des contrôles de qualité des données : libellé, catégorie, gravité."
+    columns:
+      - name: code_controle
+        data_tests: [unique, not_null]
+      - name: gravite
+        data_tests:
+          - accepted_values:
+              values: ['Critique', 'Avertissement', 'Information']

@@ -1,0 +1,161 @@
+version: 2
+
+models:
+  # -------------------------------------------------------------------
+  - name: stg_apogee__individu
+    description: >
+      Individus nettoyés (une ligne par COD_IND) : noms normalisés, codes en
+      majuscules, dates typées, emails en minuscules.
+    columns:
+      - name: cod_ind
+        description: "Identifiant interne de l'individu (clé)."
+        data_tests: [unique, not_null]
+      - name: cod_etu
+        description: "Numéro étudiant."
+        data_tests:
+          - not_null
+          - unique:
+              config: {severity: warn}
+      - name: numero_ine
+        description: "Numéro INE / Massar (absent pour les étudiants étrangers)."
+        data_tests:
+          - unique:
+              config: {severity: warn}
+      - name: cod_sex_etu
+        description: "Sexe (M / F)."
+        data_tests:
+          - accepted_values:
+              values: ['M', 'F']
+      - name: date_naissance
+        description: "Date de naissance."
+        data_tests:
+          - not_null:
+              config: {severity: warn}
+          - expression_vraie:
+              expression: "date_naissance between date '1940-01-01' and current_date - interval '15 years'"
+              config: {severity: warn}
+      - name: cod_pay_nai_etu
+        description: "Code pays de naissance."
+        data_tests:
+          - relationships:
+              to: ref('ref_pays')
+              field: cod_pay
+              config: {severity: warn}
+      - name: cod_nat_etu
+        description: "Code nationalité."
+        data_tests:
+          - relationships:
+              to: ref('ref_pays')
+              field: cod_pay
+              config: {severity: warn}
+      - name: cod_dep_nai_etu
+        description: "Code département / province de naissance ('099' = né à l'étranger)."
+        data_tests:
+          - relationships:
+              to: ref('ref_departement_naissance')
+              field: cod_dep
+              config: {severity: warn}
+      - name: adr_mail_etu
+        description: "Email (en minuscules)."
+        data_tests:
+          - expression_vraie:
+              expression: "adr_mail_etu ~ '^[^@[:space:]]+@[^@[:space:]]+\\.[a-z]{2,}$'"
+              config: {severity: warn}
+
+  # -------------------------------------------------------------------
+  - name: stg_apogee__ins_adm_etp
+    description: >
+      Inscriptions administratives nettoyées.
+      Grain : une ligne par (cod_ind, cod_anu, cod_cmp).
+    data_tests:
+      - unique_combinaison:
+          colonnes: [cod_ind, cod_anu, cod_cmp]
+    columns:
+      - name: cod_ind
+        description: "Identifiant de l'individu."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_apogee__individu')
+              field: cod_ind
+      - name: cod_anu
+        description: "Année universitaire (année de début, ex : 2024 = 2024-2025)."
+        data_tests:
+          - not_null
+          - expression_vraie:
+              expression: "cod_anu between 2000 and 2100"
+      - name: eta_iae
+        description: "État de l'inscription administrative."
+        data_tests:
+          - relationships:
+              to: ref('ref_etat_iae')
+              field: eta_iae
+              config: {severity: warn}
+      - name: cod_cmp
+        description: "Code de la composante."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('ref_composante')
+              field: cod_cmp
+              config: {severity: warn}
+      - name: nb_saisies
+        description: "Nombre de saisies de cette inscription dans la source (> 1 = doublon éliminé)."
+
+  # -------------------------------------------------------------------
+  - name: stg_apogee__ind_contrat_elp
+    description: >
+      Contrats pédagogiques nettoyés et dédoublonnés.
+      Grain : une ligne par (cod_ind, cod_anu, cod_etp, cod_vrs_vet, cod_elp).
+    data_tests:
+      - unique_combinaison:
+          colonnes: [cod_ind, cod_anu, cod_etp, cod_vrs_vet, cod_elp]
+    columns:
+      - name: cod_ind
+        description: "Identifiant de l'individu."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_apogee__individu')
+              field: cod_ind
+      - name: cod_elp
+        description: "Code de l'élément pédagogique (module)."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('ref_element_pedagogique')
+              field: cod_elp
+              config: {severity: warn}
+      - name: cod_anu
+        description: "Année universitaire."
+        data_tests: [not_null]
+      - name: cod_etp
+        description: "Code de l'étape."
+        data_tests:
+          - relationships:
+              to: ref('ref_etape')
+              field: cod_etp
+              config: {severity: warn}
+      - name: cod_vrs_vet
+        description: "Version de l'étape."
+      - name: tem_prc_ice
+        description: "Témoin de prise en compte (O / N)."
+        data_tests:
+          - accepted_values:
+              values: ['O', 'N']
+              config: {severity: warn}
+      - name: dat_cre_elp_con
+        description: "Date de création du contrat."
+        data_tests:
+          - not_null:
+              config: {severity: warn}
+      - name: dat_mod_ice
+        description: "Date de dernière modification."
+        data_tests:
+          - expression_vraie:
+              expression: "dat_mod_ice >= dat_cre_elp_con"
+              config: {severity: warn}
+      - name: cod_uti
+        description: "Utilisateur ayant saisi le contrat (APOBATCH = traitement automatique)."
+      - name: nb_saisies
+        description: "Nombre de saisies identiques dans la source (> 1 = doublon éliminé)."
