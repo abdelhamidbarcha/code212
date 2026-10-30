@@ -35,7 +35,7 @@ select
     b.age_inscription,
     case
         when b.age_inscription is null then 'Non renseigné'
-        when b.age_inscription < 18    then 'Moins de 18 ans'
+        when b.age_inscription < 18    then '17 ans et moins'
         when b.age_inscription <= 20   then '18-20 ans'
         when b.age_inscription <= 23   then '21-23 ans'
         when b.age_inscription <= 26   then '24-26 ans'

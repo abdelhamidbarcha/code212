@@ -92,7 +92,7 @@ models:
       - name: tranche_age
         data_tests:
           - accepted_values:
-              values: ['Moins de 18 ans', '18-20 ans', '21-23 ans', '24-26 ans', '27 ans et plus', 'Non renseigné']
+              values: ['17 ans et moins', '18-20 ans', '21-23 ans', '24-26 ans', '27 ans et plus', 'Non renseigné']
       - name: type_inscription
         description: "Nouvel inscrit / Réinscrit / Non déterminé (première année de l'historique)."
       - name: statut_annee_suivante
